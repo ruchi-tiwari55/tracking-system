@@ -1,0 +1,131 @@
+.modal {
+    display: block;
+    position: fixed;
+    margin: auto;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.modal_content {
+    background-color: #fefefe;
+    margin: 6% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 20px;
+    width: 50rem;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+    margin-bottom: 1.5rem;
+}
+
+.top h4 {
+    margin: 0.5rem 0 1.5rem;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.close {
+    color: #aaa;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.form input {
+    font-size: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    transition: box-shadow 0.3s;
+    background-color: white;
+}
+
+.form input:focus {
+    box-shadow: 0 0 5px 0 #1876f2dd;
+    border-color: #1877f2;
+}
+
+.form input:focus::placeholder {
+    color: rgba(128, 128, 128, 0.405);
+}
+
+.form input::placeholder {
+    font-size: 1.1rem;
+    color: rgba(128, 128, 128, 0.771);
+}
+
+.form textarea {
+    background-color: white;
+    font-size: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: box-shadow 0.3s;
+    min-height: 6rem;
+}
+
+.form textarea:focus {
+    box-shadow: 0 0 5px 0 #1876f2dd;
+    border-color: #1877f2;
+}
+
+.form textarea:focus::placeholder {
+    color: rgba(128, 128, 128, 0.405);
+}
+
+.form textarea::placeholder {
+    font-size: 1.1rem;
+    color: rgba(128, 128, 128, 0.771);
+}
+
+.cbtn {
+    background-color: rgb(18, 173, 18);
+    margin: auto;
+    padding: 0.7rem 5rem;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.2rem;
+}
+.cbtn:hover{
+    background-color: rgb(4, 144, 4);
+    cursor: pointer;
+}
+.bottom {
+    margin: auto;
+    color: rgb(49, 46, 46);
+}
+
+.bottom span {
+    color: blue;
+}
+
+.bottom span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

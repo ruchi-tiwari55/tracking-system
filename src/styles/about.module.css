@@ -1,0 +1,371 @@
+.img_section_about {
+    margin: 0;
+    width: auto;
+    padding: 10px;
+    margin: auto;
+    object-fit: fill;
+    box-shadow: 0 .125rem .25rem #00000013;
+}
+
+.img_section_about img {
+    width: 23rem;
+    margin: 0;
+}
+
+.lower_about {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0px;
+    gap: 2rem;
+}
+
+.banner_section {
+    position: relative;
+    height: 700px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.banner_imga {
+    background-image: url(/assets/about/banner.jpg);
+    width: 490px;
+    height: 390px;
+    margin-left: 5rem;
+    margin-top: 4rem;
+    border-radius: 32px;
+
+}
+
+.banner_heading {
+    text-align: center;
+    align-items: center;
+    width: 590px;
+    margin-left: 5rem;
+    margin-top: 11rem;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    display: flex;
+
+}
+
+.banner_heading h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 47px;
+    align-self: center;
+}
+
+.about_section {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    display: flex;
+
+    margin-top: -6rem;
+    background-color: #BBE2FF24;
+    ;
+}
+
+.about_section .about_content {
+
+    display: flex;
+    justify-content: center;
+    margin: 0px auto;
+    text-align: center;
+    margin-bottom: 7rem;
+}
+
+.about_section .about_content>* {
+    align-self: center;
+}
+
+.about_heading {
+    width: 700px;
+    margin-left: 5rem;
+    margin-top: 8rem;
+
+
+}
+
+.about_heading h1 {
+    font-weight: 500;
+    font-size: 47px;
+    justify-content: flex-start;
+
+}
+
+.about_heading p {
+    font-weight: 400;
+    font-size: 18px;
+    margin-top: 1rem;
+}
+
+.about_heading .banner_btn {
+    width: 129px;
+    height: 44px;
+    margin-top: 1rem;
+    background: #0064E0;
+    border-radius: 100px;
+    border: none;
+    font-weight: 700;
+    font-size: 15.875px;
+    line-height: 22px;
+    align-items: center;
+    letter-spacing: 0.08px;
+
+    color: #FFFFFF;
+
+}
+
+.about_heading {
+    color: #67757c;
+    font-family: Inter;
+    font-size: 47.438px;
+    font-style: normal;
+    font-weight: 700;
+    /* 111.304% */
+    letter-spacing: -0.48px;
+}
+
+.about_imga {
+    background-image: url(/assets/about/banner.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 330px;
+    height: 300px;
+    margin-left: 14rem;
+    margin-top: 6rem;
+    border: 3px solid #FFFFFF;
+    box-shadow: 0px 15.1587px 30.3173px rgba(0, 100, 224, 0.06);
+    border-radius: 8.33499px;
+
+
+}
+
+.divider {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.divider_content h1 {
+    font-weight: 500;
+    font-size: 47px;
+}
+
+.divider_content_img {
+
+    margin-top: 6rem;
+    background: linear-gradient(0deg, rgba(131, 164, 212, 0.52) 0%, rgba(182, 251, 255, 0.28) 45%, white 100%);
+    width: 100%;
+    height: 150vh;
+}
+
+.divider_content_img h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 45px;
+    margin-top: 3rem;
+}
+
+.divider_images {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.divider_images .img1a img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    margin-top: 2rem;
+    margin-left: 5rem;
+    border: 3px solid #83a4d4;
+}
+
+.divider_images h4 {
+
+    flex: 0 0 36%;
+    font-size: 30px;
+    margin-top: 13rem;
+    font-weight: 400;
+    justify-content: center;
+
+
+
+}
+
+.divider_images .img2a img{
+    width: 100%;
+    height: 30rem;
+    border-radius: 32px;
+    margin-top: 5rem;
+    margin-right: 3rem;
+    border: 3px solid #83a4d4;
+
+}
+
+.divider_images_2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.divider_images_2 .img1a img {
+    width: 100%;
+    border-radius: 20px;
+    margin-left: 5rem;
+    border: 3px solid #83a4d4;
+
+}
+
+.divider_images_2 h4 {
+    flex: 0 0 25%;
+    font-size: 30px;
+    margin-top: 13rem;
+    font-weight: 400;
+    justify-content: center;
+}
+
+.divider_images_2 .img2a img {
+    width: 100%;
+    height: 20rem;
+    border-radius: 32px;
+    
+}
+
+@media screen and (max-width: 1680px) {
+    .banner_section {
+        text-align: center;
+    }
+
+    .about_content {
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .about_imga {
+        width: 330px;
+        height: 300px;
+        margin-top: 2rem;
+    }
+
+    .about_heading {
+        width: 50%;
+        margin-left: 0;
+        margin-top: 2rem;
+        text-align: center;
+    }
+    .img_section_about{
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+    }
+    .img_section_about img{
+        width: 60%;
+    }
+}
+/* @media screen and (max-width: 800px) {
+    .divider_content{
+        display: flex;
+        flex-direction: column;
+    }
+    .divider_content_img{
+        display: flex;
+        flex-direction: column;
+    }
+} */
+@media screen and (max-width: 768px) {
+
+    .banner_section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner_heading {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 2rem;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .banner_heading h1 {
+        padding: 0 0.5rem;
+        line-height: 1.5;
+    }
+
+    .about_content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about_heading {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .img_section_about img {
+        width: 10rem;
+        margin: auto;
+    }
+
+    .about_heading p {
+        padding: 0 2rem;
+    }
+
+    .divider h1 {
+        line-height: 1.5;
+    }
+
+    .divider_images {
+        flex-direction: column;
+    }
+    .about_imga {
+        margin: auto;
+    }
+
+    .divider_images .img1a,
+    .divider_images .img2a {
+        width: 100%;
+        height: auto;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .about_heading {
+        font-size: 28px;
+        text-align: start;
+        margin: 0;
+    }
+
+    .about_imga {
+        margin: auto;
+    }
+
+    .img_section_about img {
+        width: 7rem;
+        margin: 0;
+    }
+}

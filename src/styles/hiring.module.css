@@ -1,0 +1,113 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+@media screen and (max-width: 768) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hiring-images .images {
+    flex-direction: column;
+    /* Stack images vertically on smaller screens */
+  }
+
+  .hiring-images .images .img1 {
+    height: 200px;
+    width: 330px;
+    /* Adjust height for smaller screens */
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .hiring-images .images {
+    flex-direction: column;
+  }
+}
+
+/* Hiring Icons */
+
+/* Base styles */
+.hiring_icons {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-left: 6rem;
+  margin-right: 6rem;
+  flex-wrap: wrap;
+}
+
+.box_images {
+  width: 80px;
+  height: 70px;
+  position: relative;
+  background: #ffffff;
+  border: 0.5px solid rgba(62, 62, 62, 0.5);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.box_images:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.1);
+}
+
+.box_images img {
+  width: 45px;
+  height: 45px;
+}
+
+.box_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.box_content p {
+  font-size: 10px;
+  margin-top: 0.5rem;
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 1200px) {
+  .hiring_icons {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .hiring_icons {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hiring_icons {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+
+  .box_content p {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .hiring_icons {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+}
