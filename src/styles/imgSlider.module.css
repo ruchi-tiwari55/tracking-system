@@ -1,0 +1,50 @@
+.image_slider {
+    position: relative;
+    width: 100%;
+    max-width: 60rem; /* Adjust as needed */
+    margin:0 auto;
+    margin-top: 1rem;
+    display: flex;
+  }
+  
+  .image_slider img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .image_slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .image_slider button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .image_slider button:first-child {
+    left: 10px;
+  }
+  
+  .image_slider button:last-child {
+    right: 10px;
+  }
+  /* Default styles (from previous code) */
+
+@media only screen and (max-width: 768px) {
+  .image_slider button {
+    /* Adjust button size for smaller screens */
+    padding: 5px 10px;
+    background-color: inherit;
+    /* Adjust button positioning if needed */
+    /* left: 5%; Example: Move buttons slightly inwards */
+  }
+}

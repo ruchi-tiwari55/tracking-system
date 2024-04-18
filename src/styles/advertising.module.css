@@ -1,0 +1,259 @@
+.ad_disp {
+  display: flex;
+}
+
+.btn {
+  margin-top: 5rem;
+  background-color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1a73e8;
+  border: 2px solid #1a73e8;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background-color: #1a73e8;
+  color: #fff;
+}
+
+.banner_heading {
+  font-family: "Poppins", sans-serif;
+  width: 700px;
+  margin-top: 8rem;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  display: flex;
+}
+
+.content span {
+  /* color: #0f4387; */
+  font-weight: bold;
+}
+
+.content h3 {
+  margin: auto;
+  font-weight: bolder;
+  font-size: 2.5rem;
+  display: flex;
+}
+
+.content h5 {
+  margin: 2rem 0 0;
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+
+.content p {
+  margin: 0.5rem 0;
+  line-height: 2rem;
+  font-size: 15px;
+  font-size: 17px;
+}
+
+.ad_disp video {
+  margin-top: 3rem;
+  margin-left: 1rem;
+  width: 65rem;
+}
+@media screen and (max-width:1600px) {
+  .ad_disp video {
+    width: 50rem;
+  }
+  .banner_heading {
+    margin-top: 3rem;
+  }
+
+  .btn {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width:1400px) {
+  .ad_disp video {
+    width: 50rem;
+  }
+  .banner_heading {
+    margin-top: 3rem;
+  }
+
+  .btn {
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .ad_disp video {
+    margin-top: 3rem;
+    margin-left: 1rem;
+    width: 45rem;
+  }
+
+  .banner_heading {
+    margin-top: 3rem;
+  }
+
+  .btn {
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .banner_heading {
+    max-width: 400px;
+    /* margin-left: 10rem; */
+    margin-top: 2rem;
+    text-align: center;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .banner_heading h1 {
+    padding: 0 0.5rem 0 0.5rem;
+    line-height: 1.5;
+    letter-spacing: -1px;
+  }
+
+  .pt-6 {
+    width: 10rem;
+  }
+
+  .banner_heading {
+    width: 100%;
+    /* Make heading full width */
+    text-align: left;
+    /* Align left on small screens */
+  }
+
+  .content h3 {
+    font-size: 2rem;
+    /* Adjust heading size */
+  }
+
+  .content h5 {
+    font-size: 1.5rem;
+    /* Adjust subheading size */
+  }
+
+  .content p {
+    font-size: 1rem;
+    /* Adjust paragraph size */
+  }
+
+  .ad_disp video {
+    width: 100%;
+    /* Make video full width */
+    margin: 1rem 0;
+    /* Adjust video margins */
+  }
+
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1120px) {
+
+  /* Add your styles here for medium screens */
+  .banner_heading {
+    margin-top: 2rem;    
+    width: 80%;
+    /* Adjust width as needed */
+  }
+
+  .content h3 {
+    font-size: 2.2rem;
+    /* Adjust heading size as needed */
+  }
+
+  .ad_disp video {
+    width: 90%;
+    /* Make video full width */
+    margin: 10rem 0;
+    /* Adjust video margins */
+  }
+
+  .banner_heading {
+    width: 100%;
+    margin: auto 1rem;
+  }
+
+  /* Add styles for other elements as necessary */
+}
+
+@media screen and (max-width: 768px) {
+  .ad_disp {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+  }
+}
+
+
+@media (max-width: 425px) {
+  .banner_heading {
+    max-width: 300px;
+    /* margin-left: 10rem; */
+    margin-top: 2rem;
+    text-align: center;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .heading {
+    font-size: 20px !important;
+    font-weight: 500 !important;
+    line-height: 31px !important;
+  }
+
+  .main-slider {
+    height: 310px !important;
+    width: 190px !important;
+  }
+
+  .main-slider img {
+    height: 175px !important;
+    width: auto !important;
+  }
+
+  .company-member {
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .team-detail {
+    gap: 10px !important;
+  }
+
+  .about-heading {
+    font-size: 28px !important;
+    text-align: start;
+    margin: 0 !important;
+  }
+
+  .about-team {
+    font-size: 14px !important;
+  }
+
+  .heading-join-team {
+    font-size: 12px !important;
+  }
+
+
+  .handicraft-img img {
+    width: 60%;
+    height: 100%;
+    border-radius: 8px;
+    margin: auto;
+  }
+
+  .img-section-about {
+    /* padding-top: 2px; */
+    width: 332px !important;
+    height: 600px !important;
+  }
+}
