@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../../styles/imgSlider.module.css'
+import styles from './imgSlider.module.css'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 

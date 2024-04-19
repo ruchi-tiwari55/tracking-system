@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles/lzyCrazyHeader.module.css'
+import styles from './lzyCrazyHeader.module.css'
 
 function LzyCrazyHeader() {
     return (

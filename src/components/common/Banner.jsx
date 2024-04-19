@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../../styles/login.module.css'
+import styles from '../../styles/outerPages/login.module.css'
 
 import banner from '/assets/about/banner_main.jpeg'
 

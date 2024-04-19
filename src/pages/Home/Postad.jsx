@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import styles from '../styles/postad.module.css'
-import '../styles/globals.css';
+import styles from '../../styles/home/postad.module.css'
+import '../../styles/globals.css';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import VehiclesIcon from '@mui/icons-material/DriveEtaOutlined';
 import RealEstateIcon from '@mui/icons-material/MapsHomeWorkOutlined';

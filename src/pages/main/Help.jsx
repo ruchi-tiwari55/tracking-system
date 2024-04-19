@@ -1,7 +1,7 @@
 import React from 'react'
-import styles from '../styles/help.module.css'
-import LzyCrazyFooter from '../components/common/LzyCrazyFooter'
-import LzyCrazyHeader from '../components/common/LzyCrazyHeader'
+import styles from '../../styles/outerPages/help.module.css'
+import LzyCrazyFooter from '../../components/common/LzyCrazyFooter'
+import LzyCrazyHeader from '../../components/common/LzyCrazyHeader'
 
 const Help = () => {
     return (
@@ -31,9 +31,9 @@ const Help = () => {
                 <div className={styles.lower_help}>
                     <div className={styles.video_head}>CAll AND WHATSAPP US</div>
                     <div className={styles.video_content}>
-                        <div style={{ fontSize: "1.3rem" ,lineHeight:"3rem"}}>
-                            <span style={{fontSize: "1.5rem", fontWeight: "600" }}>Email :</span> support@lzycrazy@gmail.com<br />
-                            <span style={{fontSize: "1.5rem", fontWeight: "600" }}>Contact :</span> +91-9818238286 <br />
+                        <div style={{ fontSize: "1.3rem", lineHeight: "3rem" }}>
+                            <span style={{ fontSize: "1.5rem", fontWeight: "600" }}>Email :</span> support@lzycrazy@gmail.com<br />
+                            <span style={{ fontSize: "1.5rem", fontWeight: "600" }}>Contact :</span> +91-9818238286 <br />
                         </div>
                     </div>
                     <div className={styles.contact_icon}>

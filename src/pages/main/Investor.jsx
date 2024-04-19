@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import LzyCrazyHeader from '../components/common/LzyCrazyHeader'
-import LzyCrazyFooter from '../components/common/LzyCrazyFooter'
-import '../styles/investor.css'
-import Contact from '../components/common/Contact';
+import LzyCrazyHeader from '../../components/common/LzyCrazyHeader'
+import LzyCrazyFooter from '../../components/common/LzyCrazyFooter'
+import '../../styles/outerPages/investor.css'
+import Contact from '../../components/common/Contact';
 
 function Investor() {
 

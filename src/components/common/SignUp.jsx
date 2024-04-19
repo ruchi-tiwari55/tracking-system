@@ -1,4 +1,4 @@
-import styles from '../../styles/signup.module.css'
+import styles from './signup.module.css'
 import '../../styles/globals.css'
 import { useState } from 'react';
 

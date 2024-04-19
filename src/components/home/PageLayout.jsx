@@ -2,8 +2,7 @@ import React from 'react';
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import { Outlet } from 'react-router-dom';
-import '../../styles/index/index.css'
-import '../../styles/index/style.css'
+
 
 const PageLayout = () => {
     return (

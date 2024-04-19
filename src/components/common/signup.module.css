@@ -26,17 +26,9 @@
   margin-bottom: 20px;
 }
 
-.top p {
-  margin-top: -1rem;
-}
-
-.top h2 {
-  margin-top: -2px;
-}
-
 .close {
   color: #aaa;
-  font-size: 35px;
+  font-size: 33px;
   font-weight: bold;
 }
 
@@ -50,15 +42,16 @@
 .form {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.5rem;
 }
 
 .form input {
+  background-color: inherit;
+  color: black;
   padding: 1rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.8rem;
   border-radius: 10px;
-  width: 27rem;
-  font-size: 18px;
+  width: 29rem;
+  font-size: 1rem;
   border: 1px solid #ddd;
   outline: none;
   transition: box-shadow 0.3s;
@@ -79,94 +72,99 @@
 }
 
 .form_name input {
-  width: 12rem;
+  width: 14rem;
 }
 
 .form_name input:first-child {
-  margin-right: 12px;
+  margin-right: 1rem;
 }
-.dob p,.gender_p p,.location p{
+
+.dob p,
+.gender_p p,
+.location p {
   margin: 0;
 }
-.dob_select{
+
+.dob,
+.gender_p {
   margin-bottom: 0.5rem;
 }
+
+.dob_select {
+  display: flex;
+  gap: 1rem;
+}
+
 .dob_select select {
+  background-color: inherit;
   outline: none;
   border: 1px solid #ddd;
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 1rem;
   color: rgb(69, 67, 67);
   width: 9rem;
-  margin-right: 1rem;
+  /* margin-right: 1rem; */
   padding: 10px 5px;
 }
 
 .gender {
   display: flex;
-  margin-bottom: 0.5rem;
+  gap: 1rem;
 }
 
 .gender label {
   color: rgb(69, 67, 67);
-  font-size: 18px;
+  font-size: 1rem;
   border: 1px solid #ddd;
   border-radius: 10px;
-  width: 8.4rem;
-  margin-right: 1rem;
-  height: 2.6rem;
-  padding-left: 8px;
+  width: 9rem;
+  padding: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between;  
 }
 
 
 .gender input[type="radio"] {
+  color: red;
   width: 13px;
   height: 13px;
 }
 
-.location div{
+.location div {
   display: flex;
+  gap: 1rem;
 }
 
 .country div {
-  font-size: 18px;
+  font-size: 1rem;
   border: 1px solid #ddd;
   border-radius: 10px;
-  margin-right: 1rem;
-  width: 8.9rem;
-  height: 2rem;
-  padding-top: 8px;
+  width: 9rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.country img {
-  margin-right: 0.7rem;
-}
-
 .state select {
+  background-color: inherit;
+  color: rgb(69, 67, 67);
   font-size: 1rem;
-  /* align-items: center; */
   border: 1px solid #ddd;
   border-radius: 10px;
-  margin-right: 1rem;
-  padding: 11px 5px;
+  padding: 10px 5px;
   width: 9rem;
-  height: 2.6rem;
   outline: none;
 }
 
 .city input {
-  font-size: 18px;
+  background-color: inherit;
+  color: black;
+  font-size: 1rem;
   border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 0.6rem 1rem;
-  width: 7rem;
-  height: 1.2rem;
+  padding: 10px;
+  width: 9rem;
   outline: none;
 }
 
@@ -179,6 +177,8 @@
 
 .bottom button {
   margin: auto;
+  border-radius: 10px;
+  color: white;
   background-color: rgb(18, 173, 18);
   border: none;
   padding: 0.7rem 5rem;
