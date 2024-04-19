@@ -24,15 +24,14 @@ const Advertising = () => {
                             </video>
                         </div>
                         <div className={styles.banner_heading}>
-                            <div className={styles.content_a}>
-                                <h3>Welcome to All Business Ad</h3>
+                            <div className={styles.content_b}>
+                                <h3>Welcome to All Business Profile</h3>
 
-                                <p> LzyCrazy team will create business ad<br /><br />
-
+                                <p> LzyCrazy team will create business Profile<br /><br />
                                     Your business ad will Stream live in the<br />
                                     LzyCrazy Marketplace<br />
                                 </p>
-                                 <h5>Benefit</h5>
+                                <h5>Benefit</h5>
                             </div>
                             <button className={styles.btn} onClick={toggleContactForm}>Contact Us</button>
                             {showContactForm && <Contact toggleContactForm={toggleContactForm} />}

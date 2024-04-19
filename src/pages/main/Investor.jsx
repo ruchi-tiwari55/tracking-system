@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import LzyCrazyHeader from '../../components/common/LzyCrazyHeader'
 import LzyCrazyFooter from '../../components/common/LzyCrazyFooter'
-import '../../styles/outerPages/investor.css'
-import Contact from '../../components/common/Contact';
+import styles from '../../styles/outerPages/advertising.module.css'
+import Contact from '../../components/common/Contact'
 
-function Investor() {
+const Advertising = () => {
 
     const [showContactForm, setShowContactForm] = useState(false);
 
@@ -15,43 +15,46 @@ function Investor() {
     return (
         <div>
             <LzyCrazyHeader />
-            <div className="">
-                <section className="banner-section">
-                    <div className="banner-img">
-                        <img src='/assets/about/invester.jpg' alt='investor' />
-                    </div>
-                    <div className="banner-heading">
-                        <div className="banner_content">
-                            {/* <h1>Investor</h1> */}
-                            <h3>Join all investors in LzyCrazy</h3>
-
-                            <p>Investor plays pivotal role in every industry.<br />
-
-                                Investors are backbone of a company.<br />
-
-                                We are inviting potential<br />
-                                investors in our organization<br />
-                            </p>
-
-                            <h5> You have more knowledge than us <br /><span>Guide us</span></h5>
+            <div>
+                <section id="advertising">
+                    <div className={styles.ad_disp}>
+                        <div>
+                            <video autoPlay loop muted playsInline={true}>
+                                <source src="/assets/about/info_video2.MP4" type="video/MP4" />
+                            </video>
                         </div>
-                        <button className="btn" onClick={toggleContactForm}>Contact Us</button>
-                        {showContactForm && <Contact toggleContactForm={toggleContactForm} />}
+                        <div className={styles.banner_heading}>
+                            <div className={styles.content_i}>
+                                <h3>I Invite All Investors</h3>
+                                <p>For collaboration</p>
+                               
+                                    <h5>New Resource Solution</h5><br />
+
+                                    <p>Working in Futures<br />
+
+                                    Our Technology<br />
+                                    Our Manufacturer<br />
+                                    Our Finance
+                                </p>
+
+
+                                <h5>Benefit</h5>
+
+                                {/* <p>Customer with interest of your Business will<br />
+                                    Directly Connect you
+                                </p> */}
+                            </div>
+                            <button className={styles.btn} onClick={toggleContactForm}>Contact Us</button>
+                            {showContactForm && <Contact toggleContactForm={toggleContactForm} />}
+                        </div>
                     </div>
+
                 </section>
             </div>
-            <section className="about-section">
-                <div className="about-content">
-                    <div className="about-heading">
-                        <p>We are inviting potential investors to our organization. You can invest and partner with LzyCrazy.</p>
-                    </div>
-                    <div className="about-img">
-                    </div>
-                </div>
-            </section>
             <LzyCrazyFooter />
+
         </div>
+
     );
 }
-
-export default Investor;
+export default Advertising
