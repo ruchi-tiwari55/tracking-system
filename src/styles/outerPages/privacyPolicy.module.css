@@ -1,0 +1,184 @@
+
+
+.about_us {
+    display: flex;
+    align-items: center;
+    /* height: 100vh; */
+    width: 100%;
+    padding: 90px 0;
+    background: #fff;
+    
+}
+
+.pic {
+    height: auto;
+    width: 400px;
+    border-radius: 12px;
+}
+
+.about {
+    width: 1130px;
+    max-width: 85%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+
+.text h1 {
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.text h2 {
+    color: #333;
+    font-size: 90px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.text h5 {
+    color: #333;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.text span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0e101a;
+    line-height: 32px;
+}
+
+.policy_item_title {
+    color: rgb(109, 11, 145);
+    font-weight: 300;
+}
+
+.policy_item_desc {
+    font-size: 18px;
+    color: #43494e;
+    line-height: 28px;
+    margin: 10px 0;
+    text-align: justify;
+}
+
+.head_title_desc {
+    font-size: 18px;
+    font-weight: 400;
+    color: #43494e;
+    text-align: justify;
+    line-height: 28px;
+}
+
+.policy_item_descA {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0e101a;
+    line-height: 32px;
+}
+
+.head_title {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 48px;
+    text-align: left;
+    color: #121127;
+    /* text-align: center; */
+}
+
+.data {
+    margin-top: 30px;
+}
+
+.text p {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 20px 0;
+}
+
+.hire {
+    font-size: 18px;
+    background: #4070f4;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    transition: 0.5s;
+}
+
+.hire:hover {
+    background: #000;
+}
+
+.btn {
+    margin-top: 5rem;
+    background-color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1a73e8;
+    border: 2px solid #1a73e8;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    background-color: #1a73e8;
+    color: #fff;
+}
+@media screen and (max-width: 768px) {
+    .pic {
+        width: 100%;
+    }
+  
+    .about {
+        padding: 0 10px;
+    }
+
+    .text h2 {
+        font-size: 2.5rem;
+    }
+
+    .text h5 {
+        font-size: 1.25rem;
+    }
+
+    .text p {
+        font-size: 0.875rem;
+    }
+
+    .hire {
+        font-size: 0.875rem;
+        padding: 10px 20px;
+    }
+
+    .btn {
+        font-size: 0.875rem;
+        padding: 0.75rem 1.5rem;
+        margin: auto ;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .text h1 {
+        font-size: 1.5rem;
+    }
+
+    .text h2 {
+        font-size: 2rem;
+    }
+
+    .text h5 {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+    }
+}
