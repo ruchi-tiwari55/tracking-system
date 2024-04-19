@@ -6,6 +6,7 @@ import About from "../pages/main/About";
 import Advertising from "../pages/main/Advertising";
 import Hiring from "../pages/main/Hiring";
 import Investor from "../pages/main/Investor";
+import Business from "../pages/main/Business";
 import Help from "../pages/main/Help";
 import PrivacyPolicy from "../pages/main/PrivacyPolicy";
 import Postad from "../pages/home/Postad"
@@ -30,7 +31,7 @@ const AppRoutes = () => {
 
         <Route path="about" element={<About />} />
         <Route path="advertising" element={<Advertising />} />
-        <Route path="business-profile" element={<Investor />} />
+        <Route path="business-profile" element={<Business />} />
         <Route path="investors" element={<Investor />} />
         <Route path="hiring" element={<Hiring />} />
         <Route path="privacy-policy" element={<PrivacyPolicy />} />
