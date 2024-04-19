@@ -1,7 +1,7 @@
-import styles from '../styles/hiring.module.css'
-import LzyCrazyHeader from '../components/common/LzyCrazyHeader'
-import LzyCrazyFooter from '../components/common/LzyCrazyFooter'
-import ImageSlider from '../components/common/Img_slider'
+import styles from '../../styles/outerPages/hiring.module.css'
+import LzyCrazyHeader from '../../components/common/LzyCrazyHeader'
+import LzyCrazyFooter from '../../components/common/LzyCrazyFooter'
+import ImageSlider from '../../components/common/Img_slider'
 
 function Hiring() {
 

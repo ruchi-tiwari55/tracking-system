@@ -1,5 +1,5 @@
-import styles from '../../styles/grainForm.module.css';
-import '../../styles/globals.css';
+import styles from './grainForm.module.css';
+import '../../../styles/globals.css';
 import PhotoIcon from '@mui/icons-material/AddAPhotoOutlined';
 import React, { useState } from 'react';
 import Select from 'react-select';
@@ -45,19 +45,6 @@ const GrainForm = () => {
     const handleChange = (selectedOption) => {
         setSelectedOption(selectedOption);
     };
-    const handleImageSelect = () => {
-        this.fileInput.click();
-    };
-
-    const handleFileSelect = (event) => {
-        const selectedFiles = event.target.files;
-        // Process the selected files (you can display them, upload them, etc.)
-        for (let i = 0; i < selectedFiles.length; i++) {
-            console.log('Selected file:', selectedFiles[i]);
-        }
-    };
-
-
     return (
         <>
             <div className={styles.navbar}></div>
@@ -117,15 +104,7 @@ const GrainForm = () => {
                             <p>Add Photo</p>
                             <div className={styles.photos1}>
                                 {[...Array(12)].map((_, index) => (
-                                    <div key={index} onClick={handleImageSelect}><PhotoIcon />
-                                        <input
-                                            type="file"
-                                            accept="image/*"
-                                            multiple
-                                            style={{ display: 'none' }}
-                                            onChange={handleFileSelect}
-                                            // ref={(input) => (this.fileInput = input)}
-                                        />
+                                    <div key={index}><PhotoIcon />
                                     </div>
                                 ))}
                             </div>

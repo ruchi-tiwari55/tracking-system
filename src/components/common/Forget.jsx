@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../../styles/forget.module.css'
+import styles from './forget.module.css'
 
 const Forget = ({ toggleForgetForm }) => {
     return (

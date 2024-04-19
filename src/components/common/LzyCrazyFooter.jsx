@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../../styles/lzyCrazyFooter.module.css'
+import styles from './lzyCrazyFooter.module.css'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';

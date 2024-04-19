@@ -1,7 +1,7 @@
-import styles from '../styles/about.module.css'
+import styles from '../../styles/outerPages/about.module.css'
 import React from "react"
-import LzyCrazyFooter from '../components/common/LzyCrazyFooter'
-import LzyCrazyHeader from '../components/common/LzyCrazyHeader'
+import LzyCrazyFooter from '../../components/common/LzyCrazyFooter'
+import LzyCrazyHeader from '../../components/common/LzyCrazyHeader'
 function About() {
 
   return (

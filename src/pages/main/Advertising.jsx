@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import LzyCrazyHeader from '../components/common/LzyCrazyHeader'
-import LzyCrazyFooter from '../components/common/LzyCrazyFooter'
-import styles from '../styles/advertising.module.css'
-import Contact from '../components/common/Contact'
+import LzyCrazyHeader from '../../components/common/LzyCrazyHeader'
+import LzyCrazyFooter from '../../components/common/LzyCrazyFooter'
+import styles from '../../styles/outerPages/advertising.module.css'
+import Contact from '../../components/common/Contact'
 
 const Advertising = () => {
 

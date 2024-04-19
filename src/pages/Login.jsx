@@ -4,7 +4,7 @@ import LoginForm from '../components/common/LoginForm';
 import Banner from '../components/common/Banner';
 import Footer from '../components/common/Footer';
 import Search from '../components/common/Search';
-import styles from '../styles/login.module.css'
+import styles from '../styles/outerPages/login.module.css'
 import '../styles/globals.css'
 
 function Login() {
@@ -23,7 +23,7 @@ function Login() {
         </div>
         <div className={styles.right}>
           <LoginForm toggleSignupForm={toggleSignupForm} />
-        </div>
+        </div>  
       </div>
       <Footer />
       {showSignupForm && <Signup toggleSignupForm={toggleSignupForm} />}

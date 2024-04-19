@@ -60,15 +60,19 @@
     border-radius: 5px;
     margin: auto;
     width: 30rem;
+    color: black;
 }
 
-button {
+.modal button {
     background-color: rgb(18, 173, 18);
-    margin: auto 40%;
+    margin: auto ;
     border-radius: 10px;
     color: white;
+    padding: 1rem 5rem;
 }
-
+.modal button:hover {
+    background-color: rgb(21, 192, 21);
+}
 .bottom {
     margin: auto;
 }

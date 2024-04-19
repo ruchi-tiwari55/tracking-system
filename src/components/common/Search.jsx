@@ -1,7 +1,7 @@
 import React from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import MicIcon from '@mui/icons-material/Mic';
-import styles from '../../styles/login.module.css'
+import styles from '../../styles/outerPages/login.module.css'
 
 const Search = () => {
     return (

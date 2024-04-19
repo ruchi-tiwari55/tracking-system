@@ -19,10 +19,11 @@
 }
 
 
-.banner-img img{
+.banner-img img {
   width: 100%;
   height: auto;
 }
+
 .banner-heading {
   text-align: center;
   align-items: center;
@@ -62,15 +63,17 @@
   padding-right: 1rem;
   font-size: 17px;
 }
+
 @media screen and (max-width: 1680px) and (min-width: 846px) {
   .banner-section {
     text-align: center;
     justify-content: center;
     overflow: hidden;
   }
-.banner-img{
-  width: 50%;
-}
+
+  .banner-img {
+    width: 50%;
+  }
 
 }
 
@@ -94,9 +97,10 @@
     align-items: center;
   }
 
-  .about-img img{
+  .about-img img {
     width: 5%;
   }
+
   .banner-heading {
     width: 100%;
     margin-left: 0;
@@ -536,21 +540,21 @@ video {
 
 @media screen and (max-width: 320px) {
   .heading {
-    font-size: 26px !important;
-    font-weight: 700 !important;
+    font-size: 26px;
+    font-weight: 700;
     /* margin: 0; */
-    line-height: 31px !important;
+    line-height: 31px;
   }
 
   .heading-about {
-    font-size: 16px !important;
-    line-height: 25px !important;
+    font-size: 16px;
+    line-height: 25px;
   }
 
   .about-team {
     line-height: 23px;
-    margin-left: 4% !important;
-    margin-right: 4% !important;
+    margin-left: 4%;
+    margin-right: 4%;
   }
 
   .show-more {
@@ -571,30 +575,30 @@ video {
   }
 
   .team-container {
-    padding-left: 0% !important;
-    padding-right: 0% !important;
+    padding-left: 0%;
+    padding-right: 0%;
   }
 
   .customer-heading {
-    font-size: 23px !important;
+    font-size: 23px;
   }
 }
 
 @media(max-width: 425px) {
   .heading {
-    font-size: 20px !important;
-    font-weight: 500 !important;
-    line-height: 31px !important;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 31px;
   }
 
   .main-slider {
-    height: 310px !important;
-    width: 190px !important;
+    height: 310px;
+    width: 190px;
   }
 
   .main-slider img {
-    height: 175px !important;
-    width: auto !important;
+    height: 175px;
+    width: auto;
   }
 
   .company-member {
@@ -604,26 +608,26 @@ video {
   }
 
   .team-detail {
-    gap: 10px !important;
+    gap: 10px;
   }
 
   .about-heading {
-    font-size: 28px !important;
+    font-size: 28px;
     text-align: start;
-    margin: 0 !important;
+    margin: 0;
   }
 
   .about-team {
-    font-size: 14px !important;
+    font-size: 14px;
   }
 
   .heading-join-team {
-    font-size: 12px !important;
+    font-size: 12px;
   }
 
   .handicraft-img {
     width: 100%;
-    height: 240px !important;
+    height: 240px;
     margin: auto;
     object-fit: cover;
 
@@ -639,18 +643,18 @@ video {
 
   .img-section-about {
     /* padding-top: 2px; */
-    width: 332px !important;
-    height: 600px !important;
+    width: 332px;
+    height: 600px;
 
   }
 }
 
 /* @media (min-width: 320px) and (max-width: 767px) {
     .img-section {
-      height: 380px !important;
-      width: 310px !important;
-      padding: 0px 40px !important;
-      margin: auto !important;
+      height: 380px ;
+      width: 310px ;
+      padding: 0px 40px ;
+      margin: auto ;
     }
   
     .image {
@@ -663,27 +667,27 @@ video {
 
 @media(max-width: 768px) {
   .img-section {
-    height: 380px !important;
-    width: 390px !important;
+    height: 380px;
+    width: 390px;
     padding: 0px 40px;
   }
 
   .heading {
-    font-size: 26px !important;
-    font-weight: 700 !important;
+    font-size: 26px;
+    font-weight: 700;
     /* margin: 0; */
-    line-height: 31px !important;
+    line-height: 31px;
   }
 
   .heading-about {
-    font-size: 14px !important;
-    line-height: 25px !important;
+    font-size: 14px;
+    line-height: 25px;
   }
 
   .about-team {
     line-height: 23px;
-    margin-left: 4% !important;
-    margin-right: 4% !important;
+    margin-left: 4%;
+    margin-right: 4%;
   }
 
   .show-more {
@@ -697,8 +701,8 @@ video {
   }
 
   .image-first {
-    max-width: 100% !important;
-    height: 90% !important;
+    max-width: 100%;
+    height: 90%;
   }
 
   .button-section {
@@ -707,17 +711,17 @@ video {
   }
 
   .team-container {
-    padding-left: 0% !important;
-    padding-right: 0% !important;
+    padding-left: 0%;
+    padding-right: 0%;
   }
 
   .customer-heading {
-    font-size: 23px !important;
+    font-size: 23px;
   }
 
   .text-about {
-    margin-left: 4% !important;
-    margin-right: 4% !important;
+    margin-left: 4%;
+    margin-right: 4%;
     text-align: start;
   }
 
@@ -729,13 +733,13 @@ video {
   }
 
   .about-heading-section {
-    font-size: 28px !important;
+    font-size: 28px;
     text-align: start;
-    margin: 0 !important;
+    margin: 0;
   }
 
   .ad-section {
-    margin: 20% 0% !important;
+    margin: 20% 0%;
   }
 }
 
@@ -817,7 +821,7 @@ video {
   flex-shrink: 0;
   border-radius: 100px;
   background: #0064e0;
-  color: #fff !important;
+  color: #fff;
   font-family: Inter;
   font-size: 15.875px;
   font-style: normal;
@@ -827,7 +831,7 @@ video {
 }
 
 .button :hover {
-  background-color: #9da5af !important;
+  background-color: #9da5af;
 }
 
 .team-heading {
@@ -869,7 +873,7 @@ video {
 }
 
 .card {
-  border: none !important;
+  border: none;
   padding: 0;
 }
 
@@ -971,6 +975,7 @@ video {
   font-weight: 700;
   letter-spacing: -0.48px;
 }
+
 .btn {
   margin-top: 2rem;
   background-color: #fff;

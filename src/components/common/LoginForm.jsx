@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import Forget from './Forget'
-import styles from '../../styles/login.module.css'
+import styles from '../../styles/outerPages/login.module.css'
 import { Link } from 'react-router-dom';
 
 const LoginForm = ({ toggleSignupForm }) => {
-  // const history = useHistory();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -27,7 +26,7 @@ const LoginForm = ({ toggleSignupForm }) => {
     setShowForgetForm(!showForgetForm);
   };
 
- 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Email:', email);
@@ -48,7 +47,7 @@ const LoginForm = ({ toggleSignupForm }) => {
           }}
           required
         />
-        {emailError && <p style={{ color: "red", marginTop: "-10px" }}>{emailError}</p>}
+        {emailError && <p style={{ fontSize: "small", color: "red", marginTop: "-1rem" }}>{emailError}</p>}
         <input
           type="password"
           placeholder="Password"
@@ -60,11 +59,14 @@ const LoginForm = ({ toggleSignupForm }) => {
           }}
           required
         />
-        {passwordError && <p style={{ color: "red", marginTop: "-10px" }}>{passwordError}</p>}
-       <Link to="/dashboard"><button type="submit" className={styles.login_btn}>Log In</button></Link> 
+        {passwordError && <p style={{ fontSize: "small", color: "red", marginTop: "-1rem" }}>{passwordError}</p>}
+
+        <Link to="/dashboard" style={{margin:"auto"}}><button type="submit" className={styles.login_btn}>Log In</button>
+        </Link>
         <p className={styles.forget_p} onClick={toggleForgetForm}>Forgotten password?</p>
         <div>{showForgetForm && <Forget toggleForgetForm={toggleForgetForm} />}</div>
         <hr />
+
         <button onClick={toggleSignupForm} type="button" className={styles.create_account_btn}>Create New Account</button>
       </form>
     </div>
