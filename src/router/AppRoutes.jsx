@@ -11,7 +11,6 @@ import PrivacyPolicy from "../pages/main/PrivacyPolicy";
 import Postad from "../pages/home/Postad"
 import Grain from "../pages/home/postadforms/Grain";
 
-
 import PageLayout from "../components/home/PageLayout";
 import Home from "../pages/home/Home";
 import Profile from "../pages/home/Profile";
