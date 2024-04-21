@@ -8,6 +8,8 @@ import Hiring from "../pages/main/Hiring";
 import Investor from "../pages/main/Investor";
 import Help from "../pages/main/Help";
 import PrivacyPolicy from "../pages/main/PrivacyPolicy";
+// import Postad from "../pages/Home/Postad"
+// import Grain from "../pages/Home/postadforms/Grain";
 import Postad from "../pages/Home/Postad"
 import Grain from "../pages/Home/postadforms/Grain";
 
