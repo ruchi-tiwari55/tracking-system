@@ -8,14 +8,15 @@ import Hiring from "../pages/main/Hiring";
 import Investor from "../pages/main/Investor";
 import Help from "../pages/main/Help";
 import PrivacyPolicy from "../pages/main/PrivacyPolicy";
-import Postad from "../pages/home/Postad"
-import Grain from "../pages/home/postadforms/Grain";
+import Postad from "../pages/Home/Postad"
+import Grain from "../pages/Home/postadforms/Grain";
 
 
 import PageLayout from "../components/home/PageLayout";
-import Home from "../pages/home/Home";
-import Profile from "../pages/home/Profile";
-import Response from "../pages/home/Response";
+import Home from "../pages/Home/Home";
+import Profile from "../pages/Home/Profile";
+import Response from "../pages/Home/Response";
+import MarketPlace  from "../pages/Home/MarketPlace/MarketPlace";
 
 const AppRoutes = () => {
   return (
@@ -25,7 +26,7 @@ const AppRoutes = () => {
         <Route exact path="/" element={<PageLayout />}>
           <Route path="dashboard" element={<Home />} />
           <Route path="user-page" element={<Profile />} />
-          <Route path="market-Place" element={<h1>Market Place</h1>} />
+          <Route path="market-Place" element={<MarketPlace/>} />
           <Route path="my-ads-response" element={<Response />} />
         </Route>
 
