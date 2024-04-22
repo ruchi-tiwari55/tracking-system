@@ -16,7 +16,7 @@ const PageLayout = () => {
                 <div className="col-lg-3">
                     <Sidebar />
                 </div>
-                <div className="col-lg-9">
+                <div className="col-lg-9" style={{marginTop:"75px", marginLeft: "20%"}}>
                  <Outlet/>
                 </div>
             </div>
