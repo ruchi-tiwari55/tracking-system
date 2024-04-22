@@ -38,7 +38,8 @@ function Signup({ toggleSignupForm }) {
       });
       const data = await response.json();
 
-      alert('Register successful');
+      toggleSignupForm();
+      // alert('Register successful');
       // Handle response
       console.log(data);
     } catch (error) {
