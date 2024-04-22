@@ -1,34 +1,248 @@
-import React from 'react';
-import video1 from '../../../assets/video1.mp4';
-import video2 from '../../../assets/video2.mp4';
-
+import React from "react";
+import video1 from "../../../assets/video1.mp4";
+import video2 from "../../../assets/video2.mp4";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import banner77 from "../../../assets/banner77.png";
+import banner22 from "../../../assets/banner22.jpg";
+import banner33 from "../../../assets/banner33.jpg";
+import banner55 from "../../../assets/banner55.jpg";
+import banner44 from "../../../assets/banner44.jpg";
+import banner1 from "../../../assets/banner1.jpg";
+import banner3 from "../../../assets/banner3.jpg";
+import banner4 from "../../../assets/banner4.jpg";
+import banner5 from "../../../assets/banner5.jpg";
 function VideoComponent() {
+  var slidersettings = {
+    dots: true,
+    infinite: true,
+    speed: 1500,
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+
+  const fixedHeight = '200px';  // Aapko fixed height set karni padegi
+const fixedWidth = '100%';   // Sabhi images ko 100% width dekar ensure kar sakte hain ki woh container mein fit ho jaayein
+
+const ImageWithFixedSize = ({ src, alt }) => (
+  <img
+    src={src}
+    alt={alt}
+    style={{
+      height: fixedHeight,  // Fixed height
+      width: fixedWidth,   // Fixed width
+      objectFit: 'cover',  // Ensure karta hai ki image area ko cover kare
+      borderRadius: '10px', // BorderRadius consistent banata hai
+    }}
+  />
+);
   return (
-    <div className="row ps-2 pe-2 mob-pl">
-      <div className="main-section">
-        <div className="row">
-          <div className="col-6">
-            <div className="banner">
-              <div className="video-wrapper">
-                <video className="video-size" preload="metadata" controls poster="/assets/banner5.37291f5c.jpg">
-                  <source src={video1} type="video/mp4" />
-                  <source src="" type="video/ogg" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
+    <div className="container">
+      <div className="row" style={{ justifyContent: "flex-start" }}>
+        <div className="col" style={{ textAlign: "left" }}>
+          <div
+            className="video-wrapper"
+            style={{ borderRadius: "15px", overflow: "hidden" }}
+          >
+            <video
+              className="video-size"
+              preload="metadata"
+              controls
+              style={{ width: "100%", height: "300px" }}
+            >
+              <source src={video1} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
-          <div className="col-6">
-            <div className="banner">
-              <div className="video-wrapper">
-                <video preload="metadata" className="video-size" controls poster="/assets/banner3.9cf0ab5a.jpg">
-                  <source src={video2} type="video/mp4" />
-                  <source src="" type="video/ogg" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
+        </div>
+        <div className="col" style={{ textAlign: "left" }}>
+          <div
+            className="video-wrapper"
+            style={{ borderRadius: "15px", overflow: "hidden" }}
+          >
+            <video
+              className="video-size"
+              preload="metadata"
+              controls
+              style={{ width: "100%", height: "300px" }}
+            >
+              <source src={video2} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
+        </div>
+      </div>
+      {/* FIRST IMAGE SLIDER */}
+      <div className="row">
+      <div className="col-6">
+  <Slider {...slidersettings}>
+    <div>
+      <ImageWithFixedSize src={banner77} alt="Banner 77" />
+    </div>
+    <div>
+      <ImageWithFixedSize src={banner22} alt="banner 22" />
+    </div>
+    <div>
+      <ImageWithFixedSize src={banner33} alt="banner 33" />
+    </div>
+  </Slider>
+</div>
+        {/* <div className="col-6">
+          <Slider {...slidersettings}>
+            <div>
+              <img
+                src={banner77}
+                alt="Banner 77"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: "10px"
+                }}
+              />
+            </div>
+            <div>
+              <img
+                src={banner22}
+                alt="banner 22"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: "10px"
+                }}
+              />
+            </div>
+            <div>
+              <img
+                src={banner33}
+                alt="banner 33"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: "10px"
+                }}
+              />
+            </div>
+          </Slider>
+        </div> */}
+
+        <div className="col-6">
+          <Slider {...slidersettings}>
+            <div>
+              <ImageWithFixedSize
+                src={banner55}
+                alt="Banner 55"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: "10px"
+                }}
+              />
+            </div>
+            <div>
+              <ImageWithFixedSize
+                src={banner44}
+                alt="banner 33"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: "10px"
+                }}
+              />
+            </div>
+            <div>
+              <ImageWithFixedSize
+                src={banner33}
+                alt="banner 44"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: "10px"
+                }}
+              />
+            </div>
+          </Slider>
+        </div>
+      </div>
+
+      {/* SECOND IMAGE SLIDER */}
+      <div className="row">
+        <div className="col-6">
+          <Slider {...slidersettings}>
+            <div>
+              <ImageWithFixedSize
+                src={banner1}
+                alt="Banner 1"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: "10px"
+                }}
+              />
+            </div>
+            <div>
+              <ImageWithFixedSize
+                src={banner5}
+                alt="banner 5"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: "10px"
+                }}
+              />
+            </div>
+            <div>
+              <ImageWithFixedSize
+                src={banner3}
+                alt="banner 3"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: "10px"
+                }}
+              />
+            </div>
+          </Slider>
+        </div>
+
+        <div className="col-6">
+          <Slider {...slidersettings}>
+            <div>
+              <ImageWithFixedSize
+                src={banner3}
+                alt="Banner 3"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: "10px"
+                }}
+              />
+            </div>
+            <div>
+              <ImageWithFixedSize
+                src={banner4}
+                alt="banner 4"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: "10px"
+                }}
+              />
+            </div>
+            <div>
+              <ImageWithFixedSize
+                src={banner5}
+                alt="banner 5"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: "10px"
+                }}
+              />
+            </div>
+          </Slider>
         </div>
       </div>
     </div>
