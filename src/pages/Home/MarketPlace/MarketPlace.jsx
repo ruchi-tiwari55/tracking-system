@@ -51,7 +51,7 @@ const ImageWithFixedSize = ({ src, alt }) => (
               className="video-size"
               preload="metadata"
               controls
-              style={{ width: "100%", height: "300px" }}
+              style={{ width: "100%", height: "250px" }}
             >
               <source src={video1} type="video/mp4" />
               Your browser does not support the video tag.
@@ -67,7 +67,7 @@ const ImageWithFixedSize = ({ src, alt }) => (
               className="video-size"
               preload="metadata"
               controls
-              style={{ width: "100%", height: "300px" }}
+              style={{ width: "100%", height: "250px" }}
             >
               <source src={video2} type="video/mp4" />
               Your browser does not support the video tag.
@@ -90,43 +90,7 @@ const ImageWithFixedSize = ({ src, alt }) => (
     </div>
   </Slider>
 </div>
-        {/* <div className="col-6">
-          <Slider {...slidersettings}>
-            <div>
-              <img
-                src={banner77}
-                alt="Banner 77"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  borderRadius: "10px"
-                }}
-              />
-            </div>
-            <div>
-              <img
-                src={banner22}
-                alt="banner 22"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  borderRadius: "10px"
-                }}
-              />
-            </div>
-            <div>
-              <img
-                src={banner33}
-                alt="banner 33"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  borderRadius: "10px"
-                }}
-              />
-            </div>
-          </Slider>
-        </div> */}
+       
 
         <div className="col-6">
           <Slider {...slidersettings}>
