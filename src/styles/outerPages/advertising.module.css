@@ -16,7 +16,7 @@
 
 .btn:hover {
   background-color: #1a73e8;
-  color: #fff;
+  color: #ffff;
 }
 
 .banner_heading {
@@ -28,32 +28,60 @@
   align-items: center;
   display: flex;
 }
-
-.content span {
-  /* color: #0f4387; */
-  font-weight: bold;
-}
-
-.content h3 {
+.content_a h3 {
   margin: auto;
   font-weight: bolder;
-  font-size: 2.2rem;
-  display: flex;
+  font-size: 2.8rem;
 }
 
-.content h5 {
+.content_b h3 {
+  font-size: 2.4rem;
+}
+
+.content_i h3 {
+  font-size: 3rem;
+}
+
+.content_a h5 {
   margin: 2rem 0 0;
   font-weight: 600;
   font-size: 1.7rem;
   text-align: center;
 }
 
-.content p {
-  text-align: left;
+.content_b h5 {
+  margin: 3rem 0 0;
+  font-weight: 600;
+  font-size: 1.7rem;
+  text-align: center;
+}
+.content_i h5{
+  margin: 3rem 0 0;
+  font-weight: 600;
+  font-size: 1.7rem;
+  text-align: center;
+}
+.content_i h4 {
+  font-weight: 600;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.content_a p {
+  text-align: center;
   margin: 0.5rem 0;
-  line-height: 2rem;
-  font-size: 15px;
-  font-size: 22px;
+  line-height: 3rem;
+  font-size: 20px;
+}
+
+.content_b p {
+  line-height: 3rem;
+  font-size: 20px;
+}
+
+.content_i p {
+  line-height: 2.5rem;
+  font-size: 20px;
 }
 
 .ad_disp video {
@@ -135,17 +163,17 @@
     /* Align left on small screens */
   }
 
-  .content h3 {
+  .content_a h3 {
     font-size: 2rem;
     /* Adjust heading size */
   }
 
-  .content h5 {
+  .content_a h5 {
     font-size: 1.5rem;
     /* Adjust subheading size */
   }
 
-  .content p {
+  .content_a p {
     font-size: 1rem;
     /* Adjust paragraph size */
   }
@@ -168,7 +196,7 @@
     /* Adjust width as needed */
   }
 
-  .content h3 {
+  .content_a h3 {
     font-size: 2.2rem;
     /* Adjust heading size as needed */
   }
@@ -194,7 +222,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
+    /* justify-content_a: center; */
   }
 }
 

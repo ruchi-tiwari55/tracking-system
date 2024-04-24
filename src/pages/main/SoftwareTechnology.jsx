@@ -24,11 +24,10 @@ const Advertising = () => {
                             </video>
                         </div>
                         <div className={styles.banner_heading}>
-                            <div className={styles.content_b}>
-                                <h3>Welcome to All Business Profile</h3>
-
-                                <p> LzyCrazy team will create business Profile<br />
-                                    Your business ad will Stream live in the<br />
+                            <div className={styles.content_a}>
+                                <h3>Software Technology</h3>
+                                <p> LzyCrazy team will provide solution<br />
+                                    for your business with top industry standards at<br />
                                     LzyCrazy Marketplace<br />
                                 </p>
                                 <h5>Benefit</h5>
