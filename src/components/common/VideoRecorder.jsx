@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import './videoRecorder.css'; // CSS file for styling
 
-function VideoRecorder() {
+function VideoRecorder({ onRecordingComplete }) {
     const [recording, setRecording] = useState(false);
     const [videoURL, setVideoURL] = useState('');
     const videoRef = useRef();
@@ -24,6 +24,7 @@ function VideoRecorder() {
                 const blob = new Blob(chunks, { type: 'video/webm' });
                 const url = URL.createObjectURL(blob);
                 setVideoURL(url);
+                onRecordingComplete(url); 
             };
 
             recorder.start();
@@ -66,8 +67,8 @@ function VideoRecorder() {
             </div>
             <div className="controls">
                 {recording ? (
-                    <button onClick={stopRecording} className="record-button">
-                        Stop Recording
+                    <button onClick={stopRecording} className="record-button stop">
+                        Stop and Save
                     </button>
                 ) : (
                     <button onClick={startRecording} className="record-button">

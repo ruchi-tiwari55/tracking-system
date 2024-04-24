@@ -50,18 +50,30 @@
     margin-bottom: 2rem;
 }
 
-.form button {
+.form p {
     margin: 0;
-    border-radius: 10px;
-    color: white;
-    background-color: rgb(18, 173, 18);
-    border: none;
-    padding: 0 1rem;
-    font-size: 18px;
 }
 
-.form button:hover {
-    background-color: rgb(4, 144, 4);
+.form div {
+    display: flex;
+    gap: 0.3rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form a {
+    margin: 0;
+    border-radius: 5px;
+    color: white;
+    background-color: #1877f2;
+    border: none;
+    padding: 0 1rem;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.form a:hover {
+    background-color: #1261c8;
     cursor: pointer;
 }
 
@@ -117,7 +129,7 @@
 
 .bottom {
     font-size: 15px;
-    margin-top: 1rem;
+    margin-top: 2rem;
     color: #888;
     text-align: center;
 }

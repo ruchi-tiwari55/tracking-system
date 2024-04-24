@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../styles/index/index.css'
-import '../../styles/index/style.css'
+// import '../../styles/index/index.css'
+// import '../../styles/index/style.css'
 
 const Home = () => {
     return (

@@ -1,12 +1,26 @@
 import React, { useState } from 'react';
 import TaskForm from './TaskForm';
 import VideoRecorder from './VideoRecorder';
+import ConfirmForm from './ConfirmForm';
 import styles from './hiringForm.module.css';
 import '../../styles/globals.css';
 
 function HiringForm({ toggleHiringForm }) {
-    const [step, setStep] = useState(0); 
-    
+    const [step, setStep] = useState(0);
+    const [formData, setFormData] = useState({
+        job: '',
+        experience: '',
+        certifications: '',
+        accountId: '',
+        videoURL: ''
+    });
+
+    const { job, experience, certifications, accountId } = formData;
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
     const handleHiringFormSubmit = (e) => {
         e.preventDefault();
         setStep(1);
@@ -15,6 +29,17 @@ function HiringForm({ toggleHiringForm }) {
     const handleTaskFormSubmit = () => {
         // Handle task form submission
         setStep(0);
+    };
+
+    const handleConfirm = () => {
+        setStep(2); 
+    };
+
+    const handleEdit = () => {
+        setStep(0); 
+    };
+    const handleVideoRecordingComplete = (videoURL) => {
+        setFormData({ ...formData, videoURL: videoURL });
     };
 
     return (
@@ -33,40 +58,44 @@ function HiringForm({ toggleHiringForm }) {
                             <div className={styles.dob}>
                                 <div className={styles.dob_select}>
                                     <p>Job</p>
-                                    <select>
+                                    <select name="job" value={job} onChange={handleInputChange}>
                                         <option value="">Select</option>
-                                        <option value="1">IT</option>
-                                        <option value="2">Administration</option>
-                                        <option value="3">HR</option>
+                                        <option value="IT">IT</option>
+                                        <option value="Administration">Administration</option>
+                                        <option value="HR">HR</option>
                                     </select>
                                 </div>
                                 <div className={styles.dob_select}>
                                     <p>Experience</p>
-                                    <select>
+                                    <select name="experience" value={experience} onChange={handleInputChange}>
                                         <option value="">Select</option>
-                                        <option value="January">Fresher</option>
-                                        <option value="February">Exp.(0-1)</option>
-                                        <option value="February">Exp.(1-3)</option>
-                                        <option value="February">Exp.(3-5)</option>
-                                        <option value="February">Exp.5+</option>
+                                        <option value="Fresher">Fresher</option>
+                                        <option value="Exp.(0-1)">Exp.(0-1)</option>
+                                        <option value="Exp.(1-3)">Exp.(1-3)</option>
+                                        <option value="Exp.(3-5)">Exp.(3-5)</option>
+                                        <option value="Exp.5+">Exp.5+</option>
                                     </select>
                                 </div>
                                 <div className={styles.dob_select}>
-                                    <p>New</p>
-                                    <select>
+                                    <p>Certifications</p>
+                                    <select name="certifications" value={certifications} onChange={handleInputChange}>
                                         <option value="">Select</option>
-                                        <option value="January">Fresher</option>
-                                        <option value="February">Exp.(0-1)</option>
-                                        <option value="February">Exp.(1-3)</option>
-                                        <option value="February">Exp.(3-5)</option>
-                                        <option value="February">Exp.5+</option>
+                                        <option value="Coursera">Coursera</option>
+                                        <option value="Udemy">Udemy</option>
+                                        <option value="Meta">Meta</option>
+                                        <option value="Google">Google</option>
+                                        <option value="Microsoft">Microsoft</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div className={styles.form}>
-                                <input type='text' placeholder='Enter your ID' required />
-                                <button type="">Signup</button>
+                                <input name="accountId" type='text' placeholder='Enter your account ID' value={accountId} onChange={handleInputChange} required />
+                                <div>
+                                    <p>Don't have an account?</p>
+                                    <a href="/">Create here</a>
+                                </div>
+
                             </div>
 
                             <div className={styles.video}>
@@ -78,20 +107,25 @@ function HiringForm({ toggleHiringForm }) {
                                     <div style={{ textAlign: "center" }}>How Lzycrazy works</div>
                                 </div>
                                 <div>
-                                    <VideoRecorder />
+                                    <VideoRecorder onRecordingComplete={handleVideoRecordingComplete} />
                                     <div style={{ textAlign: "center" }}>Upload your work</div>
                                 </div>
                             </div>
                             <div className={styles.bottom}>
-                                <p>People who use our service may have uploaded your contact information to<br /> Lzycrazy.<span> Learn more.</span></p>
                                 <p>By clicking Submit, you agree to our <span>Terms</span>,<span> Privacy Policy</span> and <span>Cookies Policy</span>.<br />
                                     You may receive SMS notifications from us and can optout at any time.</p>
                                 <button type="submit">Submit</button>
                             </div>
                         </form>
                     </div>
-                ) : 
-                    (<TaskForm handleSubmit={handleTaskFormSubmit} toggleHiringForm={toggleHiringForm } />
+                ) : step === 1 ? (
+                    <ConfirmForm
+                        formData={formData}
+                        handleConfirm={handleConfirm}
+                        handleEdit={handleEdit}
+                    />
+                ) : (
+                    <TaskForm handleSubmit={handleTaskFormSubmit} toggleHiringForm={toggleHiringForm} />
                 )}
             </div>
         </div>
