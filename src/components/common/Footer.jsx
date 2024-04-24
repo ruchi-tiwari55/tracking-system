@@ -5,7 +5,7 @@ import styles from '../../styles/outerPages/login.module.css'
 
 const Footer = () => {
   return (
-    <div className={styles.footer}>
+    <div className='vh-10'>
       <div className={styles.ftop}>India</div>
       <div className={styles.fdown}>
         <div className={styles.fleft}>
@@ -13,7 +13,7 @@ const Footer = () => {
           <Link to="/advertising"><p>Advertising</p></Link>
           <Link to="/business-profile"><p>Business</p></Link>
           <Link to="/investors"><p>Investor</p></Link>
-          <Link to="/hiring"><p>Team</p></Link>
+          <Link to="/hiring"><p>Hiring</p></Link>
         </div>
         <div className={styles.fright}>
           <Link to="/privacy-policy"><p>Privacy & Terms</p></Link>
