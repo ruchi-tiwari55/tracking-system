@@ -17,7 +17,9 @@ import PageLayout from "../components/home/PageLayout";
 import Home from "../pages/Home/Home";
 import Profile from "../pages/Home/Profile";
 import Response from "../pages/Home/Response";
-import MarketPlace  from "../pages/Home/MarketPlace/MarketPlace";
+import MarketPlace from "../pages/Home/MarketPlace/MarketPlace";
+
+// import Payment from "../components/common/payment/PaymentForm"
 
 const AppRoutes = () => {
   return (
@@ -41,6 +43,7 @@ const AppRoutes = () => {
         <Route path="my-ads" element={<Postad />} />
         <Route path="anaaj-grain" element={<Grain />} />
         <Route path="software-technology" element={<SoftwareTechnology />} />
+        {/* <Route path="payment" element={<Payment />} /> */}
       </Routes>
     </Router>
 

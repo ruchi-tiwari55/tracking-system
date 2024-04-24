@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import TaskForm from './TaskForm';
 import VideoRecorder from './VideoRecorder';
 import ConfirmForm from './ConfirmForm';
+import PaymentForm from './payment/PaymentForm'; 
 import styles from './hiringForm.module.css';
 import '../../styles/globals.css';
 
@@ -124,8 +125,9 @@ function HiringForm({ toggleHiringForm }) {
                         handleConfirm={handleConfirm}
                         handleEdit={handleEdit}
                     />
-                ) : (
-                    <TaskForm handleSubmit={handleTaskFormSubmit} toggleHiringForm={toggleHiringForm} />
+                    ) : (
+                            <PaymentForm />
+                    
                 )}
             </div>
         </div>
@@ -133,3 +135,4 @@ function HiringForm({ toggleHiringForm }) {
 }
 
 export default HiringForm;
+{/* <TaskForm handleSubmit={handleTaskFormSubmit} toggleHiringForm={toggleHiringForm} />  */}

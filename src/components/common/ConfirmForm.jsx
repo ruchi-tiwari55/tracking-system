@@ -14,16 +14,14 @@ const ConfirmationForm = ({ formData, handleConfirm, handleEdit }) => {
                 <div>
                     <strong>Recorded video:</strong>
                     <div className={styles.video_window}>
-                        {formData.videoURL ? (
+                        {formData.videoURL && (
                             <video src={formData.videoURL} controls autoPlay className={styles.video_player} />
-                        ) : (
-                            <video ref={videoRef} className={styles.video_player} />
                         )}
                     </div>
                 </div>
             </div>
             <div className={styles.buttons}>
-                <button onClick={handleConfirm}>Confirm</button>
+                <button onClick={handleConfirm}>Confirm/Proceed to Payment</button>
                 <button onClick={handleEdit}>Edit Details</button>
             </div>
         </div>
