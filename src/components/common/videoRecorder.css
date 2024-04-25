@@ -20,8 +20,20 @@
 }
 
 .record-button {
-    padding: 10px 20px;
-    font-size: 16px;
+    border-radius: 5px;
+    color: white;
+    background-color: #696a6d;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+.stop {
+    background-color: rgb(4, 144, 4);
+}
+
+.record-button:hover {
+    background-color: #7c7d7e;
     cursor: pointer;
 }
 
