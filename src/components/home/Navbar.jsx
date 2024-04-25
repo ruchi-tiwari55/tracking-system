@@ -1,55 +1,63 @@
 import React from 'react';
-import './navbar.css'; // Import the CSS file
 
 const Navbar = () => {
     return (
-        <div className="navbar">
-            <div className="logo">
-                <a href="/dashboard">
-                    <img src="https://lzycrazy.com/assets/logo.86bdc6c8.png" alt="image" />
+        <div className="d-flex justify-content-between border border-danger nav-header shadow-xs border-0">
+            <div className="nav-top">
+                <a href="/dashboard" className="">
+                    <img src="https://lzycrazy.com/assets/logo.86bdc6c8.png" className="d-lg-block" alt="image" style={{ width: "100px" }} />
                 </a>
+                <button className="nav-menu me-0 ms-2"></button>
             </div>
-            <div className="nav-links">
-                <div>
-                    <a href="/dashboard">
-                        <i className="fas fa-home"></i>
-                        Home
+            <div className="dc main-menu d-flex" style={{ gap: "25px" }}>
+                <div className="header-menu">
+                    <a href="/dashboard" className="p-2 text-center menu-icon center-menu-icon">
+                        <i className="fas fa-home" style={{ color: "rgb(0, 0, 0)" }}></i>
                     </a>
+                        <a href="/dashboard" className="main-menu primary-color">Home</a>
                 </div>
-                <div>
-                    <a href="/market-Place">
-                        <i className="fas fa-store"></i>
-                        Market Place
+                <div className="header-menu">
+                    <a href="/market-Place" className="p-2 text-center menu-icon center-menu-icon">
+                        <i className="fas fa-store" style={{ color: "rgb(0, 0, 0)" }}></i>
                     </a>
+                    <a href="/market-Place" className="main-menu primary-color">Market Place</a>
                 </div>
-                <div>
-                    <a href="/my-ads">
-                        <i className="fab fa-buysellads"></i>
-                        Post Ads
+                <div className="header-menu">
+                    <a href="/my-ads" className="p-2 text-center menu-icon center-menu-icon">
+                        <i className="fab fa-buysellads" style={{ color: "rgb(0, 0, 0)" }}></i>
                     </a>
+                    <a href="/my-ads" className="main-menu primary-color">Post Ads</a>
                 </div>
             </div>
-            <div className="right-menu">
-                <div>
-                    <a href="/my-ads-response">
+            <div className="dc justify-content-md-between main-menu d-flex" style={{ gap: "15px" }}>
+                <div className="header-menu">
+                    <a href="/my-ads-response" className="router-link-active router-link-exact-active p-2 text-center menu-icon center-menu-icon">
                         <span className="dot-count bg-warning"></span>
                         <i className="bx bxs-message-dots"></i>
-                        Response
                     </a>
+                    <a href="/my-ads-response" className="main-menu primary-color">Response</a>
                 </div>
-                <div className="dropdown-menu-icon">
-                    <a href="/home#">
+                <div className="header-menu dropdown-menu-icon">
+                    <a aria-current="page" href="/home#" className="router-link-active router-link-exact-active router-link-active router-link-exact-active p-2 text-center menu-icon center-menu-icon">
                         <i className="bx bxs-cog header-icon"></i>
-                        Setting
                     </a>
+                    <a aria-current="page" href="/home#" className="router-link-active router-link-exact-active main-menu primary-color">Setting</a>
                     <div className="dropdown-menu-settings switchcolor-wrap">
                         <div>
-                            <h4>Arvind Bhandari</h4>
-                            <div>
-                                <a href="/userpage">Profile</a>
+                            <h4 className="fw-700 font-sm mb-1 px-3 shadow-messaage-box py-1">Arvind Bhandari</h4>
+                            <div className="bg-transparent-card border-0 d-block mt-1 border-top pt-1 px-3">
+                                <a href="#" className="d-flex align-items-center shadow-messaage-box p-1 px-2">
+                                    <i className="text-white bx bx-log-out font-xs me-3 py-1"></i>
+                                    <h4 className="fw-600 font-xsss mb-0 mt-0">
+                                        <a href="/userpage" className="main-menu primary-color">Profile</a>
+                                    </h4>
+                                </a>
                             </div>
-                            <div>
-                                <a href="#">Logout</a>
+                            <div className="bg-transparent-card border-0 d-block mt-1 border-top pt-1 px-3">
+                                <a href="#" className="d-flex align-items-center shadow-messaage-box p-1 px-2">
+                                    <i className="text-white bx bx-log-out font-xs me-3 py-1"></i>
+                                    <h4 className="fw-600 font-xsss mb-0 mt-0">Logout</h4>
+                                </a>
                             </div>
                         </div>
                     </div>

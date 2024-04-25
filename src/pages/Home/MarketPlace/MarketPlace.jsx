@@ -49,18 +49,17 @@ function VideoComponent() {
     };
 
 
-  const fixedHeight = '200px';  // Aapko fixed height set karni padegi
-const fixedWidth = '100%';   // Sabhi images ko 100% width dekar ensure kar sakte hain ki woh container mein fit ho jaayein
-
+  const fixedHeight = '200px'; 
+const fixedWidth = '100%';   
 const ImageWithFixedSize = ({ src, alt }) => (
   <img
     src={src}
     alt={alt}
     style={{
-      height: fixedHeight,  // Fixed height
-      width: fixedWidth,   // Fixed width
-      objectFit: 'cover',  // Ensure karta hai ki image area ko cover kare
-      borderRadius: '10px', // BorderRadius consistent banata hai
+      height: fixedHeight,  
+      width: fixedWidth,   
+      objectFit: 'cover', 
+      borderRadius: '10px', 
     }}
   />
 );
@@ -69,9 +68,9 @@ const ImageWithFixedSize = ({ src, alt }) => (
     <div className="col-lg-3">
     <MarketSidebar />
 </div>
-    <div className="container col-lg-12" style={{marginTop:"75px",width:"80%", marginLeft:"19%"}}>
+    <div className="container col-lg-12 col-md-2" style={{marginTop:"75px",width:"80%", marginLeft:"19%"}}>
       <div className="row" style={{ justifyContent: "flex-start" }}>
-        <div className="col" style={{ textAlign: "left" }}>
+        <div className="col-lg-6" style={{ textAlign: "left" }}>
           <div
             className="video-wrapper"
             style={{ borderRadius: "15px", overflow: "hidden" }}
@@ -88,7 +87,7 @@ const ImageWithFixedSize = ({ src, alt }) => (
             </video>
           </div>
         </div>
-        <div className="col" style={{ textAlign: "left" }}>
+        <div className="col-lg-6" style={{ textAlign: "left" }}>
           <div
             className="video-wrapper"
             style={{ borderRadius: "15px", overflow: "hidden" }}
@@ -108,7 +107,7 @@ const ImageWithFixedSize = ({ src, alt }) => (
       </div>
       {/* FIRST IMAGE SLIDER */}
       <div className="row">
-      <div className="col-6">
+      <div className="col-lg-6">
   <Slider {...slidersettings}>
     <div>
       <ImageWithFixedSize src={banner77} alt="Banner 77" />
@@ -123,7 +122,7 @@ const ImageWithFixedSize = ({ src, alt }) => (
 </div>
        
 
-        <div className="col-6">
+        <div className="col-lg-6">
           <Slider {...slidersetting}>
             <div>
               <ImageWithFixedSize
@@ -164,7 +163,7 @@ const ImageWithFixedSize = ({ src, alt }) => (
 
       {/* SECOND IMAGE SLIDER */}
       <div className="row">
-        <div className="col-6">
+        <div className="col-lg-6">
           <Slider {...slidersettingt}>
             <div>
               <ImageWithFixedSize
@@ -202,7 +201,7 @@ const ImageWithFixedSize = ({ src, alt }) => (
           </Slider>
         </div>
 
-        <div className="col-6">
+        <div className="col-lg-6">
           <Slider {...slidersettingu}>
             <div>
               <ImageWithFixedSize
