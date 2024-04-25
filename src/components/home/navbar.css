@@ -1,0 +1,52 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c9ccce;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    width: 100px;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+  }
+  
+  .nav-links a {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .nav-links a:hover {
+    color: #007bff;
+  }
+  
+  .right-menu {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .right-menu .dropdown-menu-settings {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    padding: 10px;
+  }
+  
+  .right-menu .dropdown-menu-settings a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .right-menu:hover .dropdown-menu-settings {
+    display: block;
+  }
+  
