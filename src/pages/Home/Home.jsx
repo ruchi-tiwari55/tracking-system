@@ -1,10 +1,15 @@
 import React from 'react';
 import '../../styles/index/index.css'
 import '../../styles/index/style.css'
+import Sidebar from "../../components/home/Sidebar";
 
 const Home = () => {
     return (
-        <div className="">
+        <>
+        <div className="col-lg-3">
+        <Sidebar />
+    </div>
+        <div  className="col-lg-9" style={{marginTop:"75px", marginLeft: "20%"}}>
             <div className="middle-sidebar-bottom">
                 <div className="middle-sidebar-left">
                     <div className="preloader-wrap" style={{ display: "none" }}>
@@ -34,6 +39,7 @@ const Home = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

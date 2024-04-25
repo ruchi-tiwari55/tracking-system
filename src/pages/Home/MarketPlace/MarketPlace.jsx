@@ -13,6 +13,7 @@ import banner1 from "../../../assets/banner1.jpg";
 import banner3 from "../../../assets/banner3.jpg";
 import banner4 from "../../../assets/banner4.jpg";
 import banner5 from "../../../assets/banner5.jpg";
+import MarketSidebar from "../../../components/home/MarketSidebar/MarketSidebar"
 function VideoComponent() {
   var slidersettings = {
     dots: true,
@@ -22,6 +23,30 @@ function VideoComponent() {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+    var slidersetting = {
+      dots: true,
+      infinite: true,
+      speed: 2500,
+      autoplay: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
+    var slidersettingt = {
+      dots: true,
+      infinite: true,
+      speed: 3500,
+      autoplay: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
+    var slidersettingu = {
+      dots: true,
+      infinite: true,
+      speed: 5500,
+      autoplay: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
 
 
   const fixedHeight = '200px';  // Aapko fixed height set karni padegi
@@ -40,7 +65,11 @@ const ImageWithFixedSize = ({ src, alt }) => (
   />
 );
   return (
-    <div className="container">
+    <>
+    <div className="col-lg-3">
+    <MarketSidebar />
+</div>
+    <div className="container col-lg-12" style={{marginTop:"75px",width:"80%", marginLeft:"19%"}}>
       <div className="row" style={{ justifyContent: "flex-start" }}>
         <div className="col" style={{ textAlign: "left" }}>
           <div
@@ -51,7 +80,8 @@ const ImageWithFixedSize = ({ src, alt }) => (
               className="video-size"
               preload="metadata"
               controls
-              style={{ width: "100%", height: "250px" }}
+              style={{ width: "100%", height: "210px" }}
+              poster={banner1}
             >
               <source src={video1} type="video/mp4" />
               Your browser does not support the video tag.
@@ -67,7 +97,8 @@ const ImageWithFixedSize = ({ src, alt }) => (
               className="video-size"
               preload="metadata"
               controls
-              style={{ width: "100%", height: "250px" }}
+              style={{ width: "100%", height: "210px" }}
+              poster={banner3}
             >
               <source src={video2} type="video/mp4" />
               Your browser does not support the video tag.
@@ -93,7 +124,7 @@ const ImageWithFixedSize = ({ src, alt }) => (
        
 
         <div className="col-6">
-          <Slider {...slidersettings}>
+          <Slider {...slidersetting}>
             <div>
               <ImageWithFixedSize
                 src={banner55}
@@ -134,7 +165,7 @@ const ImageWithFixedSize = ({ src, alt }) => (
       {/* SECOND IMAGE SLIDER */}
       <div className="row">
         <div className="col-6">
-          <Slider {...slidersettings}>
+          <Slider {...slidersettingt}>
             <div>
               <ImageWithFixedSize
                 src={banner1}
@@ -172,7 +203,7 @@ const ImageWithFixedSize = ({ src, alt }) => (
         </div>
 
         <div className="col-6">
-          <Slider {...slidersettings}>
+          <Slider {...slidersettingu}>
             <div>
               <ImageWithFixedSize
                 src={banner3}
@@ -210,6 +241,7 @@ const ImageWithFixedSize = ({ src, alt }) => (
         </div>
       </div>
     </div>
+    </>
   );
 }
 

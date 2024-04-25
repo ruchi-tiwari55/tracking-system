@@ -32,6 +32,7 @@ const Contact = ({ toggleContactForm }) => {
       const data = await response.json();
       if (response.ok) {
         alert('Thanks for contacting us!');
+        toggleContactForm(); // Close the form after successful submission
       } else {
         alert('Failed to send your message. Please try again.');
       }
@@ -62,15 +63,15 @@ const Contact = ({ toggleContactForm }) => {
               type='text'
               name='businessprofile'
               placeholder='Business Profile'
-              value={formData.businessProfile}
+              value={formData.businessprofile}
               onChange={handleChange}
               required
             />
             <input
               type='text'
               name='phone'
-              placeholder='Mobile Number'
-              value={formData.mobileNumber}
+              placeholder='Phone Number'
+              value={formData.phone}
               onChange={handleChange}
               required
             />
