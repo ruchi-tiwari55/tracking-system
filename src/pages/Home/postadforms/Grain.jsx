@@ -157,7 +157,7 @@ const GrainForm = () => {
                     </div>
 
                 </div>
-                <div className={styles.review}>
+                {/* <div className={styles.review}>
                     <div>
                         <h3>REVIEW YOUR DETAILS</h3>
                         <div className={styles.review1}>
@@ -177,7 +177,7 @@ const GrainForm = () => {
                             <input></input>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div className={styles.bottom}>
                     <button>POST NOW</button>
                 </div>

@@ -27,7 +27,7 @@ const Advertising = () => {
                             <div className={styles.content_a}>
                                 <h3>Welcome to All Business Ad</h3>
 
-                                <p> LzyCrazy team will create business ad<br /><br />
+                                <p> LzyCrazy team will create business ad<br />
 
                                     Your business ad will Stream live in the<br />
                                     LzyCrazy Marketplace<br />

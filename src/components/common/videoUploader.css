@@ -1,0 +1,50 @@
+.video-uploader-container {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+}
+
+.video-uploader {
+    margin-right: 20px;
+}
+
+.upload-label {
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid #ccc;
+    background-color: #f9f9f9;
+    color: #333;
+    display: inline-block;
+}
+
+#video-input {
+    display: none;
+}
+
+.video-preview {
+    border: 2px solid #ccc;
+    width: 250px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Added for absolute positioning of remove video cross */
+}
+
+.remove-video {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    color: red;
+}
+
+.video-player {
+    width: 100%;
+    height: 100%;
+}

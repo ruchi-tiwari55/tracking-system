@@ -28,7 +28,7 @@ const Advertising = () => {
                                 <h3>I Invite All Investors</h3>
                                 <p>For collaboration</p>
                                
-                                    <h5>New Resource Solution</h5><br />
+                                    <h4>New Resource Solution</h4>
 
                                     <p>Working in Futures<br />
 
@@ -36,13 +36,7 @@ const Advertising = () => {
                                     Our Manufacturer<br />
                                     Our Finance
                                 </p>
-
-
                                 <h5>Benefit</h5>
-
-                                {/* <p>Customer with interest of your Business will<br />
-                                    Directly Connect you
-                                </p> */}
                             </div>
                             <button className={styles.btn} onClick={toggleContactForm}>Contact Us</button>
                             {showContactForm && <Contact toggleContactForm={toggleContactForm} />}
