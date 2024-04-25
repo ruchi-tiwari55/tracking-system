@@ -54,9 +54,9 @@
   }
   
   .nav-content-bttn {
-    text-decoration: none; /* No underline on links */
-    padding: 10px;
-    color: #333; /* Default text color */
+    display: flex; 
+    align-items: center;
+    text-decoration: none;
   }
   
   .nav-content-bttn:hover {
@@ -85,3 +85,29 @@
     }
   }
   
+
+  .nav-content-bttn {
+    display: flex;
+    align-items: center; 
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .icon-wrapper {
+    margin-right: 10px; 
+  }
+  
+  .nav-content-bttn span {
+    font-size: 1em;
+  }
+  
+  .nav-content-bttn:hover {
+    background-color: #f0f0f0;
+  }
+  
+  @media (max-width: 600px) { 
+    .nav-text {
+      display: none; /* Hide text */
+    }
+  }
