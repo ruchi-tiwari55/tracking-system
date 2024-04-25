@@ -1,0 +1,53 @@
+.confirmationForm {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+}
+.details strong {
+    color: black;
+}
+.confirmationForm h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.confirmationForm p {
+    margin-bottom: 10px;
+}
+
+.confirmationForm .details {
+    margin-bottom: 20px;
+}
+
+.confirmationForm .details p {
+    margin-bottom: 5px;
+}
+
+.confirmationForm .buttons button {
+    margin-right: 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.confirmationForm .buttons button:hover {
+    background-color: #0056b3;
+}
+
+.video_window {
+    position: relative;
+    width: 300px;
+    height: 185px;
+    border: 2px solid #ccc;
+    margin-bottom: 0.5rem;
+}
+
+.video_player {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

@@ -21,13 +21,13 @@
 }
 
 .main_box a {
-    color:black;
+    color: black;
     margin-right: 3rem;
     text-decoration: none;
 }
 
 .help_box a {
-    color:black;
+    color: black;
     text-decoration: none;
 }
 
@@ -36,46 +36,77 @@
     text-decoration: underline;
     text-underline-position: under;
 }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdownContent a {
+    color: black;
+    white-space: nowrap;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+
 @media only screen and (max-width: 768px) {
     .inner {
         flex-direction: column;
         margin: 0 1rem;
     }
-    
+
     .main_box {
         flex-direction: column;
     }
-    
+
     .main_box a {
         margin: 0.5rem 0;
     }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
+
     /* Styles for medium-sized screens */
     .outer {
         padding: 1rem;
     }
-    
+
     .inner {
         margin: 0 2rem;
     }
-    
+
     .main_box a {
         margin-right: 2rem;
     }
 }
 
 @media only screen and (min-width: 1025px) {
+
     /* Styles for larger screens */
     .outer {
         padding: 1rem 0rem 0.5rem;
     }
-    
+
     .inner {
         margin: 0 3rem;
     }
-    
+
     .main_box a {
         margin-right: 3rem;
     }
