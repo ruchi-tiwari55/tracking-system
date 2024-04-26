@@ -13,7 +13,7 @@ import banner1 from "../../../assets/banner1.jpg";
 import banner3 from "../../../assets/banner3.jpg";
 import banner4 from "../../../assets/banner4.jpg";
 import banner5 from "../../../assets/banner5.jpg";
-import MarketSidebar from "../../../components/home/MarketSidebar/MarketSidebar"
+// import MarketSidebar from "../../../components/home/MarketSidebar/MarketSidebar"
 function VideoComponent() {
   var slidersettings = {
     dots: true,
@@ -66,7 +66,7 @@ const ImageWithFixedSize = ({ src, alt }) => (
   return (
     <>
     <div className="col-lg-3">
-    <MarketSidebar />
+    {/* <MarketSidebar /> */}
 </div>
     <div className="container col-lg-12 col-md-2" style={{marginTop:"75px",width:"80%", marginLeft:"19%"}}>
       <div className="row" style={{ justifyContent: "flex-start" }}>
