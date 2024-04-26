@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './sidebar.css'
 
 const Sidebar = () => {
     return (
+<<<<<<< HEAD
         <nav className="navigation scroll-bar hov-none">
             <div className="container ps-0 pe-0">
                 <div className="nav-content">
@@ -42,6 +44,41 @@ const Sidebar = () => {
                     </div>
                 </div>
             </div>
+=======
+        <nav>
+            <ul>
+                <li>
+                    <Link to="/user-page">
+                        <img src='assets/images/favicon.png' alt="user" />
+                        <span>Arvind Bhandari</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/market-Place">
+                        <img src='assets/images/marketplace.png' alt="Market" />
+                        <span>Market</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/my-ads">
+                        <img src='assets/images/myads.png' alt="My Ads" />
+                        <span>My Ads</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/my-ads-response">
+                        <img src='assets/images/response.png' alt="resp" />
+                        <span>Response</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="#">
+                        <img src='assets/images/logout.png' alt="Log out" />
+                        <span>Log out</span>
+                    </Link>
+                </li>
+            </ul>
+>>>>>>> b56c7e646df87db36fb632894409de285ecec234
         </nav>
     );
 }

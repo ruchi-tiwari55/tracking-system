@@ -17,10 +17,17 @@ const Navbar = () => {
                         <a href="/dashboard" className="main-menu primary-color">Home</a>
                 </div>
                 <div className="header-menu">
+<<<<<<< HEAD
                     <a href="/market-Place/marketSidebar" className="p-2 text-center menu-icon center-menu-icon">
                         <i className="fas fa-store" style={{ color: "rgb(0, 0, 0)" }}></i>
                     </a>
                     <a href="/market-Place/marketSidebar" className="main-menu primary-color">Market Place</a>
+=======
+                    <a href="/market-Place" className="p-2 text-center menu-icon center-menu-icon">
+                        <i className="fas fa-store" style={{ color: "rgb(0, 0, 0)" }}></i>
+                    </a>
+                    <a href="/market-Place" className="main-menu primary-color">Market Place</a>
+>>>>>>> b56c7e646df87db36fb632894409de285ecec234
                 </div>
                 <div className="header-menu">
                     <a href="/my-ads" className="p-2 text-center menu-icon center-menu-icon">
