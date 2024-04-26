@@ -16,11 +16,6 @@ import Home from "../pages/Home/Home";
 import Profile from "../pages/Home/Profile";
 import Response from "../pages/Home/Response";
 import MarketPlace from "../pages/Home/MarketPlace/MarketPlace";
-<<<<<<< HEAD
-import MarketSubcategory from "../components/home/MarketSubcategory/MarketSubcategory";
-import MarketLayout from "../components/home/MarketSidebar/MarketLayout";
-import MarketSidebar from "../components/home/MarketSidebar/MarketSidebar";
-=======
 import Postad from "../pages/Home/Postad"
 
 import Grain from "../pages/Home/postadforms/directByFarm/Grain";
