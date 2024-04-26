@@ -1,10 +1,50 @@
-import styles from './ac.module.css';
-import '../../../../styles/globals.css';
+import styles from './grainForm.module.css';
+import '../../../styles/globals.css';
 import PhotoIcon from '@mui/icons-material/AddAPhotoOutlined';
 import React, { useState } from 'react';
+import Select from 'react-select';
 
-const ArtificialJewellery = () => {
+const options = [
+    { value: 'Bajra', label: 'Bajra' },
+    { value: 'Basmati Rice', label: 'Basmati Rice' },
+    { value: 'Brown Rice', label: 'Brown Rice' },
+    { value: 'Chana', label: 'Chana' },
+    { value: 'Chana Daal', label: 'Chana Daal' },
+    { value: 'Chawli Daal', label: 'Chawli Daal' },
+    { value: 'Gehu', label: 'Gehu' },
+    { value: 'Grain Rice', label: 'Grain Rice' },
+    { value: 'Hare Mung Daal', label: 'Hare Mung Daal' },
+    { value: 'Hari Matar', label: 'Hari Matar' },
+    { value: 'Jasmine Rice', label: 'Jasmine Rice' },
+    { value: 'Jaw', label: 'Jaw' },
+    { value: 'Jowar', label: 'Jowar' },
+    { value: 'Kala Chana', label: 'Kala Chana' },
+    { value: 'Lobia', label: 'Lobia' },
+    { value: 'Makai', label: 'Makai' },
+    { value: 'Masoor Daal', label: 'Masoor Daal' },
+    { value: 'Moth Daal', label: 'Moth Daal' },
+    { value: 'Mung Daal', label: 'Mung Daal' },
+    { value: 'Pulses', label: 'Pulses' },
+    { value: 'Ragi', label: 'Ragi' },
+    { value: 'Rice', label: 'Rice' },
+    { value: 'Safed Chana', label: 'Safed Chana' },
+    { value: 'Safed Matar', label: 'Safed Matar' },
+    { value: 'Sarso', label: 'Sarso' },
+    { value: 'Soyabean', label: 'Soyabean' },
+    { value: 'Sugarcane', label: 'Sugarcane' },
+    { value: 'Toor Daal', label: 'Toor Daal' },
+    { value: 'Urad Daal', label: 'Urad Daal' },
+    { value: 'White Rice', label: 'White Rice' },
+    { value: 'Others', label: 'Others' }
+];
 
+const GrainForm = () => {
+
+    const [selectedOption, setSelectedOption] = useState(null);
+
+    const handleChange = (selectedOption) => {
+        setSelectedOption(selectedOption);
+    };
     return (
         <>
             <div className={styles.navbar}></div>
@@ -13,13 +53,13 @@ const ArtificialJewellery = () => {
                 <div className={styles.top}>
                     <h3>SELECTED CATEGORY</h3>
                     <div className={styles.top1}>
-                        <p>Direct By Farm / Costume/Cloth</p>
+                        <p>Direct By Farm / Anaaj/Grain</p>
                         <h4>Change</h4>
                     </div>
                 </div>
                 <div className={styles.details}>
                     <h3>INCLUDE SOME DETAILS</h3>
-                    {/* <div className={styles.details1}>
+                    <div className={styles.details1}>
                         <p>Brand/Type *</p>
                         <div>
                             <Select
@@ -30,7 +70,7 @@ const ArtificialJewellery = () => {
                                 className={styles.options}
                             />
                         </div>
-                    </div> */}
+                    </div>
                     <div className={styles.details2}>
                         <label>Ad title *</label>
                         <input></input>
@@ -115,12 +155,29 @@ const ArtificialJewellery = () => {
                             <option value="West Bengal">West Bengal</option>
                         </select>
                     </div>
-                    <div className={styles.location2}>
-                        <label>City *</label>
-                        <input></input>
-                    </div>
 
                 </div>
+                {/* <div className={styles.review}>
+                    <div>
+                        <h3>REVIEW YOUR DETAILS</h3>
+                        <div className={styles.review1}>
+                            <div className={styles.review_image}></div>
+                            <div className={styles.review1_1}>
+                                <label>Name</label>
+                                <input></input>
+                                <p>0/30</p>
+                            </div>
+                        </div>
+                        <div className={styles.review2}>
+                            <h4>Let's verify your account</h4>
+                            <p>We will send you a confirmation code by sms on the next step.</p>
+                        </div>
+                        <div className={styles.review3}>
+                            <label>Mobile Phone Number *</label>
+                            <input></input>
+                        </div>
+                    </div>
+                </div> */}
                 <div className={styles.bottom}>
                     <button>POST NOW</button>
                 </div>
@@ -130,4 +187,4 @@ const ArtificialJewellery = () => {
         </>
     )
 }
-export default ArtificialJewellery;
+export default GrainForm;
