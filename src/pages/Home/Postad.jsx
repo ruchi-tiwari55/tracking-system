@@ -28,39 +28,38 @@ function HomePage() {
         return (
           <>
             <Link to="/anaaj-grain" style={{ color: "inherit", textDecoration: "none" }}><div>ANAAJ/GRAIN</div></Link>
-            <Link to="/eggs" style={{ color: "inherit", textDecoration: "none" }}><div>EGGS</div></Link>
-            <Link to="/fish" style={{ color: "inherit", textDecoration: "none" }}><div>FISH</div></Link>
-            <Link to="/fruits" style={{ color: "inherit", textDecoration: "none" }}><div>FRUITS</div></Link>
-            <Link to="/milk" style={{ color: "inherit", textDecoration: "none" }}><div>MILK</div></Link>
-            <Link to="/vegetables" style={{ color: "inherit", textDecoration: "none" }}><div>VEGETABLES</div></Link>
+            <div>EGGS</div>
+            <div>FISH</div>
+            <div>FRUITS</div>
+            <div>MILK</div>
+            <div>VEGETABLES</div>
           </>
         );
       case 'SELF MADE':
         return (
           <>
-            <Link to="/artificial-jewellery" style={{ color: "inherit", textDecoration: "none" }}><div>ARTIFICIAL JEWELLERY</div></Link>
-            <Link to="/cloth" style={{ color: "inherit", textDecoration: "none" }}><div>CLOTH/STITCHING</div></Link>
-            <Link to="/home-decor" style={{ color: "inherit", textDecoration: "none" }}><div>HOME DECOR</div></Link>
-            <Link to="/home-made" style={{ color: "inherit", textDecoration: "none" }}><div>HOME MADE</div></Link>
-            <Link to="/plant-pot" style={{ color: "inherit", textDecoration: "none" }}><div>PLANT & POT</div></Link>
+            <div>ARTIFICIAL JEWELLERY</div>
+            <div>CLOTH/STITCHING</div>
+            <div>HOME DECOR</div>
+            <div>HOME MADE</div>
+            <div>PLANT & POT</div>
           </>
         );
       case 'RENTAL ITEMS':
         return (
           <>
-            <Link to="/ac" style={{ color: "inherit", textDecoration: "none" }}><div>AC</div></Link>
-            <Link to="/computer-laptop" style={{ color: "inherit", textDecoration: "none" }}><div>COMPUTER/LAPTOP</div></Link>
-            <Link to="/costume" style={{ color: "inherit", textDecoration: "none" }}><div>COSTUME/CLOTH</div></Link>
-            <Link to="/fridge" style={{ color: "inherit", textDecoration: "none" }}><div>FRIDGE</div></Link>
-            <Link to="/furniture" style={{ color: "inherit", textDecoration: "none" }}><div>FURNITURE</div></Link>
-            <Link to="/home-appliance" style={{ color: "inherit", textDecoration: "none" }}><div>HOME APPLIANCE</div></Link>
-            <Link to="/inverter" style={{ color: "inherit", textDecoration: "none" }}><div>INVERTER</div></Link>
+            <div>AC</div>
+            <div>COMPUTER/LAPTOP</div>
+            <div>COSTUME/CLOTH</div>
+            <div>FRIDGE</div>
+            <div>FURNITURE</div>
+            <div>HOME APPLIANCE</div>
+            <div>INVERTER</div>
           </>
         );
       case 'REAL ESTATE':
         return (
           <>
-            <Link to="/house-and-appartments" style={{ color: "inherit", textDecoration: "none" }}><div>HOUSES & APPARTMENTS</div></Link>
             <div>BUY</div>
             <div>COMMERCIALS</div>
             <div>RENT</div>
@@ -69,7 +68,7 @@ function HomePage() {
       case 'VEHICLES':
         return (
           <>
-            <Link to="/bicycles" style={{ color: "inherit", textDecoration: "none" }}><div>BICYCLES</div></Link>
+            <div>BICYCLES</div>
             <div>BIKES</div>
             <div>CARS</div>
             <div>OTHER</div>
@@ -80,9 +79,9 @@ function HomePage() {
       case 'MOBILES':
         return (
           <>
-            <Link to="/accessories" style={{ color: "inherit", textDecoration: "none" }}><div>ACCESSORIES</div></Link>
-            <Link to="/mobile-phones" style={{ color: "inherit", textDecoration: "none" }}><div>MOBILE PHONES</div></Link>
-            <Link to="/tablets" style={{ color: "inherit", textDecoration: "none" }}><div>TABLETS</div></Link>
+            <div>ACCESSORIES</div>
+            <div>MOBILE PHONES</div>
+            <div>TABLETS</div>
           </>
         );
       case 'FURNITURE':

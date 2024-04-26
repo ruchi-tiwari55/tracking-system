@@ -2,10 +2,10 @@
 
 const Profile = () => {
     return (
-        <div className="main-content right-chat-active border">
+        <div className="main-content right-chat-active">
             <div className="middle-sidebar-bottom">
                 <div className="middle-sidebar-left">
-                    <div className="card w-100 border-0 p-0 bg-white shadow-xss rounded-sm ">
+                    <div className="card w-100 border-0 p-0 bg-white shadow-xss rounded-sm mt-4">
                         <div className="card-body p-0 rounded overflow-hidden m-1">
                             <img
                                 src="https://lzycrazy.com/assets/about-bg.d32aac61.jpg"
