@@ -1,43 +1,22 @@
-import styles from './mobile.module.css';
-import '../../../../styles/globals.css';
+import styles from './bicycleform.module.css'
 import PhotoIcon from '@mui/icons-material/AddAPhotoOutlined';
-import React, { useState } from 'react';
-import Select from 'react-select';
+import { useState } from 'react';
+import Select from 'react-select'
 
-const options = [
-    { value: 'Apple', label: 'Apple' },
-    { value: 'Asus', label: 'Asus' },
-    { value: 'Google', label: 'Google' },
-    { value: 'Honor', label: 'Honor' },
-    { value: 'karbonn', label: 'karbonn' },
-    { value: 'Lava', label: 'Lava' },
-    { value: 'LG', label: 'LG' },
-    { value: 'Motorola', label: 'Motorola' },
-    { value: 'Nokia', label: 'Nokia' },
-    { value: 'One Plus', label: 'One Plus' },
-    { value: 'Oppo', label: 'Oppo' },
-    { value: 'Realme', label: 'Realme' },
-    { value: 'Samsung', label: 'Samsung' },
-    { value: 'Vivo', label: 'Kajuli' },
-    { value: 'Xiaomi', label: 'Xiaomi' },
-    { value: 'Xolo', label: 'Xolo' },
-    { value: 'Others', label: 'Others' }
-];
 
-const GrainForm = () => {
-    const [photos, setPhotos] = useState(Array(12).fill(null));
+const brands = [
+    "Maruti Suzuki", "Hyundai", "Tata", "Mahindra", "Toyota", "Honda", "BYD", "Audi", "Ambassador",
+    "Ashok", "Ashok Leyland", "Aston", "Aston Martin", "Bajaj", "Bentley", "Citroen", "McLaren",
+    "Fisker", "Tesla", "BMW", "Bugatti", "Cadillac", "Caterham", "Chevrolet", "Chrysler", "Conquest",
+    "Daewoo", "Datsun", "Dc", "Dodge", "Eicher Polaris", "Ferrari", "Fiat", "Force Motors", "Ford",
+    "Hummer", "ICML", "Infiniti", "Isuzu", "Jaguar", "Jeep", "Kia", "Lamborghini", "Land Rover",
+    "Lexus", "Mahindra Renault", "Maserati", "Maybach", "Mazda", "Mercedes-Benz", "MG", "Mini",
+    "Mitsubishi", "Nissan", "Opel", "Peugeot", "Porsche", "Premier", "Renault", "Rolls-Royce", "San",
+    "Sipani", "Skoda", "Smart", "Ssangyong", "Subaru", "Volkswagen", "Volvo"
+  ];
+const HousesAppartments = () => {
 
-    const handlePhotoUpload = (index, event) => {
-        const file = event.target.files[0];
-        const newPhotos = [...photos];
-        newPhotos[index] = URL.createObjectURL(file);
-        setPhotos(newPhotos);
-    };
-    const [selectedOption, setSelectedOption] = useState(null);
-
-    const handleChange = (selectedOption) => {
-        setSelectedOption(selectedOption);
-    };
+    const options = brands.map(brand => ({ value: brand, label: brand }));
     return (
         <>
             <div className={styles.navbar}></div>
@@ -46,38 +25,78 @@ const GrainForm = () => {
                 <div className={styles.top}>
                     <h3>SELECTED CATEGORY</h3>
                     <div className={styles.top1}>
-                        <p>Mobiles / Mobile Phones</p>
+                        <p>Vehicles / Cars</p>
                         <h4>Change</h4>
                     </div>
                 </div>
                 <div className={styles.details}>
                     <h3>INCLUDE SOME DETAILS</h3>
-                    <div className={styles.details1}>
-                        <p>Brand/Type *</p>
+                    <div className={styles.details1} style={{ gap: "2.5rem" }}>
                         <div>
-                            <Select
-                                value={selectedOption}
-                                onChange={handleChange}
-                                options={options}
-                                placeholder="Select a category"
-                                className={styles.options}
-                            />
+                            <p>Brand *</p>
+                            <div>
+                                <Select
+                                    options={options}
+                                    className={styles.selectOpt}
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div className={styles.details2}>
-                        <label>Ad title *</label>
-                        <input></input>
-                        <div className={styles.details2_2}>
-                            <p>Mention the key features of you item (e.g. brand, model, age, type)</p>
-                            <p>0/70</p>
+                        <div>
+                            <p>Year *</p>
+                            <div>
+                                <input></input>
+                            </div>
                         </div>
-                    </div>
-                    <div className={styles.details3}>
-                        <label>Description*</label>
-                        <input></input>
-                        <div className={styles.details2_2}>
-                            <p>Include condition, features and reason for selling</p>
-                            <p>0/4096</p>
+                        <div>
+                            <p>Fuel *</p>
+                            <div className={styles.details1_1}>
+                                <div>CNG & Hybrids</div>
+                                <div>Diesel</div>
+                                <div>Electric</div>
+                                <div>LPG</div>
+                                <div>Petrol</div>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Transmission *</p>
+                            <div className={styles.details1_1}>
+                                <div>Automatic</div>
+                                <div>Manual</div>
+                            </div>
+                        </div>
+                        <div>
+                            <p>KM Driven *</p>
+                            <div>
+                                <input></input>
+                            </div>
+                        </div>
+                        <div>
+                            <p>No. of Owners *</p>
+                            <div className={styles.details1_1}>
+                                <div>1st</div>
+                                <div>2nd</div>
+                                <div>3rd</div>
+                                <div>4th</div>
+                                <div>4+</div>
+                            </div>
+                        </div>
+                        <div className={styles.details1} style={{ gap: "2.5rem" }}>
+                            <div className={styles.details2}>
+                                <label>Ad title *</label>
+                                <input></input>
+                                <div className={styles.details2_2}>
+                                    <p>Mention the key features of you item (e.g. brand, model, age, type)</p>
+                                    <p>0/70</p>
+                                </div>
+                            </div>
+                            <div className={styles.details3}>
+                                <label>Description*</label>
+                                <textarea></textarea>
+                                <div className={styles.details2_2}>
+                                    <p>Include condition, features and reason for selling</p>
+                                    <p>0/4096</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -92,28 +111,14 @@ const GrainForm = () => {
                 </div>
                 <div className={styles.photos}>
                     <div>
-                        <h3>UPLOAD UPTO 12 PHOTOS</h3>
+                        <h3>UPLOAD UPTO 20 PHOTOS</h3>
                         <div>
                             <p>Add Photo</p>
                             <div className={styles.photos1}>
-                                {photos.map((photo, index) => (
-                                    <label key={index}>
-                                        <input
-                                            type="file"
-                                            accept="image/*"
-                                            onChange={(event) => handlePhotoUpload(index, event)}
-                                            style={{ display: 'none' }}
-                                        />
-                                        <div
-                                            className={`${styles.photoIcon} ${index === 0 ? styles.firstPhotoIcon : ''}`}
-                                            onClick={() => document.getElementById(`file-upload-${index}`).click()}
-                                        >
-                                            {photo ? <img src={photo} alt={`Uploaded Photo ${index + 1}`} /> : <PhotoIcon />}
-                                        </div>
-                                    </label>
+                                {[...Array(20)].map((_, index) => (
+                                    <div key={index}><PhotoIcon /></div>
                                 ))}
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -165,7 +170,6 @@ const GrainForm = () => {
                         <label>City *</label>
                         <input></input>
                     </div>
-
                 </div>
                 <div className={styles.bottom}>
                     <button>POST NOW</button>
@@ -176,4 +180,4 @@ const GrainForm = () => {
         </>
     )
 }
-export default GrainForm;
+export default HousesAppartments;

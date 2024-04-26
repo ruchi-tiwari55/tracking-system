@@ -47,6 +47,14 @@ const options = [
 ];
 
 const GrainForm = () => {
+    const [photos, setPhotos] = useState(Array(12).fill(null));
+
+    const handlePhotoUpload = (index, event) => {
+        const file = event.target.files[0];
+        const newPhotos = [...photos];
+        newPhotos[index] = URL.createObjectURL(file);
+        setPhotos(newPhotos);
+    };
 
     const [selectedOption, setSelectedOption] = useState(null);
 
@@ -111,11 +119,24 @@ const GrainForm = () => {
                         <div>
                             <p>Add Photo</p>
                             <div className={styles.photos1}>
-                                {[...Array(12)].map((_, index) => (
-                                    <div key={index}><PhotoIcon />
-                                    </div>
+                                {photos.map((photo, index) => (
+                                    <label key={index}>
+                                        <input
+                                            type="file"
+                                            accept="image/*"
+                                            onChange={(event) => handlePhotoUpload(index, event)}
+                                            style={{ display: 'none' }}
+                                        />
+                                        <div
+                                            className={`${styles.photoIcon} ${index === 0 ? styles.firstPhotoIcon : ''}`}
+                                            onClick={() => document.getElementById(`file-upload-${index}`).click()}
+                                        >
+                                            {photo ? <img src={photo} alt={`Uploaded Photo ${index + 1}`} /> : <PhotoIcon />}
+                                        </div>
+                                    </label>
                                 ))}
                             </div>
+                            
                         </div>
                     </div>
                 </div>

@@ -60,21 +60,19 @@ function HomePage() {
       case 'REAL ESTATE':
         return (
           <>
-            <Link to="/house-and-appartments" style={{ color: "inherit", textDecoration: "none" }}><div>HOUSES & APPARTMENTS</div></Link>
-            <div>BUY</div>
-            <div>COMMERCIALS</div>
-            <div>RENT</div>
+            <Link to="/buy" style={{ color: "inherit", textDecoration: "none" }}><div>BUY</div></Link>
+            <Link to="/commercials" style={{ color: "inherit", textDecoration: "none" }}><div>COMMERCIALS</div></Link>
+            <Link to="/rent" style={{ color: "inherit", textDecoration: "none" }}><div>RENT</div></Link>
           </>
         );
       case 'VEHICLES':
         return (
           <>
-            <Link to="/bicycles" style={{ color: "inherit", textDecoration: "none" }}><div>BICYCLES</div></Link>
-            <div>BIKES</div>
-            <div>CARS</div>
-            <div>OTHER</div>
-            <div>SCOOTERS</div>
-            <div>SPARE PARTS</div>
+            <Link to="/bicycle" style={{ color: "inherit", textDecoration: "none" }}><div>BICYCLES</div></Link>
+            <Link to="/bikes" style={{ color: "inherit", textDecoration: "none" }}><div>BIKES</div></Link>
+            <Link to="/cars" style={{ color: "inherit", textDecoration: "none" }}><div>CARS</div></Link>
+            <Link to="/scooters" style={{ color: "inherit", textDecoration: "none" }}><div>SCOOTERS</div></Link>
+            <Link to="/spareparts" style={{ color: "inherit", textDecoration: "none" }}><div>SPARE PARTS</div></Link>
           </>
         );
       case 'MOBILES':
@@ -88,34 +86,34 @@ function HomePage() {
       case 'FURNITURE':
         return (
           <>
-            <div>BEDS</div>
-            <div>CHAIRS</div>
-            <div>DINING TABLES</div>
-            <div>KIDS FURNITURE</div>
-            <div>OFFICE FURNITURE</div>
-            <div>SOFA</div>
-            <div>WARDROBES</div>
+            <Link to="/beds" style={{ color: "inherit", textDecoration: "none" }}><div>BEDS</div></Link>
+            <Link to="/chairs" style={{ color: "inherit", textDecoration: "none" }}><div>CHAIRS</div></Link>
+            <Link to="/dining-tables" style={{ color: "inherit", textDecoration: "none" }}><div>DINING TABLES</div></Link>
+            <Link to="/kids-furniture" style={{ color: "inherit", textDecoration: "none" }}><div>KIDS FURNITURE</div></Link>
+            <Link to="/office-furniture" style={{ color: "inherit", textDecoration: "none" }}><div>OFFICE FURNITURE</div></Link>
+            <Link to="/sofa" style={{ color: "inherit", textDecoration: "none" }}><div>SOFA</div></Link>
+            <Link to="/wardrobes" style={{ color: "inherit", textDecoration: "none" }}><div>WARDROBES</div></Link>
           </>
         );
       case 'FASHION':
         return (
           <>
-            <div>KIDS</div>
-            <div>MEN</div>
-            <div>WOMEN</div>
+            <Link to="/kids" style={{ color: "inherit", textDecoration: "none" }}><div>KIDS</div></Link>
+            <Link to="/men" style={{ color: "inherit", textDecoration: "none" }}><div>MEN</div></Link>
+            <Link to="/women" style={{ color: "inherit", textDecoration: "none" }}><div>WOMEN</div></Link>
           </>
         );
       case 'ELECTRONICS':
         return (
           <>
-            <div>AC</div>
-            <div>CAMERAS & LENSES</div>
-            <div>COMPUTER/LAPTOP</div>
-            <div>FRIDGE</div>
-            <div>KITCHEN APPLIANCES</div>
-            <div>PRINTERS</div>
-            <div>TV</div>
-            <div>WASHING MACHINES</div>
+            <Link to="/air-conditioner" style={{ color: "inherit", textDecoration: "none" }}><div>AC</div></Link>
+            <Link to="/camera-lenses" style={{ color: "inherit", textDecoration: "none" }}><div>CAMERAS & LENSES</div></Link>
+            <Link to="/computerlaptop" style={{ color: "inherit", textDecoration: "none" }}><div>COMPUTER/LAPTOP</div></Link>
+            <Link to="/fridgee" style={{ color: "inherit", textDecoration: "none" }}><div>FRIDGE</div></Link>
+            <Link to="/kitchen-appliance" style={{ color: "inherit", textDecoration: "none" }}><div>KITCHEN APPLIANCES</div></Link>
+            <Link to="/printers" style={{ color: "inherit", textDecoration: "none" }}><div>PRINTERS</div></Link>
+            <Link to="/television" style={{ color: "inherit", textDecoration: "none" }}><div>TV</div></Link>
+            <Link to="/washing-machines" style={{ color: "inherit", textDecoration: "none" }}><div>WASHING MACHINES</div></Link>
           </>
         );
       case 'TOUR & TRAVELS':

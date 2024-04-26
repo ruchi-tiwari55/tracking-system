@@ -1,43 +1,72 @@
-import styles from './mobile.module.css';
-import '../../../../styles/globals.css';
+import styles from './bicycleform.module.css'
 import PhotoIcon from '@mui/icons-material/AddAPhotoOutlined';
-import React, { useState } from 'react';
-import Select from 'react-select';
+import { useState } from 'react';
+import Select from 'react-select'
+
 
 const options = [
-    { value: 'Apple', label: 'Apple' },
-    { value: 'Asus', label: 'Asus' },
-    { value: 'Google', label: 'Google' },
-    { value: 'Honor', label: 'Honor' },
-    { value: 'karbonn', label: 'karbonn' },
-    { value: 'Lava', label: 'Lava' },
-    { value: 'LG', label: 'LG' },
-    { value: 'Motorola', label: 'Motorola' },
-    { value: 'Nokia', label: 'Nokia' },
-    { value: 'One Plus', label: 'One Plus' },
-    { value: 'Oppo', label: 'Oppo' },
-    { value: 'Realme', label: 'Realme' },
-    { value: 'Samsung', label: 'Samsung' },
-    { value: 'Vivo', label: 'Kajuli' },
-    { value: 'Xiaomi', label: 'Xiaomi' },
-    { value: 'Xolo', label: 'Xolo' },
-    { value: 'Others', label: 'Others' }
+    { value: 'Vespa', label: 'Vespa' },
+    { value: 'Ampere', label: 'Ampere' },
+    { value: 'Ather', label: 'Ather' },
+    { value: 'OLA', label: 'OLA' },
+    { value: 'Husqvarna', label: 'Husqvarna' },
+    { value: 'Revolt', label: 'Revolt' },
+    { value: 'Ducati', label: 'Ducati' },
+    { value: 'Jawa', label: 'Jawa' },
+    { value: 'Benelli', label: 'Benelli' },
+    { value: 'Aprilia', label: 'Aprilia' },
+    { value: 'Chetak', label: 'Chetak' },
+    { value: 'BMW', label: 'BMW' },
+    { value: 'CFMoto', label: 'CFMoto' },
+    { value: 'Eider', label: 'Eider' },
+    { value: 'Emflux Motors', label: 'Emflux Motors' },
+    { value: 'Escorts', label: 'Escorts' },
+    { value: 'Evolet', label: 'Evolet' },
+    { value: 'FB Mondial', label: 'FB Mondial' },
+    { value: 'Hero Electric', label: 'Hero Electric' },
+    { value: 'Hop Electric', label: 'Hop Electric' },
+    { value: 'Hyosung', label: 'Hyosung' },
+    { value: 'Indian', label: 'Indian' },
+    { value: 'Keeway', label: 'Keeway' },
+    { value: 'LML', label: 'LML' },
+    { value: 'Mahindra', label: 'Mahindra' },
+    { value: 'Matter', label: 'Matter' },
+    { value: 'Motto Guzzi', label: 'Motto Guzzi' },
+    { value: 'Moto Morini', label: 'Moto Morini' },
+    { value: 'MV Agusta', label: 'MV Agusta' },
+    { value: 'Norton', label: 'Norton' },
+    { value: 'Odysse', label: 'Odysse' },
+    { value: 'Okinawa', label: 'Okinawa' },
+    { value: 'OLA', label: 'OLA' },
+    { value: 'PURE EV', label: 'PURE EV' },
+    { value: 'QJ Motor', label: 'QJ Motor' },
+    { value: 'SWM', label: 'SWM' },
+    { value: 'Tork', label: 'Tork' },
+    { value: 'Triumph', label: 'Triumph' },
+    { value: 'UM', label: 'UM' },
+    { value: 'Vespa', label: 'Vespa' },
+    { value: 'Victory', label: 'Victory' },
+    { value: 'Vida', label: 'Vida' },
+    { value: 'Zontes', label: 'Zontes' },
+    { value: 'Bajaj', label: 'Bajaj' },
+    { value: 'Hero', label: 'Hero' },
+    { value: 'Hero Honda', label: 'Hero Honda' },
+    { value: 'Honda', label: 'Honda' },
+    { value: 'KTM', label: 'KTM' },
+    { value: 'Royal Enfield', label: 'Royal Enfield' },
+    { value: 'Suzuki', label: 'Suzuki' },
+    { value: 'TVS', label: 'TVS' },
+    { value: 'Yamaha', label: 'Yamaha' },
+    { value: 'Other Brands', label: 'Other Brands' },
 ];
 
-const GrainForm = () => {
-    const [photos, setPhotos] = useState(Array(12).fill(null));
-
-    const handlePhotoUpload = (index, event) => {
-        const file = event.target.files[0];
-        const newPhotos = [...photos];
-        newPhotos[index] = URL.createObjectURL(file);
-        setPhotos(newPhotos);
-    };
+const bicycleForm = () => {
     const [selectedOption, setSelectedOption] = useState(null);
 
     const handleChange = (selectedOption) => {
         setSelectedOption(selectedOption);
     };
+
     return (
         <>
             <div className={styles.navbar}></div>
@@ -46,12 +75,13 @@ const GrainForm = () => {
                 <div className={styles.top}>
                     <h3>SELECTED CATEGORY</h3>
                     <div className={styles.top1}>
-                        <p>Mobiles / Mobile Phones</p>
+                        <p>Vehicles / Scooters</p>
                         <h4>Change</h4>
                     </div>
                 </div>
                 <div className={styles.details}>
                     <h3>INCLUDE SOME DETAILS</h3>
+
                     <div className={styles.details1}>
                         <p>Brand/Type *</p>
                         <div>
@@ -59,11 +89,19 @@ const GrainForm = () => {
                                 value={selectedOption}
                                 onChange={handleChange}
                                 options={options}
-                                placeholder="Select a category"
-                                className={styles.options}
+                                className={styles.selectOpt}
                             />
                         </div>
                     </div>
+                    <div className={styles.details2}>
+                        <label>Year *</label>
+                        <input></input>
+                    </div>
+                    <div className={styles.details2}>
+                        <label>KM Driven *</label>
+                        <input></input>
+                    </div>
+
                     <div className={styles.details2}>
                         <label>Ad title *</label>
                         <input></input>
@@ -74,7 +112,7 @@ const GrainForm = () => {
                     </div>
                     <div className={styles.details3}>
                         <label>Description*</label>
-                        <input></input>
+                        <textarea></textarea>
                         <div className={styles.details2_2}>
                             <p>Include condition, features and reason for selling</p>
                             <p>0/4096</p>
@@ -96,24 +134,10 @@ const GrainForm = () => {
                         <div>
                             <p>Add Photo</p>
                             <div className={styles.photos1}>
-                                {photos.map((photo, index) => (
-                                    <label key={index}>
-                                        <input
-                                            type="file"
-                                            accept="image/*"
-                                            onChange={(event) => handlePhotoUpload(index, event)}
-                                            style={{ display: 'none' }}
-                                        />
-                                        <div
-                                            className={`${styles.photoIcon} ${index === 0 ? styles.firstPhotoIcon : ''}`}
-                                            onClick={() => document.getElementById(`file-upload-${index}`).click()}
-                                        >
-                                            {photo ? <img src={photo} alt={`Uploaded Photo ${index + 1}`} /> : <PhotoIcon />}
-                                        </div>
-                                    </label>
+                                {[...Array(12)].map((_, index) => (
+                                    <div key={index}><PhotoIcon /></div>
                                 ))}
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -165,7 +189,6 @@ const GrainForm = () => {
                         <label>City *</label>
                         <input></input>
                     </div>
-
                 </div>
                 <div className={styles.bottom}>
                     <button>POST NOW</button>
@@ -176,4 +199,4 @@ const GrainForm = () => {
         </>
     )
 }
-export default GrainForm;
+export default bicycleForm;

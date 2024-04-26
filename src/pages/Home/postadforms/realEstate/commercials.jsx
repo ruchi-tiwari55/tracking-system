@@ -1,4 +1,4 @@
-import styles from './saleH&A.module.css'
+import styles from './buy.module.css'
 import PhotoIcon from '@mui/icons-material/AddAPhotoOutlined';
 import { useState } from 'react';
 import Select from 'react-select'
@@ -30,7 +30,7 @@ const HousesAppartments = () => {
                 <div className={styles.top}>
                     <h3>SELECTED CATEGORY</h3>
                     <div className={styles.top1}>
-                        <p>Real Estate / For sale: Houses & Appartments</p>
+                        <p>Real Estate / Commercials</p>
                         <h4>Change</h4>
                     </div>
                 </div>

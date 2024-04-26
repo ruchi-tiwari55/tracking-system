@@ -1,26 +1,40 @@
-import styles from './mobile.module.css';
+import styles from './grainForm.module.css';
 import '../../../../styles/globals.css';
 import PhotoIcon from '@mui/icons-material/AddAPhotoOutlined';
 import React, { useState } from 'react';
 import Select from 'react-select';
 
 const options = [
-    { value: 'Apple', label: 'Apple' },
-    { value: 'Asus', label: 'Asus' },
-    { value: 'Google', label: 'Google' },
-    { value: 'Honor', label: 'Honor' },
-    { value: 'karbonn', label: 'karbonn' },
-    { value: 'Lava', label: 'Lava' },
-    { value: 'LG', label: 'LG' },
-    { value: 'Motorola', label: 'Motorola' },
-    { value: 'Nokia', label: 'Nokia' },
-    { value: 'One Plus', label: 'One Plus' },
-    { value: 'Oppo', label: 'Oppo' },
-    { value: 'Realme', label: 'Realme' },
-    { value: 'Samsung', label: 'Samsung' },
-    { value: 'Vivo', label: 'Kajuli' },
-    { value: 'Xiaomi', label: 'Xiaomi' },
-    { value: 'Xolo', label: 'Xolo' },
+    { value: 'Bajra', label: 'Bajra' },
+    { value: 'Basmati Rice', label: 'Basmati Rice' },
+    { value: 'Brown Rice', label: 'Brown Rice' },
+    { value: 'Chana', label: 'Chana' },
+    { value: 'Chana Daal', label: 'Chana Daal' },
+    { value: 'Chawli Daal', label: 'Chawli Daal' },
+    { value: 'Gehu', label: 'Gehu' },
+    { value: 'Grain Rice', label: 'Grain Rice' },
+    { value: 'Hare Mung Daal', label: 'Hare Mung Daal' },
+    { value: 'Hari Matar', label: 'Hari Matar' },
+    { value: 'Jasmine Rice', label: 'Jasmine Rice' },
+    { value: 'Jaw', label: 'Jaw' },
+    { value: 'Jowar', label: 'Jowar' },
+    { value: 'Kala Chana', label: 'Kala Chana' },
+    { value: 'Lobia', label: 'Lobia' },
+    { value: 'Makai', label: 'Makai' },
+    { value: 'Masoor Daal', label: 'Masoor Daal' },
+    { value: 'Moth Daal', label: 'Moth Daal' },
+    { value: 'Mung Daal', label: 'Mung Daal' },
+    { value: 'Pulses', label: 'Pulses' },
+    { value: 'Ragi', label: 'Ragi' },
+    { value: 'Rice', label: 'Rice' },
+    { value: 'Safed Chana', label: 'Safed Chana' },
+    { value: 'Safed Matar', label: 'Safed Matar' },
+    { value: 'Sarso', label: 'Sarso' },
+    { value: 'Soyabean', label: 'Soyabean' },
+    { value: 'Sugarcane', label: 'Sugarcane' },
+    { value: 'Toor Daal', label: 'Toor Daal' },
+    { value: 'Urad Daal', label: 'Urad Daal' },
+    { value: 'White Rice', label: 'White Rice' },
     { value: 'Others', label: 'Others' }
 ];
 
@@ -33,6 +47,7 @@ const GrainForm = () => {
         newPhotos[index] = URL.createObjectURL(file);
         setPhotos(newPhotos);
     };
+
     const [selectedOption, setSelectedOption] = useState(null);
 
     const handleChange = (selectedOption) => {
@@ -46,7 +61,7 @@ const GrainForm = () => {
                 <div className={styles.top}>
                     <h3>SELECTED CATEGORY</h3>
                     <div className={styles.top1}>
-                        <p>Mobiles / Mobile Phones</p>
+                        <p>Direct By Farm / Anaaj/Grain</p>
                         <h4>Change</h4>
                     </div>
                 </div>
@@ -94,7 +109,7 @@ const GrainForm = () => {
                     <div>
                         <h3>UPLOAD UPTO 12 PHOTOS</h3>
                         <div>
-                            <p>Add Photo</p>
+                        <p>Add Photo</p>
                             <div className={styles.photos1}>
                                 {photos.map((photo, index) => (
                                     <label key={index}>
@@ -113,7 +128,7 @@ const GrainForm = () => {
                                     </label>
                                 ))}
                             </div>
-
+                            
                         </div>
                     </div>
                 </div>
@@ -167,6 +182,27 @@ const GrainForm = () => {
                     </div>
 
                 </div>
+                {/* <div className={styles.review}>
+                    <div>
+                        <h3>REVIEW YOUR DETAILS</h3>
+                        <div className={styles.review1}>
+                            <div className={styles.review_image}></div>
+                            <div className={styles.review1_1}>
+                                <label>Name</label>
+                                <input></input>
+                                <p>0/30</p>
+                            </div>
+                        </div>
+                        <div className={styles.review2}>
+                            <h4>Let's verify your account</h4>
+                            <p>We will send you a confirmation code by sms on the next step.</p>
+                        </div>
+                        <div className={styles.review3}>
+                            <label>Mobile Phone Number *</label>
+                            <input></input>
+                        </div>
+                    </div>
+                </div> */}
                 <div className={styles.bottom}>
                     <button>POST NOW</button>
                 </div>

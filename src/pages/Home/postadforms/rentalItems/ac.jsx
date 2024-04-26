@@ -13,7 +13,7 @@ const ArtificialJewellery = () => {
                 <div className={styles.top}>
                     <h3>SELECTED CATEGORY</h3>
                     <div className={styles.top1}>
-                        <p>Direct By Farm / AC</p>
+                        <p>Rental Items / AC</p>
                         <h4>Change</h4>
                     </div>
                 </div>
