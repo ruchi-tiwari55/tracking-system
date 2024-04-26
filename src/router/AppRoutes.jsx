@@ -9,9 +9,9 @@ import Investor from "../pages/main/Investor";
 import Business from "../pages/main/Business";
 import Help from "../pages/main/Help";
 import PrivacyPolicy from "../pages/main/PrivacyPolicy";
-import Postad from "../pages/Home/Postad"
+import Postad from "../pages/Home/Postad";
 import Grain from "../pages/Home/postadforms/Grain";
-import SoftwareTechnology from "../pages/main/SoftwareTechnology"
+import SoftwareTechnology from "../pages/main/SoftwareTechnology";
 
 import PageLayout from "../components/home/PageLayout";
 import Home from "../pages/Home/Home";
@@ -21,6 +21,7 @@ import MarketPlace from "../pages/Home/MarketPlace/MarketPlace";
 import MarketSubcategory from "../components/home/MarketSubcategory/MarketSubcategory";
 import MarketLayout from "../components/home/MarketSidebar/MarketLayout";
 import MarketSidebar from "../components/home/MarketSidebar/MarketSidebar";
+import MarketplacePage from "../pages/MarketplacePage/MarketplacePage";
 
 // import Payment from "../components/common/payment/PaymentForm"
 
@@ -34,9 +35,10 @@ const AppRoutes = () => {
           <Route path="user-page" element={<Profile />} />
           <Route path="market-Place" element={<MarketPlace />} />
           <Route exact path="market-Place" element={<MarketLayout />}>
-          <Route path="marketSidebar" element={<MarketSidebar />} />
-          <Route path="marketsubcategory" element={<MarketSubcategory />} />
+            <Route path="marketSidebar" element={<MarketSidebar />} />
+            <Route path="marketsubcategory" element={<MarketSubcategory />} />
           </Route>
+          <Route path="marketplacePage" element={<MarketplacePage />} />
           <Route path="my-ads-response" element={<Response />} />
           {/* <Route path="marketsubcategory" element={<MarketSubcategory />} /> */}
         </Route>
@@ -54,7 +56,6 @@ const AppRoutes = () => {
         {/* <Route path="payment" element={<Payment />} /> */}
       </Routes>
     </Router>
-
   );
 };
 
