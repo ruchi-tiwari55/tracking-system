@@ -16,6 +16,11 @@ import Home from "../pages/Home/Home";
 import Profile from "../pages/Home/Profile";
 import Response from "../pages/Home/Response";
 import MarketPlace from "../pages/Home/MarketPlace/MarketPlace";
+<<<<<<< HEAD
+import MarketSubcategory from "../components/home/MarketSubcategory/MarketSubcategory";
+import MarketLayout from "../components/home/MarketSidebar/MarketLayout";
+import MarketSidebar from "../components/home/MarketSidebar/MarketSidebar";
+=======
 import Postad from "../pages/Home/Postad"
 
 import Grain from "../pages/Home/postadforms/directByFarm/Grain";
@@ -47,6 +52,7 @@ import HouseAndAppartments from "../pages/Home/postadforms/realEstate/saleH&A"
 
 
 import Bicycles from "../pages/Home/postadforms/vehicles/bicycleform"
+>>>>>>> b56c7e646df87db36fb632894409de285ecec234
 
 // import Payment from "../components/common/payment/PaymentForm"
 
@@ -59,7 +65,12 @@ const AppRoutes = () => {
           <Route path="dashboard" element={<Home />} />
           <Route path="user-page" element={<Profile />} />
           <Route path="market-Place" element={<MarketPlace />} />
+          <Route exact path="market-Place" element={<MarketLayout />}>
+          <Route path="marketSidebar" element={<MarketSidebar />} />
+          <Route path="marketsubcategory" element={<MarketSubcategory />} />
+          </Route>
           <Route path="my-ads-response" element={<Response />} />
+          {/* <Route path="marketsubcategory" element={<MarketSubcategory />} /> */}
         </Route>
 
         <Route path="about" element={<About />} />
