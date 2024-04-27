@@ -1,58 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './navbar.css'; // Import the CSS file
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+    const [showDropdown, setShowDropdown] = useState(false);
+
+    const toggleDropdown = () => {
+        setShowDropdown(!showDropdown);
+    };
     return (
         <div className="navbar">
             <div className="logo">
-                <a href="/dashboard">
+                <Link to="/dashboard">
                     <img src="https://lzycrazy.com/assets/logo.86bdc6c8.png" alt="image" />
-                </a>
+                </Link>
             </div>
             <div className="nav-links">
                 <div>
-                    <a href="/dashboard">
-                        <i className="fas fa-home"></i>
+                    <Link to="/dashboard">
+                        <i className="fa fa-home fa-2x"></i>
                         Home
-                    </a>
+                    </Link>
                 </div>
                 <div>
-                    <a href="/market-Place">
-                        <i className="fas fa-store"></i>
+                    <Link to="/market-Place">
+                        <i className="fas fa-store fa-2x"></i>
                         Market Place
-                    </a>
+                    </Link>
                 </div>
                 <div>
-                    <a href="/my-ads">
-                        <i className="fab fa-buysellads"></i>
+                    <Link to="/my-ads">
+                        <i className="fab fa-buysellads fa-2x"></i>
                         Post Ads
-                    </a>
+                    </Link>
                 </div>
             </div>
             <div className="right-menu">
                 <div>
-                    <a href="/my-ads-response">
-                        <span className="dot-count bg-warning"></span>
-                        <i className="bx bxs-message-dots"></i>
+                    <Link to="/my-ads-response">
+                        <i className="fas fa-comments fa-2x"></i>
                         Response
-                    </a>
+                    </Link>
                 </div>
                 <div className="dropdown-menu-icon">
-                    <a href="/home#">
-                        <i className="bx bxs-cog header-icon"></i>
-                        Setting
-                    </a>
-                    <div className="dropdown-menu-settings switchcolor-wrap">
-                        <div>
-                            <h4>Arvind Bhandari</h4>
-                            <div>
-                                <a href="/userpage">Profile</a>
-                            </div>
-                            <div>
-                                <a href="#">Logout</a>
+                    <Link onClick={toggleDropdown} style={{ cursor: "pointer" }}>
+                        <i className="fas fa-cog fa-2x"></i>
+                        Settings
+                    </Link>
+                    {showDropdown && (
+                        <div className="dropdown-menu-settings ">
+                            <h3>Arvind Bhandari</h3>
+                            <div className="dropdown-bottom">
+                                <div>
+                                    <Link to="/user-page">Profile</Link>
+                                </div>
+                                <div>
+                                    <Link to="/">Logout</Link>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    )}
                 </div>
             </div>
         </div>

@@ -6,17 +6,13 @@ import { Outlet } from 'react-router-dom';
 
 const PageLayout = () => {
     return (
-        <div>
+        <div style={{ backgroundColor: "rgba(239, 238, 238, 0.71)", width: "100%", height: "100vh" }}>
             <div>
                 <Navbar />
             </div>
-            <div style={{display:"flex"}}>
-                <div style={{ width: "max-content" }}>
-                    <Sidebar />
-                </div>
-                <div style={{marginTop:"1%", marginLeft: "1%" }}>
-                    <Outlet />
-                </div>
+            <div style={{ display: "flex" }}>
+                <Sidebar />
+                <Outlet />
             </div>
 
         </div>

@@ -57,7 +57,7 @@ import Scooters from "../pages/Home/postadforms/vehicles/scooters"
 import Spareparts from "../pages/Home/postadforms/vehicles/spareparts"
 import Cars from "../pages/Home/postadforms/vehicles/cars"
 
-import AirConditionerE from "../pages/Home/postadforms/electronics/ac" 
+import AirConditionerE from "../pages/Home/postadforms/electronics/ac"
 import CameraLenses from "../pages/Home/postadforms/electronics/camera&lenses"
 import ComputerLaptopE from "../pages/Home/postadforms/electronics/computerLaptop"
 import FridgeE from "../pages/Home/postadforms/electronics/fridge"
@@ -81,7 +81,7 @@ const AppRoutes = () => {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<Login />} />
+        <Route index exact path="/" element={<Login />} />
         <Route exact path="/" element={<PageLayout />}>
           <Route path="dashboard" element={<Home />} />
           <Route path="user-page" element={<Profile />} />
@@ -141,7 +141,7 @@ const AppRoutes = () => {
         <Route path="kids" element={<Kids />} />
         <Route path="men" element={<Men />} />
         <Route path="women" element={<Women />} />
-        
+
 
         <Route path="beds" element={<Beds />} />
         <Route path="chairs" element={<Chairs />} />
