@@ -33,7 +33,7 @@ const Sidebar = ({ onCategoryClick }) => {
         <div className="nav-wrap bg-transparent-card">
           <ul className="sidebar-list">
             <li>
-              <Link to="#" onClick={(e) => handleCategoryClick(e, 'Vegetables')} className="nav-content-bttn">
+              <Link to="/marketplacePage" >
                 <div className="icon-wrapper">
                   <i className="fa fa-carrot"></i> 
                 </div>
