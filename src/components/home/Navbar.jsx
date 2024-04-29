@@ -9,6 +9,7 @@ const Navbar = () => {
                 </a>
                 <button className="nav-menu me-0 ms-2"></button>
             </div>
+            
             <div className="dc main-menu d-flex" style={{ gap: "25px" }}>
                 <div className="header-menu">
                     <a href="/dashboard" className="p-2 text-center menu-icon center-menu-icon">
