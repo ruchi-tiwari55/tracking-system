@@ -1,0 +1,93 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 5px 20px;
+  box-shadow: 0 2px 10px 0 rgba(25, 25, 25, 0.2);
+}
+
+.logo img {
+  width: 8rem;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.nav-links i,
+.right-menu i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 5px;
+}
+
+.nav-links a,
+.right-menu a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.nav-links i:hover,
+.right-menu i:hover {
+  background-color: black;
+  color: white;
+}
+
+.right-menu {
+  display: flex;
+  gap: 15px;
+}
+
+.right-menu .dropdown-menu-settings {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  padding: 10px 0;
+}
+
+.dropdown-menu-settings {
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  border-bottom-left-radius: 5px;
+  box-shadow: 0 2px 10px 0 rgba(25, 25, 25, 0.2)
+}
+
+.dropdown-menu-settings h3 {
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.dropdown-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-bottom div {
+  border-radius: 10px;
+  padding: 0.5rem 4rem;
+  width: 5rem;
+}
+
+.dropdown-bottom a {
+  font-size: 1.2rem;
+}
+
+.dropdown-bottom div:hover {
+  background-color: rgba(239, 238, 238, 0.71);
+  text-decoration: underline;
+}
