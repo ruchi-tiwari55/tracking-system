@@ -1,0 +1,40 @@
+.outer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    width: 100%;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.top img {
+    width: 70vw;
+    border: 8px solid white;
+    border-radius: 10px;
+}
+
+.link {
+    display: flex;
+    gap: 10rem;
+    width: 70vw;
+    border: 2px dashed grey;
+    padding: 2rem;
+}
+
+.link span {
+    color: rgb(29, 147, 29);
+}
+
+.link i {
+    cursor: pointer;
+    margin-right: 1rem;
+    font-size: 2rem;
+}
+
