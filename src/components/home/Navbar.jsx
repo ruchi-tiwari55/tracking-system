@@ -1,65 +1,67 @@
-import React, { useState } from 'react';
-import './navbar.css'; // Import the CSS file
-import { Link } from 'react-router-dom';
+import React from 'react';
 
 const Navbar = () => {
-    const [showDropdown, setShowDropdown] = useState(false);
-
-    const toggleDropdown = () => {
-        setShowDropdown(!showDropdown);
-    };
     return (
-        <div className="navbar">
-            <div className="logo">
-                <Link to="/dashboard">
-                    <img src="https://lzycrazy.com/assets/logo.86bdc6c8.png" alt="image" />
-                </Link>
+        <div className="d-flex justify-content-between border border-danger nav-header shadow-xs border-0">
+            <div className="nav-top">
+                <a href="/dashboard" className="">
+                    <img src="https://lzycrazy.com/assets/logo.86bdc6c8.png" className="d-lg-block" alt="image" style={{ width: "100px" }} />
+                </a>
+                <button className="nav-menu me-0 ms-2"></button>
             </div>
-            <div className="nav-links">
-                <div>
-                    <Link to="/dashboard">
-                        <i className="fa fa-home fa-2x"></i>
-                        Home
-                    </Link>
+            
+            <div className="dc main-menu d-flex" style={{ gap: "25px" }}>
+                <div className="header-menu">
+                    <a href="/dashboard" className="p-2 text-center menu-icon center-menu-icon">
+                        <i className="fas fa-home" style={{ color: "rgb(0, 0, 0)" }}></i>
+                    </a>
+                        <a href="/dashboard" className="main-menu primary-color">Home</a>
                 </div>
-                <div>
-                    <Link to="/market-Place">
-                        <i className="fas fa-store fa-2x"></i>
-                        Market Place
-                    </Link>
+                <div className="header-menu">
+                    <a href="/market-Place/marketSidebar" className="p-2 text-center menu-icon center-menu-icon">
+                        <i className="fas fa-store" style={{ color: "rgb(0, 0, 0)" }}></i>
+                    </a>
+                    <a href="/market-Place/marketSidebar" className="main-menu primary-color">Market Place</a>
                 </div>
-                <div>
-                    <Link to="/my-ads">
-                        <i className="fab fa-buysellads fa-2x"></i>
-                        Post Ads
-                    </Link>
+                <div className="header-menu">
+                    <a href="/my-ads" className="p-2 text-center menu-icon center-menu-icon">
+                        <i className="fab fa-buysellads" style={{ color: "rgb(0, 0, 0)" }}></i>
+                    </a>
+                    <a href="/my-ads" className="main-menu primary-color">Post Ads</a>
                 </div>
             </div>
-            <div className="right-menu">
-                <div>
-                    <Link to="/my-ads-response">
-                        <i className="fas fa-comments fa-2x"></i>
-                        Response
-                    </Link>
+            <div className="dc justify-content-md-between main-menu d-flex" style={{ gap: "15px" }}>
+                <div className="header-menu">
+                    <a href="/my-ads-response" className="router-link-active router-link-exact-active p-2 text-center menu-icon center-menu-icon">
+                        <span className="dot-count bg-warning"></span>
+                        <i className="bx bxs-message-dots"></i>
+                    </a>
+                    <a href="/my-ads-response" className="main-menu primary-color">Response</a>
                 </div>
-                <div className="dropdown-menu-icon">
-                    <Link onClick={toggleDropdown} style={{ cursor: "pointer" }}>
-                        <i className="fas fa-cog fa-2x"></i>
-                        Settings
-                    </Link>
-                    {showDropdown && (
-                        <div className="dropdown-menu-settings ">
-                            <h3>Arvind Bhandari</h3>
-                            <div className="dropdown-bottom">
-                                <div>
-                                    <Link to="/user-page">Profile</Link>
-                                </div>
-                                <div>
-                                    <Link to="/">Logout</Link>
-                                </div>
+                <div className="header-menu dropdown-menu-icon">
+                    <a aria-current="page" href="/home#" className="router-link-active router-link-exact-active router-link-active router-link-exact-active p-2 text-center menu-icon center-menu-icon">
+                        <i className="bx bxs-cog header-icon"></i>
+                    </a>
+                    <a aria-current="page" href="/home#" className="router-link-active router-link-exact-active main-menu primary-color">Setting</a>
+                    <div className="dropdown-menu-settings switchcolor-wrap">
+                        <div>
+                            <h4 className="fw-700 font-sm mb-1 px-3 shadow-messaage-box py-1">Arvind Bhandari</h4>
+                            <div className="bg-transparent-card border-0 d-block mt-1 border-top pt-1 px-3">
+                                <a href="#" className="d-flex align-items-center shadow-messaage-box p-1 px-2">
+                                    <i className="text-white bx bx-log-out font-xs me-3 py-1"></i>
+                                    <h4 className="fw-600 font-xsss mb-0 mt-0">
+                                        <a href="/userpage" className="main-menu primary-color">Profile</a>
+                                    </h4>
+                                </a>
+                            </div>
+                            <div className="bg-transparent-card border-0 d-block mt-1 border-top pt-1 px-3">
+                                <a href="#" className="d-flex align-items-center shadow-messaage-box p-1 px-2">
+                                    <i className="text-white bx bx-log-out font-xs me-3 py-1"></i>
+                                    <h4 className="fw-600 font-xsss mb-0 mt-0">Logout</h4>
+                                </a>
                             </div>
                         </div>
-                    )}
+                    </div>
                 </div>
             </div>
         </div>
