@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './sidebar.css'
+import styles from './sidebar.module.css'
 
 const Sidebar = () => {
     return (
-            <div className='side-outer'>
+        <div className={styles.side_outer}>
                 <div>
                     <Link to="/user-page">
                         <img src='assets/images/response.png' alt="user"/>

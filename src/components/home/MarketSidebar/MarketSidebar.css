@@ -1,122 +1,39 @@
-
-.single-box {
-    background: hwb(0 96% 4%); 
-    padding: 10px;       
-    border-radius: 5px;   
-    display: block;       
+.side-outer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  width: max-content;
 }
 
-.single-box ul {
-    margin: 0;
-    padding: 0;
+.side-outer div {
+  width: 15rem;
+  border-radius: 5px;
+  padding: 0.2rem 1rem;
+  box-shadow: 1px 2px 6px 0 rgba(25, 25, 25, 0.2)
 }
 
-.single-box li {
-    /* padding: 5px 0;      
-    border-bottom: none;  */
+.side-outer a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: #000;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
-.sidebar-list h5 {
-  text-align: center;
-  font-weight: bold;
-  padding-top: 10px;
+.side-outer div:hover {
+  background-color: white;
 }
 
-
-
-/* Responsive */
-
-.navigation {
-    position: fixed;
-    top: 0;
-    left: 0; /* Stick to the left */
-    height: 100%;
-    background-color: #f5f5f5;
-    transition: width 0.3s; /* Smooth transition when collapsing */
-    overflow-y: auto; /* Allow vertical scrolling */
-  }
-  
-  .navigation.collapsed {
-    width: 60px; 
-  }
-  
-  .nav-toggle {
-    padding: 10px;
-    cursor: pointer; /* Pointer cursor to indicate clickability */
-    display: none; /* Hide by default */
-  }
-  
-  .nav-content {
-    padding: 10px;
-    transition: opacity 0.3s; /* Smooth transition for opacity */
-  }
-  
-  .sidebar-list {
-    list-style-type: none; /* No bullet points */
-    padding: 0;
-    margin: 0;
-  }
-  
-  .nav-content-bttn {
-    display: flex; 
-    align-items: center;
-    text-decoration: none;
-  }
-  
-  .nav-content-bttn:hover {
-    color: #007bff; /* Change color on hover */
-  }
-  
-  @media (max-width: 768px) {
-    .navigation {
-      width: 60px; /* Collapsed width for smaller screens */
-    }
-  
-    .nav-toggle {
-      display: block; /* Show toggle button in mobile view */
-    }
-  
-    .navigation.collapsed .nav-content {
-      opacity: 1; /* Make content visible when sidebar is expanded */
-    }
-  
-    .nav-content {
-      opacity: 0; /* Collapse content */
-    }
-  
-    .nav-content-bttn {
-      font-size: 14px; /* Adjust font size for smaller screens */
-    }
-  }
-  
-
-  .nav-content-bttn {
-    display: flex;
-    align-items: center; 
-    padding: 10px;
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .icon-wrapper {
-    margin-right: 10px; 
-  }
-  
-  .nav-content-bttn span {
-    font-size: 1em;
-  }
-  
-  .nav-content-bttn:hover {
-    background-color: #f0f0f0;
-  }
-  
-  @media (max-width: 600px) { 
-    .nav-text {
-      display: none; /* Hide text */
-    }
+@media (max-width: 768px) {
+  .side-outer span {
+    display: none;
   }
 
-
-  /* SUBCATEGORY */
-
-  
+  .side-outer div{
+    width: max-content;
+  }
+}

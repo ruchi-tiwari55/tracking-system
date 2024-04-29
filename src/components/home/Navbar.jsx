@@ -1,13 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './navbar.css';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [showDropdown, setShowDropdown] = useState(false);
+    const dropdownRef = useRef(null);
 
     const toggleDropdown = () => {
         setShowDropdown(!showDropdown);
     };
+
+    const handleClickOutside = (event) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            setShowDropdown(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
     return (
         <div className="navbar">
             <div className="logo">
@@ -42,13 +57,13 @@ const Navbar = () => {
                         Response
                     </Link>
                 </div>
-                <div className="dropdown-menu-icon">
+                <div className="dropdown-menu-icon" ref={dropdownRef}>
                     <Link onClick={toggleDropdown} style={{ cursor: "pointer" }}>
                         <i className="fas fa-cog fa-2x"></i>
                         Settings
                     </Link>
                     {showDropdown && (
-                        <div className="dropdown-menu-settings ">
+                        <div className="dropdown-menu-settings">
                             <h3>Arvind Bhandari</h3>
                             <div className="dropdown-bottom">
                                 <div>

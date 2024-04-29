@@ -9,14 +9,21 @@ import Investor from "../pages/main/Investor";
 import Business from "../pages/main/Business";
 import Help from "../pages/main/Help";
 import PrivacyPolicy from "../pages/main/PrivacyPolicy";
-import SoftwareTechnology from "../pages/main/SoftwareTechnology"
+import Postad from "../pages/Home/Postad";
+// import Grain from "../pages/Home/postadforms/Grain";
+import SoftwareTechnology from "../pages/main/SoftwareTechnology";
 
 import PageLayout from "../components/home/PageLayout";
 import Home from "../pages/Home/Home";
 import Profile from "../pages/Home/Profile";
 import Response from "../pages/Home/Response";
 import MarketPlace from "../pages/Home/MarketPlace/MarketPlace";
-import Postad from "../pages/Home/Postad"
+// import MarketSubcategory from "../components/home/MarketSubcategory/MarketSubcategory";
+// import MarketLayout from "../components/home/MarketSidebar/MarketLayout";
+// import MarketSidebar from "../components/home/MarketSidebar/MarketSidebar";
+import MarketplacePage from "../pages/MarketplacePage/MarketplacePage";
+
+// import Payment from "../components/common/payment/PaymentForm"
 
 import AnaajGrain from "../pages/Home/postadforms/directByFarm/anaajGrain";
 import Eggs from "../pages/Home/postadforms/directByFarm/eggs";
@@ -74,9 +81,6 @@ import OfficeFurniture from "../pages/Home/postadforms/furniture/officeFurniture
 import Sofa from "../pages/Home/postadforms/furniture/sofa"
 import Wardrobes from "../pages/Home/postadforms/furniture/wardrobes"
 
-
-// import Payment from "../components/common/payment/PaymentForm"
-
 const AppRoutes = () => {
   return (
     <Router>
@@ -86,17 +90,20 @@ const AppRoutes = () => {
           <Route path="dashboard" element={<Home />} />
           <Route path="user-page" element={<Profile />} />
           <Route path="market-Place" element={<MarketPlace />} />
+          <Route path="marketplacePage" element={<MarketplacePage />} />
           <Route path="my-ads-response" element={<Response />} />
         </Route>
 
         <Route path="about" element={<About />} />
         <Route path="advertising" element={<Advertising />} />
         <Route path="business-profile" element={<Business />} />
-        <Route path="software-technology" element={<SoftwareTechnology />} />
         <Route path="investors" element={<Investor />} />
         <Route path="hiring" element={<Hiring />} />
         <Route path="privacy-policy" element={<PrivacyPolicy />} />
         <Route path="help-center" element={<Help />} />
+        <Route path="software-technology" element={<SoftwareTechnology />} />
+        {/* <Route path="payment" element={<Payment />} /> */}
+
 
         <Route path="my-ads" element={<Postad />} />
 
@@ -157,12 +164,8 @@ const AppRoutes = () => {
         <Route path="spareparts" element={<Spareparts />} />
         <Route path="cars" element={<Cars />} />
 
-
-
-        {/* <Route path="payment" element={<Payment />} /> */}
       </Routes>
     </Router>
-
   );
 };
 

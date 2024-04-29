@@ -1,4 +1,4 @@
-.side-outer {
+.side_outer {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -6,14 +6,14 @@
     width: max-content;
 }
 
-.side-outer div {
+.side_outer div {
     width: 15rem;
     border-radius: 5px;
     padding: 0.2rem 1rem;
     box-shadow: 1px 2px 6px 0 rgba(25, 25, 25, 0.2)
 }
 
-.side-outer a {
+.side_outer a {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -23,6 +23,6 @@
     font-size: 1rem;
     font-weight: 500;
 }
-.side-outer div:hover {
+.side_outer div:hover {
     background-color: white;
 }
