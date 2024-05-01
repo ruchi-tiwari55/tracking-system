@@ -2,11 +2,11 @@ import React from 'react';
 
 function Response() {
   return (
-    <div className="middle-sidebar-bottom" data-v-5bbe97d7="">
-      <div className="middle-sidebar-left pe-0 pt-lg-4" data-v-5bbe97d7="">
-        <div className="row" data-v-5bbe97d7="">
-          <div className="col-lg-12 mb-3" data-v-5bbe97d7="">
-            <div className="table-content table-responsive bg-white p-2 rounded-3" data-v-5bbe97d7="">
+    <div className="middle-sidebar-bottom" data-v-5bbe97d7="" style={{ width: '75vw' }}>
+      <div className="middle-sidebar-left pe-0 pt-lg-4" data-v-5bbe97d7="" style={{ height: '100%', width: '100%' }}> 
+        <div className="row" data-v-5bbe97d7="" style={{ height: '100%', width: '100%' }}>
+          <div className="col-lg-12 mb-3" data-v-5bbe97d7="" style={{ height: '100%', width: '100%' }}>
+            <div className="table-content table-responsive bg-white p-2 rounded-3" data-v-5bbe97d7="" style={{ height: '100%', width: '100%' }}> 
               <table className="table text-center" data-v-5bbe97d7="">
                 <thead className="bg-greyblue rounded-3" data-v-5bbe97d7="">
                   <tr data-v-5bbe97d7="">
