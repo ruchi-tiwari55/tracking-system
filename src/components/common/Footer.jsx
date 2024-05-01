@@ -5,7 +5,7 @@ import styles from '../../styles/outerPages/login.module.css'
 
 const Footer = () => {
   return (
-    <div className='vh-10'>
+    <div className='vh-9'>
       <div className={styles.ftop}>India</div>
       <div className={styles.fdown}>
         <div className={styles.fleft}>

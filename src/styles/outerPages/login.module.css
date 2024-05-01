@@ -2,6 +2,7 @@
     height: 88vh;
     background-color: #f0f2f5;
     display: flex;
+    padding: 20px;
 }
 
 .app {
@@ -43,7 +44,7 @@
     padding: 1rem 3rem;
     color: black;
     border-radius: 5rem;
-    width: 40rem;
+    width: 100%;
     font-size: 1rem;
     background-color: white;
     border: 1px solid #ddd;
@@ -238,7 +239,7 @@
     }
 
     .right {
-        width: 50%;
+        width: 70%;
     }
 
     .left_search input {
@@ -246,7 +247,7 @@
     }
 
     .login_form {
-        width: 25rem;
+        /* width: 50rem; */
     }
 
     .login_btn {
@@ -306,4 +307,120 @@
     .login_btn {
         padding: 0.6rem 7rem;
     }
+
+
+}
+
+
+
+
+
+
+
+/* NEW MEDIA QUERY FOR MOBILE DEVICES */
+@media (max-width: 768px) {
+ .container {
+    flex-direction: column;
+    margin: 0;
+    padding: 0,0,0,0;
+    align-items: center;
+    gap: 10px;
+    
+    overflow: hidden;
+  }
+ .left {
+    width: 100%; 
+    margin-left: 0; 
+  }
+ .right {
+    width: 100%; /* take full width on mobile */
+    margin-top: 5px; /* remove margin on mobile */
+  }
+ .left_search {
+    flex-direction: row;
+    width: 100%;
+    align-content: safe;
+  }
+ .left_search input {
+    /* width: 100%;  */
+  }
+ .search_icon,.mic_icon {
+    position: static; 
+  }
+ .banner_img {
+    height: auto; 
+    width: 20rem;
+  }
+  .login_btn {
+    background-color: #1877f2;
+    padding: 20px;
+    padding: 1rem;
+    width: 12rem;
+}
+ .login_form {
+    width: 90%; 
+    padding: 1rem; 
+  }
+ .login_form input {
+    font-size: 0.8rem; 
+  }
+ .login_form button {
+    font-size: 0.8rem; 
+  }
+ .footer {
+    font-size: 0.8rem; 
+  }
+  .login_form {
+    width: 25rem;
+}
+
+
+.ftop {
+    padding: 0.5rem 2rem;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    color: rgba(66, 61, 61, 0.755);
+    display: flex;
+}
+
+.fdown {
+    padding: 0.1rem 2rem;
+    margin: auto;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+/* .fleft, */
+.fright {
+    display: flex;
+}
+
+/* .fleft>*, */
+.fright>* {
+    text-decoration: none;
+}
+
+.fdown Link {
+    text-decoration: none;
+}
+
+.fleft p {
+    color: black;
+    /* font-weight: 700; */
+    margin: 10px 30px 0px 0px;
+    height: fit-content;
+}
+
+.fright p {
+    color: black;
+    /* font-weight: 700; */
+    margin: 10px 0px 0px 30px;
+    height: fit-content;
+}
+
+.fdown p:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+    cursor: pointer;
+}
 }
