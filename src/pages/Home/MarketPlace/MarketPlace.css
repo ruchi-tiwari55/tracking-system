@@ -6,41 +6,33 @@
 
 .row {
   display: flex;
-  justify-content: space-between; /* Distributes columns evenly */
+  justify-content: space-between; 
 }
 
 .col {
-  /* Ensures columns take equal space within the row */
-  flex: 1; /* Each column takes equal space */
-  margin: 0; /* Removes extra margin */
-  padding: 0; /* Removes extra padding */
+  flex: 1; 
+  margin: 0;  
+  padding: 0; 
 }
 
 .video-wrapper {
-  /* Maintains aspect ratio for videos */
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  padding-bottom: 56.25%;  
   height: 0;
 }
 
  .video-size {
-  /* Ensures video fills the wrapper */
-  /* position: absolute;
-  top: 0;
-  left: 0; */
   width: 90%;
-  /* height: 100%; */
 }
 
 @media (max-width: 768px) {
-  /* Adjusts layout for smaller screens */
   .row {
-    flex-direction: column; /* Stacks elements vertically */
+    flex-direction: column; 
   }
 
   .col {
-    flex: none; /* Allows individual control over column size */
-    max-width: 100%; /* Ensures full-width on smaller screens */
+    flex: none; 
+    max-width: 100%; 
   }
 }
 

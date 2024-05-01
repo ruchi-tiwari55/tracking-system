@@ -31,11 +31,23 @@ function About() {
           </div>
         </div>
       </section>
-      <div>
-        <video autoPlay loop muted playsInline={true}>
+      <div class="container-fluid"> 
+  <div class="row"> 
+    <div class="col-12"> 
+      <div class="ratio ratio-16x9"> 
+        <video autoPlay loop muted playsInline>
           <source src="/assets/about/info_video1.mp4" type="video/mp4" />
         </video>
       </div>
+    </div>
+  </div>
+</div>
+
+      {/* <div>
+        <video autoPlay loop muted playsInline={true}>
+          <source src="/assets/about/info_video1.mp4" type="video/mp4" />
+        </video>
+      </div> */}
       <section className={styles.divider}>
         <div className={styles.divider_content}>
           <h1>Your Dream, Our Desire</h1>
