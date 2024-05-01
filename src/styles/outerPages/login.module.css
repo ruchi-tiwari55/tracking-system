@@ -2,6 +2,7 @@
     height: 88vh;
     background-color: #f0f2f5;
     display: flex;
+    padding: 20px;
 }
 
 .app {
@@ -43,7 +44,7 @@
     padding: 1rem 3rem;
     color: black;
     border-radius: 5rem;
-    width: 40rem;
+    width: 100%;
     font-size: 1rem;
     background-color: white;
     border: 1px solid #ddd;
@@ -141,7 +142,7 @@
 }
 
 .login_btn {
-    background-color: #1877f2;
+    background-color: #040c4a;
     /* margin: 0.4rem 0rem 1rem; */
     padding: 0.6rem 12rem;
 }
@@ -238,7 +239,7 @@
     }
 
     .right {
-        width: 50%;
+        width: 70%;
     }
 
     .left_search input {
@@ -246,7 +247,7 @@
     }
 
     .login_form {
-        width: 25rem;
+        /* width: 50rem; */
     }
 
     .login_btn {
@@ -306,4 +307,115 @@
     .login_btn {
         padding: 0.6rem 7rem;
     }
+
+
+}
+
+
+
+
+
+
+
+/* NEW MEDIA QUERY FOR MOBILE DEVICES */
+@media (max-width: 768px) {
+ .container {
+    flex-direction: column;
+    margin: 0;
+    padding: 0,0,0,0;
+    align-items: center;
+    gap: 10px;
+    /* justify-content: center; */
+    overflow: hidden;
+  }
+ .left {
+    width: 100%; 
+    margin-left: 0; 
+  }
+ .right {
+    width: 100%; /* take full width on mobile */
+    margin-top: 5px; /* remove margin on mobile */
+  }
+ .left_search {
+    flex-direction: row;
+    width: 100%;
+    align-content: safe;
+  }
+ .left_search input {
+    /* width: 100%;  */
+  }
+ .search_icon,.mic_icon {
+    position: static; 
+  }
+ .banner_img {
+    height: auto; 
+    width: 20rem;
+  }
+  .login_btn {
+    background-color: #040c4a;
+    padding: 20px;
+    padding: 1rem;
+    width: 12rem;
+}
+ .login_form {
+    width: 90%; 
+    padding: 1rem; 
+  }
+ .login_form input {
+    font-size: 0.8rem; 
+  }
+ .login_form button {
+    font-size: 0.8rem; 
+  }
+ .footer {
+    font-size: 0.8rem; 
+  }
+  .login_form {
+    width: 25rem;
+}
+
+
+.ftop {
+    padding: 0.5rem 1rem; 
+    border-bottom: 1px solid #ddd;
+    color: rgba(66, 61, 61, 0.755);
+  }
+  
+  .fdown {
+    padding: 0,0,1px,1px; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: space-between; 
+  }
+  
+  .fleft,
+  .fright {
+    margin-top: 0; 
+    display: flex;
+  }
+  
+  .fright {
+    /* margin-top: 1rem; */
+
+  }
+  
+  .fleft p,
+  .fright p {
+    margin: 5px 0; 
+    text-align: center; 
+    font-size: 10px;
+  }
+  .fleft p {
+    margin: 5px 0; 
+    text-align: center; 
+    font-size: 10px;
+  }
+  
+  
+  .fdown p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
 }

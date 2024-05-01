@@ -1,20 +1,55 @@
-import React from 'react'
-import SearchIcon from '@mui/icons-material/Search';
-import MicIcon from '@mui/icons-material/Mic';
-import styles from '../../styles/outerPages/login.module.css'
+import React from "react";
+import { styled } from "@mui/material/styles";
+import TextField from "@mui/material/TextField";
+import IconButton from "@mui/material/IconButton";
+import SearchIcon from "@mui/icons-material/Search";
+import MicIcon from "@mui/icons-material/Mic";
 
-const Search = () => {
-    return (
-            <div className={styles.left_search}>
-                <div className={styles.search_icon}>
-                    <SearchIcon />
-                </div>
-                <input placeholder='Coming Soon...'></input>
-                <div className={styles.mic_icon}>
-                    <MicIcon />
-                </div>
-            </div>
-    )
-}
+const SearchContainer = styled("div")({
+  display: "flex",
+  alignItems: "center",
+  maxWidth: "104%",
+  margin: "0 auto", 
+  width: "80%",
+  marginBottom: 10,
+  "@media (max-width: 600px)": {
+    marginHorizontal: 0,
+    width: "100%",
+    marginBottom: 10,
+  },
+});
 
-export default Search
+const CustomTextField = styled(TextField)({
+  "& .MuiOutlinedInput-root": {
+    borderRadius: 25,
+    fontWeight:'700',
+    fontsize:18
+  },
+  
+});
+
+const SearchBar = () => {
+  return (
+    <SearchContainer>
+      <CustomTextField
+        fullWidth
+        variant="outlined"
+        placeholder="Coming Soon..."
+        InputProps={{
+          endAdornment: (
+            <>
+              <IconButton>
+                <MicIcon />
+              </IconButton>
+              <IconButton>
+                <SearchIcon />
+              </IconButton>
+            </>
+          ),
+        }}
+      />
+    </SearchContainer>
+  );
+};
+
+export default SearchBar;
