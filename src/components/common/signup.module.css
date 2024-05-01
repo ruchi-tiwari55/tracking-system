@@ -1,3 +1,5 @@
+/* signup.module.css */
+
 .modal {
   display: block;
   position: fixed;
@@ -12,16 +14,17 @@
 
 .modal_content {
   background-color: #fefefe;
-  margin: 1rem auto;
+  margin: 6% auto;
   padding: 20px;
   border: 1px solid #888;
   border-radius: 20px;
-  width: fit-content;
+  max-width: 50%;
 }
 
 .top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid grey;
   margin-bottom: 20px;
 }
@@ -50,7 +53,7 @@
   padding: 1rem;
   margin-bottom: 0.8rem;
   border-radius: 10px;
-  width: 29rem;
+  width: 100%;
   font-size: 1rem;
   border: 1px solid #ddd;
   outline: none;
@@ -62,32 +65,25 @@
   border-color: #1877f2;
 }
 
-.form input:focus::placeholder {
-  color: rgba(128, 128, 128, 0.405);
-}
-
 .form input::placeholder {
   font-size: 18px;
   color: rgba(128, 128, 128, 0.771);
 }
 
+.form_name {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 .form_name input {
-  width: 14rem;
-}
-
-.form_name input:first-child {
-  margin-right: 1rem;
-}
-
-.dob p,
-.gender_p p,
-.location p {
-  margin: 0;
+  flex: 1;
 }
 
 .dob,
-.gender_p {
-  margin-bottom: 0.5rem;
+.gender_p,
+.location {
+  margin-bottom: 1rem;
 }
 
 .dob_select {
@@ -96,14 +92,13 @@
 }
 
 .dob_select select {
+  flex: 1;
   background-color: inherit;
   outline: none;
   border: 1px solid #ddd;
   border-radius: 10px;
   font-size: 1rem;
   color: rgb(69, 67, 67);
-  width: 9rem;
-  /* margin-right: 1rem; */
   padding: 10px 5px;
 }
 
@@ -124,13 +119,6 @@
   justify-content: space-between;  
 }
 
-
-.gender input[type="radio"] {
-  color: red;
-  width: 13px;
-  height: 13px;
-}
-
 .location div {
   display: flex;
   gap: 1rem;
@@ -140,33 +128,25 @@
   font-size: 1rem;
   border: 1px solid #ddd;
   border-radius: 10px;
-  width: 9rem;
+  padding: 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
-.state select {
+.state select,
+.city input {
+  flex: 1;
   background-color: inherit;
   color: rgb(69, 67, 67);
   font-size: 1rem;
   border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 10px 5px;
-  width: 9rem;
+  padding: 10px;
   outline: none;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.city input {
-  background-color: inherit;
-  color: black;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 10px;
-  width: 9rem;
-  outline: none;
-}
 
 .bottom {
   font-size: 15px;
@@ -197,4 +177,33 @@
 .bottom span:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  /* .modal_content {
+    margin: 10% auto;
+  } */
+
+  .modal_content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 20px;
+    max-width: 90%;
+  }
+
+  .form_name {
+    flex-direction: column;
+  }
+
+  .dob_select select,
+  .state select,
+  .city input {
+    width: 100%;
+  }
+
+  .gender label {
+    width: 100%;
+  }
 }
