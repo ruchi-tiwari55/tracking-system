@@ -38,8 +38,11 @@ import banner3 from "../../assets/banner3.jpg";
 import banner4 from "../../assets/banner4.jpg";
 import banner5 from "../../assets/banner5.jpg";
 import banner from '/assets/about/banner_main.jpeg'
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 function VideoComponent() {
+  // const media= useMediaQuery()
+  const isMobile = useMediaQuery('(max-width:600px)');
   const slidersettings = {
     dots: true,
     infinite: true,
@@ -49,7 +52,7 @@ function VideoComponent() {
     slidesToScroll: 1,
   };
 
-  const enlargedHeight = '300px'; 
+  const enlargedHeight = isMobile?'200px':'300px'; 
   const enlargedWidth = '100%'; 
   
   const ImageWithFixedSize = ({ src, alt }) => (
@@ -59,17 +62,17 @@ function VideoComponent() {
       style={{
         height: enlargedHeight,
         width: enlargedWidth,
-        objectFit: 'cover',
-        borderRadius: '10px',
+        objectFit: 'scale-down',
+        borderRadius: 20,
       }}
     />
   );
   
   return (
-    <div className="container" style={{ textAlign: "center", borderRadius:"10px" }}>
+    <div className="container" style={{ textAlign: "center", borderRadius:"10px", marginBottom:10 }}>
       <div className="row justify-content-center"> 
         <div className="col-lg-8">  
-          <Slider {...slidersettings}>
+          <Slider {...slidersettings} style={{height:170}}>
             <div>
               <ImageWithFixedSize src={banner77} alt="Banner 77" />
             </div>

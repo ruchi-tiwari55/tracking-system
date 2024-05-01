@@ -7,7 +7,8 @@
 
 .app {
     height: 100%;
-    width: 100%;
+    /* width: 100%; */
+    /* gap: 30px; */
 }
 
 .footer {
@@ -23,6 +24,7 @@
     justify-content: center;
     align-items: center;
     width: 60%;
+    padding: 0,10,10,10;
 }
 
 .right {
@@ -144,7 +146,8 @@
 .login_btn {
     background-color: #040c4a;
     /* margin: 0.4rem 0rem 1rem; */
-    padding: 0.6rem 12rem;
+    /* padding: 0.6rem 12rem; */
+    align-self: center;
 }
 
 .login_btn:hover {
@@ -360,6 +363,8 @@
  .login_form {
     width: 90%; 
     padding: 1rem; 
+    height: auto;
+    z-index: 1000;
   }
  .login_form input {
     font-size: 0.8rem; 
@@ -382,7 +387,7 @@
   }
   
   .fdown {
-    padding: 0,0,1px,1px; 
+    /* padding: 0,0,1px,1px;  */
     display: flex;
     flex-direction: column; 
     align-items: center;
