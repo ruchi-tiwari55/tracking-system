@@ -22,6 +22,8 @@ const SearchContainer = styled("div")({
 const CustomTextField = styled(TextField)({
   "& .MuiOutlinedInput-root": {
     borderRadius: 25,
+    fontWeight:'700',
+    fontsize:18
   },
   
 });
@@ -32,7 +34,7 @@ const SearchBar = () => {
       <CustomTextField
         fullWidth
         variant="outlined"
-        placeholder="Search..."
+        placeholder="Coming Soon..."
         InputProps={{
           endAdornment: (
             <>
