@@ -1,7 +1,7 @@
+
 .modal {
     display: block;
     position: fixed;
-    margin: auto;
     z-index: 1000;
     top: 0;
     left: 0;
@@ -11,13 +11,15 @@
     overflow: auto;
 }
 
+
 .modal_content {
     background-color: #fdfdfd;
-    margin: 6% auto;
+    margin: 10% auto; 
     padding: 20px;
     border: 1px solid #888;
     border-radius: 20px;
-    width: 50rem;
+    width: 90%; 
+    max-width: 400px;
 }
 
 .top {
@@ -25,54 +27,95 @@
     flex-direction: row;
     justify-content: space-between;
     border-bottom: 1px solid grey;
-    margin-bottom: 2rem;
-    /* margin: auto; */
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
 }
 
+
 .top h4 {
-    /* height: 10px; */
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 600;
 }
 
+
 .close {
     color: #aaa;
-    float: right;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
     cursor: pointer;
 }
 
+
 .form {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
+    margin: 10px auto;
 }
 
 .form input {
-    padding: 15px 20px;
+    padding: 12px 16px;
     border-radius: 5px;
-    margin: auto;
-    width: 30rem;
-    color: black;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
 }
+
 
 .modal button {
     background-color: rgb(18, 173, 18);
-    margin: auto ;
     border-radius: 10px;
     color: white;
-    padding: 1rem 5rem;
+    padding: 12px 20px;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
 }
+
 .modal button:hover {
     background-color: rgb(21, 192, 21);
 }
+
 .bottom {
-    margin: auto;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .modal_content {
+        margin: 20px auto;
+        padding: 15px;
+        border-radius: 10px;
+        width: 80%; 
+    }
+
+    .top h4 {
+        font-size: 20px; 
+    }
+
+    .close {
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .modal_content {
+        margin: 30px auto; 
+        padding: 10px;
+        border-radius: 8px;
+        width: 90%; 
+    }
+
+    .top h4 {
+        font-size: 18px;
+    }
+
+    .close {
+        font-size: 18px;
+    }
+
+    .form input {
+        padding: 10px 14px;
+    }
+
+    .modal button {
+        padding: 10px 16px;
+    }
 }

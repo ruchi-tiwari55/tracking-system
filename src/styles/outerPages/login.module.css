@@ -142,7 +142,7 @@
 }
 
 .login_btn {
-    background-color: #1877f2;
+    background-color: #040c4a;
     /* margin: 0.4rem 0rem 1rem; */
     padding: 0.6rem 12rem;
 }
@@ -352,7 +352,7 @@
     width: 20rem;
   }
   .login_btn {
-    background-color: #1877f2;
+    background-color: #040c4a;
     padding: 20px;
     padding: 1rem;
     width: 12rem;
@@ -376,51 +376,45 @@
 
 
 .ftop {
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1rem; 
     border-bottom: 1px solid #ddd;
-    margin: 0;
     color: rgba(66, 61, 61, 0.755);
+  }
+  
+  .fdown {
+    padding: 0,0,1px,1px; 
     display: flex;
-}
+    flex-direction: column; 
+    align-items: center;
+    justify-content: space-between; 
+  }
+  
+  .fleft,
+  .fright {
+    margin-top: 1rem; 
+  }
+  
+  .fright {
+    margin-top: 1rem;
 
-.fdown {
-    padding: 0.1rem 2rem;
-    margin: auto;
-    display: flex;
-    /* justify-content: space-between; */
-}
-
-/* .fleft, */
-.fright {
-    display: flex;
-}
-
-/* .fleft>*, */
-.fright>* {
-    text-decoration: none;
-}
-
-.fdown Link {
-    text-decoration: none;
-}
-
-.fleft p {
-    color: black;
-    /* font-weight: 700; */
-    margin: 10px 30px 0px 0px;
-    height: fit-content;
-}
-
-.fright p {
-    color: black;
-    /* font-weight: 700; */
-    margin: 10px 0px 0px 30px;
-    height: fit-content;
-}
-
-.fdown p:hover {
+  }
+  
+  .fleft p,
+  .fright p {
+    margin: 5px 0; 
+    text-align: center; 
+    font-size: 10px;
+  }
+  .fleft p {
+    margin: 5px 0; 
+    text-align: center; 
+    font-size: 10px;
+  }
+  
+  
+  .fdown p:hover {
     text-decoration: underline;
-    text-underline-position: under;
     cursor: pointer;
-}
+  }
+  
 }
