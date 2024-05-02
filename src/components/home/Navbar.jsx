@@ -1,14 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './navbar.css';
 import { Link } from 'react-router-dom';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import MobileSideBar from './MobileSideBar';
 
-const Navbar = () => {
+
+const Navbar = ({toggleDrawer}) => {
     const [showDropdown, setShowDropdown] = useState(false);
     const dropdownRef = useRef(null);
+    const isMobile = useMediaQuery('(max-width:600px)');
+    
 
     const toggleDropdown = () => {
         setShowDropdown(!showDropdown);
     };
+
 
     const handleClickOutside = (event) => {
         if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -23,8 +29,10 @@ const Navbar = () => {
         };
     }, []);
 
+
     return (
         <div className="navbar">
+
             <div className="logo">
                 <Link to="/dashboard">
                     <img src="https://lzycrazy.com/assets/logo.86bdc6c8.png" alt="image" />
@@ -50,18 +58,34 @@ const Navbar = () => {
                     </Link>
                 </div>
             </div>
+
             <div className="right-menu">
                 <div>
-                    <Link to="/my-ads-response">
-                        <i className="fas fa-comments fa-2x"></i>
-                        Response
-                    </Link>
+                    {!isMobile ?
+                        <Link to="/my-ads-response">
+                            <i className="fas fa-comments fa-2x"></i>
+                            Response
+                        </Link> : <Link to="/my-ads-response">
+                            <i className="fab fa-buysellads fa-2x"></i>
+                            My Ads
+                        </Link>}
                 </div>
                 <div className="dropdown-menu-icon" ref={dropdownRef}>
-                    <Link onClick={toggleDropdown} style={{ cursor: "pointer" }}>
-                        <i className="fas fa-cog fa-2x"></i>
-                        Settings
-                    </Link>
+                    {!isMobile ?
+                        <Link onClick={toggleDropdown} style={{ cursor: "pointer" }}>
+                            <i className="fas fa-cog fa-2x"></i>
+                            Settings
+                        </Link> : <>
+                            <Link to="/my-ads">
+                                <i className="fab fa-buysellads fa-2x"></i>
+                                Post Ads
+                            </Link>
+
+                        </>
+
+                    }
+
+
                     {showDropdown && (
                         <div className="dropdown-menu-settings">
                             <h3>Arvind Bhandari</h3>
@@ -76,9 +100,37 @@ const Navbar = () => {
                         </div>
                     )}
                 </div>
+
+                {isMobile && <Link onClick={toggleDrawer}>
+                    <i className="fas fa-bars fa-lg 1x"></i>
+                </Link>}
             </div>
+
+            {isMobile && <div className="bottom-tab" >
+                <Link to="/dashboard" style={{ color: 'white', fontSize: '0.80rem' }}>
+                    <i className="fa fa-home fa-lg" ></i>
+                    <span>Home</span>
+                </Link>
+                <Link to="/market-Place" style={{ color: 'white', fontSize: '0.80rem' }}>
+                    <i className="fas fa-store fa-lg" ></i>
+                    <span>Marketplace</span>
+                </Link>
+                <Link to="/my-ads-response" style={{ color: 'white', fontSize: '0.80rem' }} >
+                    <i className="fas fa-comments fa-lg"></i>
+                    <span>Response</span>
+                </Link>
+                <Link to="/user-page" style={{ color: 'white', fontSize: '0.80rem' }}>
+                    <i className="fas fa-user fa-lg"></i>
+                    <span>Profile</span>
+                </Link>
+            </div>}
         </div>
     );
+
+
 }
 
 export default Navbar;
+
+
+
