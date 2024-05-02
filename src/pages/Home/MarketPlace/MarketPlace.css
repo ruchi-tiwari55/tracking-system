@@ -37,3 +37,50 @@
 }
 
 
+/* VideoComponent.css */
+
+.video-component-container {
+  width: 100%;
+  padding: 1rem;
+}
+
+.video-wrapper {
+  margin-bottom: 1rem;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.video-size {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.image-sliders {
+  margin-top: 1rem;
+}
+
+.slider {
+  margin-bottom: 1rem;
+}
+
+.responsive-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .video-size {
+    height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .video-wrapper {
+    width: 100%;
+  }
+}
+
+
+
