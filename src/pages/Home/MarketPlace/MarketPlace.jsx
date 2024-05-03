@@ -13,9 +13,14 @@ import banner1 from "../../../assets/banner1.jpg";
 import banner3 from "../../../assets/banner3.jpg";
 import banner4 from "../../../assets/banner4.jpg";
 import banner5 from "../../../assets/banner5.jpg";
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 // import MarketSidebar from "../../../components/home/MarketSidebar/MarketSidebar"
 // import "./MarketPlace.css"
+
 function VideoComponent() {
+  const isMobile = useMediaQuery('(max-width:600px)');
+
   var slidersettings = {
     dots: true,
     infinite: true,
@@ -57,8 +62,8 @@ function VideoComponent() {
       src={src}
       alt={alt}
       style={{
-        height: fixedHeight,
-        width: fixedWidth,
+        height:isMobile?117: fixedHeight,
+        width: isMobile?"100%":fixedWidth,
         objectFit: 'cover',
         borderRadius: '10px',
       }}
@@ -66,7 +71,12 @@ function VideoComponent() {
   );
   return (
     <>
-      <div className="container col-lg-12 col-md-2" style={{ width: "100%", padding: "1rem 2rem" }}>
+      <div className="container col-lg-12 col-md-2" style={{
+         width: isMobile? "77%":"100%",
+          padding: isMobile? "0rem 0.8rem" :"1rem 2rem",
+          marginLeft: isMobile? 85:0,
+          
+          }}>
         <div className="row" style={{ justifyContent: "flex-start" }}>
           <div className="col-lg-6" style={{ textAlign: "left" }}>
             <div
@@ -77,7 +87,7 @@ function VideoComponent() {
                 className="video-size"
                 preload="metadata"
                 controls
-                style={{ width: "100%", height: "210px" }}
+                style={{ width: "100%", height:isMobile? 117:"210px" }}
                 poster={banner1}
               >
                 <source src={video1} type="video/mp4" />
@@ -94,7 +104,7 @@ function VideoComponent() {
                 className="video-size"
                 preload="metadata"
                 controls
-                style={{ width: "100%", height: "210px" }}
+                style={{ width: "100%", height:isMobile? 117:"210px" }}
                 poster={banner3}
               >
                 <source src={video2} type="video/mp4" />

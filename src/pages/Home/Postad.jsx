@@ -13,6 +13,8 @@ import RentalItemsIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SelfMadeIcon from '@mui/icons-material/Inventory2Outlined';
 import DirectByFarmIcon from '@mui/icons-material/Agriculture';
 import { Link } from 'react-router-dom';
+import { Modal, Box, Typography, Divider, Button } from '@mui/material';
+
 
 
 function HomePage() {
@@ -20,6 +22,10 @@ function HomePage() {
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedCategory(null);
   };
 
   const generateOptions = () => {
@@ -196,11 +202,17 @@ function HomePage() {
               <ArrowForwardIosIcon />
             </div>
           </div>
-          <div className={styles.right}>
+          {/* <div className={styles.right}>
             <div className={styles.right_inner}>
               {selectedCategory && generateOptions()}
             </div>
-          </div>
+          </div> */}
+          {selectedCategory && <ModalComponent selectedCategory={selectedCategory} 
+          generateOptions={generateOptions} 
+          handleClose={handleCloseModal}
+          />
+          
+          }
         </div>
       </div>
     </>
@@ -208,3 +220,47 @@ function HomePage() {
 }
 
 export default HomePage;
+
+
+const ModalComponent = ({ selectedCategory, handleClose, generateOptions }) => {
+  return (
+    <Modal open={true} onClose={handleClose}>
+      <Box
+        sx={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: 300,
+          bgcolor: 'background.paper',
+          boxShadow: 24,
+          p: 2,
+          borderRadius:5
+        }}
+      >
+        <Typography variant="h7">Options for {selectedCategory}</Typography>
+        <Divider sx={{ my: 2 }} />
+        <Typography variant="h7"> {generateOptions(selectedCategory)}</Typography>
+       
+        <Button onClick={handleClose}>Close</Button>
+      </Box>
+    </Modal>
+  );
+};
+
+const style = {
+  link: {
+    display: 'block',
+    textDecoration: 'none',
+    color: 'inherit',
+    marginTop: '8px',
+  },
+  linkText: {
+    textDecoration: 'none',
+    color: 'inherit',
+    '&:hover': {
+      color: 'blue', // Change color on hover
+      textDecoration: 'underline', // Underline on hover
+    },
+  },
+};

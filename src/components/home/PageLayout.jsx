@@ -27,12 +27,18 @@ const PageLayout = () => {
             <div>
                 <Navbar toggleDrawer={toggleDrawer} onCloseDrawer={onCloseDrawer} />
             </div>
-            <div style={{ display: "flex" }}>
-                {sidebarComponent}
-                <div>
-                    <Outlet />
-                </div>
-            </div>
+            {isMobile ?
+                <div >
+                    {sidebarComponent}
+                    <div>
+                        <Outlet />
+                    </div>
+                </div> : <div style={{ display: "flex" }}>
+                    {sidebarComponent}
+                    <div>
+                        <Outlet />
+                    </div>
+                </div>}
         </div>
     );
 }

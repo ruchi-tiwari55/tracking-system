@@ -2,81 +2,67 @@
     color: grey;
     border: 1px solid rgba(198, 195, 195, 0.737);
     border-radius: 5px;
-    display: inline-block;
-    width: 60%;
-    height: max-content;
-    margin: 0 19%;
-
-}
-
-.head1 {
-    margin: 20px 42%;
-    font-size: 30px;
-}
-
-.top {
-    padding: 20px 30px;
-    color: black;
-    /* border-bottom: 1px solid rgba(198, 195, 195, 0.737); */
-}
-
-.bottom {
+    display: block;
+    width: 80%; /* Adjust width for smaller screens */
+    margin: 20px auto; /* Center the element horizontally */
+  
+    /* New styles for mobile */
+    padding: 10px; /* Increase padding */
+  }
+  
+  .head1 {
+    font-size: 24px; /* Reduce font size */
+    text-align: center; /* Center the text */
+    margin: 20px 0; /* Adjust top margin */
+  }
+  
+  .top {
+    padding: 10px; /* Reduce padding */
+    text-align: center; /* Center the text */
+  }
+  
+  .bottom {
     display: flex;
-    flex-direction: row;
-}
-
-.left {
-    border-top: 1px solid rgba(198, 195, 195, 0.737);
-    border-right: 1px solid rgba(198, 195, 195, 0.737);
-    width: 50%;
-}
-
-.right {
-    width: 50%;
-    position: relative;
-}
-
-.right_inner div {
-    padding: 21px;
-    border-bottom: 1px solid rgba(198, 195, 195, 0.737);
-}
-
-.right_inner div:first-child {
-    border-top: 1px solid rgba(198, 195, 195, 0.737);
-}
-
-.right_inner div:hover {
-    color: black;
-    background-color: rgba(163, 161, 161, 0.563);
-    cursor: pointer;
-}
-
-.navbar {
+    flex-direction: column; /* Stack items vertically */
+  }
+  
+  .left {
+    width: 100%; /* Full width for mobile */
+    border-right: none; /* Remove right border for mobile */
+  }
+  
+  .right {
+    width: 100%; /* Full width for mobile */
+    padding-top: 10px; /* Add space above the right column */
+  }
+  
+  .right_inner div {
+    padding: 15px; /* Increase padding */
+  }
+  
+  .navbar {
     background-color: rgba(216, 218, 220, 0.179);
     border-bottom: 1px solid rgba(167, 164, 164, 0.168);
     height: 60px;
-}
-
-.left div {
+  }
+  
+  .left div,
+  .right_inner div {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 15px;
+    padding: 10px; /* Adjust padding */
     border-bottom: 1px solid rgba(198, 195, 195, 0.737);
-}
-
-.left p {
-    width: 83%;
-}
-
-
-.left div:hover {
+  }
+  
+  .left p {
+    width: 70%; /* Adjust width of text */
+  }
+  
+  .left div:hover,
+  .right_inner div:hover {
     color: black;
     background-color: rgba(163, 161, 161, 0.563);
     cursor: pointer;
-}
-
-.clicked {
-    color: black;
-    background-color: rgba(163, 161, 161, 0.563);
-}
+  }
+  
