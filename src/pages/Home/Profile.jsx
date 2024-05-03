@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import styles from '../../styles/home/profile.module.css'
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const Profile = () => {
+    const isMobile = useMediaQuery('(max-width:600px)');
 
     const [copied, setCopied] = useState(false);
 
@@ -22,14 +24,23 @@ const Profile = () => {
                 </div> */}
             </div>
             <div className={styles.link}>
-                <h5>
-                    <i className="fa fa-copy" onClick={handleCopyClick}>
+             {  isMobile? <p>
+                    <i className="fa fa-copy" onClick={handleCopyClick} style={{marginRight:10}}>
                     </i>
                     REFERAL LINK :{" "}
                     <span>
                         https://lzycrazy.com/register/1904
                     </span>
-                </h5>
+                </p>: 
+                <h5>
+                <i className="fa fa-copy" onClick={handleCopyClick}>
+                </i>
+                REFERAL LINK :{" "}
+                <span>
+                    https://lzycrazy.com/register/1904
+                </span>
+            </h5>
+                }
 
             </div>
             <div className={styles.link}>

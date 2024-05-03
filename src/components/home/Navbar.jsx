@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import './navbar.css';
 import { Link } from 'react-router-dom';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import MobileSideBar from './MobileSideBar';
 
 
 const Navbar = ({toggleDrawer}) => {
