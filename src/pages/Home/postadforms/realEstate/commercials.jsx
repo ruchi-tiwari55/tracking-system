@@ -1,202 +1,84 @@
-import styles from './buy.module.css'
+import React, { useState } from 'react';
+import Select from 'react-select';
+import { Button } from '@mui/material';
 import PhotoIcon from '@mui/icons-material/AddAPhotoOutlined';
-import { useState } from 'react';
-import Select from 'react-select'
+import styles from './buy.module.css';
 
-
-const options = [
-    { value: 'East', label: 'East' },
-    { value: 'North', label: 'North' },
-    { value: 'North-East', label: 'North-East' },
-    { value: 'North-West', label: 'North-West' },
-    { value: 'South', label: 'South' },
-    { value: 'South-East', label: 'South-East' },
-    { value: 'South-West', label: 'South-West' },
-    { value: 'West', label: 'West' }
-];
 const HousesAppartments = () => {
+    const [selectedButton, setSelectedButton] = useState(null);
+    const [bedrooms, setBedrooms] = useState(null);
+    const [bathrooms, setBathrooms] = useState(null);
+    const [furnishing, setFurnishing] = useState(null);
+    const [listedBy, setListedBy] = useState(null);
+    const [carParking, setCarParking] = useState(null);
+    const [constructionStatus, setConstructionStatus] = useState(null);
+    const [selectedFacing, setSelectedFacing] = useState(null);
 
-    const [selectedOption, setSelectedOption] = useState(null);
-
-    const handleChange = (selectedOption) => {
-        setSelectedOption(selectedOption);
+    const handleButtonClick = (value, setter) => {
+        setter(value === setter ? null : value);
     };
 
     return (
-        <>
-            <div className={styles.navbar}></div>
-            <h1 className={styles.head1}>POST YOUR AD</h1>
-            <div className={styles.inner}>
-                <div className={styles.top}>
+        <div className={styles.container}>
+            <div className={styles.header}>
+                <h2>POST YOUR AD</h2>
+            </div>
+            <div className={styles.details}>
+                <div className={styles.section}>
                     <h3>SELECTED CATEGORY</h3>
-                    <div className={styles.top1}>
-                        <p>Real Estate / Commercials</p>
+                    <div className={styles.category}>
+                        <p>Real Estate / Buy</p>
                         <h4>Change</h4>
                     </div>
                 </div>
-                <div className={styles.details}>
+                <div className={styles.section}>
                     <h3>INCLUDE SOME DETAILS</h3>
-                    <div className={styles.details1}>
+                    <div className={styles.detailsGrid}>
+                        {/* Type */}
                         <div>
-                            <p>Type *</p>
-                            <div className={styles.details1_1}>
-                                <div>Appartments</div>
-                                <div>Builder Floors</div>
-                                <div>Farm Houses</div>
-                                <div>Houses & Villas</div>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Bedrooms</p>
-                            <div className={styles.details1_1}>
-                                <div>1</div>
-                                <div>2</div>
-                                <div>2</div>
-                                <div>4</div>
-                                <div>4+</div>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Bathrooms</p>
-                            <div className={styles.details1_1}>
-                                <div>1</div>
-                                <div>2</div>
-                                <div>2</div>
-                                <div>4</div>
-                                <div>4+</div>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Furnishing</p>
-                            <div className={styles.details1_1}>
-                                <div>Furnished</div>
-                                <div>Semi-Furnished</div>
-                                <div>Unfurnished</div>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Construction Status</p>
-                            <div className={styles.details1_1}>
-                                <div>New Launch</div>
-                                <div>Ready to move</div>
-                                <div>Under Construction</div>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Listed by</p>
-                            <div className={styles.details1_1}>
-                                <div>Builder</div>
-                                <div>Dealer</div>
-                                <div>Owner</div>
-                            </div>
-                        </div>
-                        <div className={styles.details1}>
-                            <div>
-                                <p>Super Builtup area (ft&sup2;) *</p>
-                                <div>
-                                    <input></input>
-                                </div>
-                            </div>
-                            <div>
-                                <p>Carpet area (ft&sup2;) *</p>
-                                <div>
-                                    <input></input>
-                                </div>
-                            </div>
-                            <div>
-                                <p>Maintenance (Monthly)</p>
-                                <div>
-                                    <input></input>
-                                </div>
-                            </div>
-                            <div>
-                                <p>Total Floors</p>
-                                <div>
-                                    <input></input>
-                                </div>
-                            </div>
-                            <div>
-                                <p>Floor No</p>
-                                <div>
-                                    <input></input>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Car Parking</p>
-                            <div className={styles.details1_1}>
-                                <div>0</div>
-                                <div>1</div>
-                                <div>2</div>
-                                <div>3</div>
-                                <div>3+</div>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Facing</p>
-                            <div>
-                                <Select
-                                    value={selectedOption}
-                                    onChange={handleChange}
-                                    options={options}
-                                    className={styles.selectOpt}
-                                />
-                            </div>
-                        </div>
-                        <div className={styles.details1}>
-                            <div className={styles.details2}>
-                                <label>Project Name</label>
-                                <input></input>
-                                <div>
-                                    <p style={{ width: "30rem", fontSize: "0.8rem", textAlign: "right" }}>0/70</p>
-                                </div>
-                            </div>
-                            <div className={styles.details2}>
-                                <label>Ad title *</label>
-                                <input></input>
-                                <div className={styles.details2_2}>
-                                    <p>Mention the key features of you item (e.g. brand, model, age, type)</p>
-                                    <p>0/70</p>
-                                </div>
-                            </div>
-                            <div className={styles.details3}>
-                                <label>Description*</label>
-                                <textarea></textarea>
-                                <div className={styles.details2_2}>
-                                    <p>Include condition, features and reason for selling</p>
-                                    <p>0/4096</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.price}>
-                    <div>
-                        <h3>SET A PRICE</h3>
-                        <div className={styles.price1}>
-                            <label>Price *</label>
-                            <input></input>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.photos}>
-                    <div>
-                        <h3>UPLOAD UPTO 20 PHOTOS</h3>
-                        <div>
-                            <p>Add Photo</p>
-                            <div className={styles.photos1}>
-                                {[...Array(20)].map((_, index) => (
-                                    <div key={index}><PhotoIcon /></div>
+                            <p style={{ margin: 20 }}>Type *</p>
+                            <div className={styles.option}>
+                                {['Appartments', 'Builder Floors', 'Farm Houses', 'Houses & Villas'].map((type) => (
+                                    <div
+                                        key={type}
+                                        onClick={() => handleButtonClick(type, setSelectedButton)}
+                                        className={`${styles.option} ${selectedButton === type && styles.selected}`}
+                                    >
+                                        {type}
+                                    </div>
                                 ))}
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div className={styles.location}>
-                    <h3>CONFIRM YOUR LOCATION</h3>
-                    <div className={styles.location1}>
-                        <label>State *</label>
-                        <select>
+                        {/* Bedrooms */}
+                        <div>
+                            <p style={{ margin: 20 }}>Bedrooms</p>
+                            <div className={styles.option}>
+                                {['1', '2', '3', '4', '4+'].map((num) => (
+                                    <div
+                                        key={num}
+                                        onClick={() => handleButtonClick(num, setBedrooms)}
+                                        className={`${styles.option} ${bedrooms === num && styles.selected}`}
+                                    >
+                                        {num}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <p>Super Builtup area (ft²) *</p>
+                        <input type="text" style={{ width: '70%', height: 35 }} />
+                        <p>Carpet area (ft²) *</p>
+                        <input type="text" style={{ width: '70%', height: 35 }} />
+                        <p>Maintenance (Monthly)</p>
+                        <input type="text" style={{ width: '70%', height: 35 }} />
+                        <p>Total Floors</p>
+                        <input type="text" style={{ width: '70%', height: 35 }} />
+                        <p>Project Name</p>
+                        <input type="text" style={{ width: '70%', height: 35 }} />
+                        <p>Price *</p>
+                        <input type="text" style={{ width: '70%', height: 35 }} />
+                        <div className={styles.location1}>
+                        <p>State *</p>
+                        <select style={{width:'70%', height:35}}>
                             <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                             <option value="Andhra Pradesh">Andhra Pradesh</option>
                             <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -236,18 +118,127 @@ const HousesAppartments = () => {
                             <option value="West Bengal">West Bengal</option>
                         </select>
                     </div>
-                    <div className={styles.location2}>
-                        <label>City *</label>
-                        <input></input>
+                        <p>city</p>
+                        <input type="text" style={{ width: '70%', height: 35 }} />
+                        {/* Description textarea */}
+                        <p>Description *</p>
+
+                        <textarea rows="4" style={{ width: '70%', }} />
+
+
+                        {/* Bathrooms */}
+                        <div>
+                            <p style={{ margin: 20 }}>Bathrooms</p>
+                            <div className={styles.option}>
+                                {['1', '2', '3', '4', '4+'].map((num) => (
+                                    <div
+                                        key={num}
+                                        onClick={() => handleButtonClick(num, setBathrooms)}
+                                        className={`${styles.option} ${bathrooms === num && styles.selected}`}
+                                    >
+                                        {num}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        {/* Furnishing */}
+                        <div>
+                            <p style={{ margin: 20 }}>Furnishing</p>
+                            <div className={styles.option}>
+                                {['Unfurnished', 'Furnished', 'Semi-Furnished'].map((type) => (
+                                    <div
+                                        key={type}
+                                        onClick={() => handleButtonClick(type, setFurnishing)}
+                                        className={`${styles.option} ${furnishing === type && styles.selected}`}
+                                    >
+                                        {type}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        {/* Construction Status */}
+                        <div>
+                            <p style={{ margin: 20 }}>Construction Status</p>
+                            <div className={styles.option}>
+                                {['New Launch', 'Ready to move', 'Under Construction'].map((status) => (
+                                    <div
+                                        key={status}
+                                        onClick={() => handleButtonClick(status, setConstructionStatus)}
+                                        className={`${styles.option} ${constructionStatus === status && styles.selected}`}
+                                    >
+                                        {status}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        {/* Listed By */}
+                        <div>
+                            <p style={{ margin: 20 }}>Listed By</p>
+                            <div className={styles.option}>
+                                {['Builder', 'Dealer', 'Owner'].map((type) => (
+                                    <div
+                                        key={type}
+                                        onClick={() => handleButtonClick(type, setListedBy)}
+                                        className={`${styles.option} ${listedBy === type && styles.selected}`}
+                                    >
+                                        {type}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        {/* Car Parking */}
+                        <div>
+                            <p style={{ margin: 20 }}>Car Parking</p>
+                            <div className={styles.option}>
+                                {['1', '2', '3', '4', '4+'].map((num) => (
+                                    <div
+                                        key={num}
+                                        onClick={() => handleButtonClick(num, setCarParking)}
+                                        className={`${styles.option} ${carParking === num && styles.selected}`}
+                                    >
+                                        {num}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        {/* Facing */}
+                        <div>
+                            <p style={{ margin: 20 }}>Facing</p>
+                            <Select
+                                value={selectedFacing}
+                                onChange={(option) => setSelectedFacing(option)}
+                                options={[
+                                    { value: 'East', label: 'East' },
+                                    { value: 'North', label: 'North' },
+                                    { value: 'North-East', label: 'North-East' },
+                                    { value: 'North-West', label: 'North-West' },
+                                    { value: 'South', label: 'South' },
+                                    { value: 'South-East', label: 'South-East' },
+                                    { value: 'South-West', label: 'South-West' },
+                                    { value: 'West', label: 'West' },
+                                ]}
+                                className={styles.selectOpt}
+                            />
+                        </div>
+
+
+                        <div style={{ display: 'flex', gap: 20, marginTop: 12 }}>
+                            {[...Array(8)].map((_, index) => (
+                                <div key={index} style={{ border: '1px dashed black', padding: 30 }}>
+                                    <PhotoIcon color="action" style={{ cursor: 'pointer' }} />
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
-                <div className={styles.bottom}>
-                    <button>POST NOW</button>
-                </div>
-
             </div>
-            <div className={styles.footer}></div>
-        </>
-    )
-}
+            <div className={styles.bottom}>
+                <Button variant="contained" style={{ width: '70%', background: '#040c4a' }}>
+                    POST NOW
+                </Button>
+            </div>
+        </div>
+    );
+};
+
 export default HousesAppartments;

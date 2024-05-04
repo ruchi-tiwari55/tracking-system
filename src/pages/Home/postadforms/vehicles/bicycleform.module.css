@@ -6,7 +6,7 @@
 
 .head1 {
     margin: 20px 42%;
-    font-size: 30px;
+    font-size: 28px;
 }
 
 .inner {
@@ -294,3 +294,19 @@
     background-color: rgba(9, 57, 10, 0.848);
     height: 60px;
 }
+
+/* ---------------- */
+
+.option {
+    padding: 10px;
+    border: 1px solid rgba(198, 195, 195, 0.737);
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+  }
+  .selected {
+    background-color: #040c4a;
+    color: white;
+  }

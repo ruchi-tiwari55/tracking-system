@@ -1,8 +1,14 @@
+import { useState } from 'react';
 import styles from './bicycleform.module.css'
 import PhotoIcon from '@mui/icons-material/AddAPhotoOutlined';
 
 const bicycleForm = () => {
 
+    const [bycyclestate1, setbycyclestate1]= useState(null)
+
+    const handleButtonClick = (value, setter) => {
+        setter(value === setter ? null : value);
+    };
 
     return (
         <>
@@ -18,12 +24,18 @@ const bicycleForm = () => {
                 </div>
                 <div className={styles.details}>
                     <h3>INCLUDE SOME DETAILS</h3>
-                    <div className={styles.details1}>
-                        <p>Brand *</p>
-                        <div className={styles.details1_1}>
-                            <div>Hercules</div>
-                            <div>Hero</div>
-                            <div>Other Brands</div>
+                    <div>
+                        <p style={{ margin: 20 }}>Brand *</p>
+                        <div className={styles.option}>
+                            {['Hercules', 'Hero', 'Other Brands'].map((type) => (
+                                <div
+                                    key={type}
+                                    onClick={() => handleButtonClick(type, setbycyclestate1)}
+                                    className={`${styles.option} ${bycyclestate1 === type && styles.selected}`}
+                                >
+                                    {type}
+                                </div>
+                            ))}
                         </div>
                     </div>
                     <div className={styles.details2}>
