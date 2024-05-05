@@ -1,5 +1,6 @@
 import React from 'react';
 import AppRoutes from './router/AppRoutes';
+import { ModalProvider } from './pages/Home/postAddForms/ModalContext';
 // import '@fortawesome/fontawesome-free/css/all.min.css';
 
 // import store from './components/dataStore/configureRedux';
@@ -9,9 +10,11 @@ import AppRoutes from './router/AppRoutes';
 function App() {
   return (
     <>
-    {/* <Provider store={store}> */}
-      <AppRoutes />
-     {/* </Provider> */}
+      {/* <Provider store={store}> */}
+      <ModalProvider>
+        <AppRoutes />
+      </ModalProvider>
+      {/* </Provider> */}
     </>
   );
 }

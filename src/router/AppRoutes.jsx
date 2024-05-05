@@ -80,6 +80,7 @@ import KidsFurniture from "../pages/Home/postadforms/furniture/kidsFurniture"
 import OfficeFurniture from "../pages/Home/postadforms/furniture/officeFurniture"
 import Sofa from "../pages/Home/postadforms/furniture/sofa"
 import Wardrobes from "../pages/Home/postadforms/furniture/wardrobes"
+import FormsLayout from "../pages/Home/postAddForms/FormLayout";
 
 const AppRoutes = () => {
   return (
@@ -163,6 +164,7 @@ const AppRoutes = () => {
         <Route path="scooters" element={<Scooters />} />
         <Route path="spareparts" element={<Spareparts />} />
         <Route path="cars" element={<Cars />} />
+        <Route path="mainForms" element={<FormsLayout />} />
 
       </Routes>
     </Router>
