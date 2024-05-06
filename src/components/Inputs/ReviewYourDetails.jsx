@@ -43,13 +43,13 @@ const ReviewDetailsForm = () => {
             sx={{gap:5}}
             >
             <CustomDropdown
-                label="Select an Option"
+                label="state"
                 options={options}
                 // value={selectedOption}
                 // onChange={handleDropdownChange}
             />
             <CustomDropdown
-                label="Select an Option"
+                label="city"
                 options={options}
                 // value={selectedOption}
                 // onChange={handleDropdownChange}
@@ -59,7 +59,7 @@ const ReviewDetailsForm = () => {
             <CommonInputField label="Your Area*" multiline={true} required />
 
 
-            <Box mt={2} display="flex" justifyContent="center">
+            <Box mt={2} mb={2} display="flex" justifyContent="center">
                 <Button variant="contained" color="primary"
                     sx={{ background: '#040c4a' }}
                     onClick={handleReviewButtonClick}>

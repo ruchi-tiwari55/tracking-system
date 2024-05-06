@@ -13,11 +13,15 @@ import RentalItemsIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SelfMadeIcon from '@mui/icons-material/Inventory2Outlined';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 
 
 const PostAdsModal = ({ open, handleClose }) => {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const navigate = useNavigate();
+    const isMobile = useMediaQuery('(max-width:600px)');
+
 
     const handleClickCategory = (category) => {
         setSelectedCategory(category);
@@ -56,8 +60,8 @@ const PostAdsModal = ({ open, handleClose }) => {
                     top: '50%',
                     left: '50%',
                     transform: 'translate(-50%, -50%)',
-                    width: '60%',
-                    maxHeight: '80vh',
+                    width: isMobile ? '87%' : '40%',
+                    maxHeight: '75vh',
                     overflowY: 'hidden',
                     bgcolor: 'background.paper',
                     boxShadow: 24,
@@ -73,7 +77,7 @@ const PostAdsModal = ({ open, handleClose }) => {
                 <Divider sx={{ height: 1, background: 'black', marginBottom: 3 }} />
 
 
-                <Box sx={{ maxHeight: 'calc(80vh - 56px)', overflowY: 'auto', padding: 3, paddingBottom: 10 }}>
+                <Box sx={{ maxHeight: 'calc(80vh - 56px)', overflowY: 'auto', paddingLeft: 2, paddingBottom: 10 }}>
                     <Typography variant="body1" id="modal-description" gutterBotton sx={{ color: 'black', fontWeight: '600' }}>
                         Choose a Category
                     </Typography>
@@ -89,15 +93,16 @@ const PostAdsModal = ({ open, handleClose }) => {
                                     display="flex"
                                     alignItems="center"
                                     justifyContent="space-between"
-                                    width={200}
+                                    width={isMobile ? 160 : 200}
                                     border={0.1}
                                     borderRadius={1}
                                     borderColor="gray"
                                     padding={0.5}
-                                    marginTop={2}
-                                    marginBottom={2}
+                                    marginTop={1}
+                                    // marginBottom={2}
                                     onMouseEnter={() => handleMouseEnter(item)}
                                     onClick={() => handleClickCategory(item)}
+
 
                                     sx={{
                                         cursor: 'pointer',
@@ -107,20 +112,30 @@ const PostAdsModal = ({ open, handleClose }) => {
                                     }}
                                 >
                                     {item.Icon}
-                                    <Typography variant="body1" component="p" textAlign="center" sx={{ fontWeight: '600', fontSize: 14, marginRight: 3 }}>
+                                    <Typography variant="body1" component="p" textAlign="center" sx={{ fontWeight: '600', fontSize: 12, marginRight: 3 }}>
                                         {item.CategoryName}
                                     </Typography>
                                     <IconButton>
-                                        <ArrowForwardIosIcon />
+                                        <ArrowForwardIosIcon sx={{ height: 15, width: 15 }} />
                                     </IconButton>
                                 </Box>
                             ))}
                         </Box>
 
 
-                        <Box sx={{ position: 'relative' }}>
+                        <Box sx={{}}>
+                            {console.log(selectedCategory?.id, '-------------')}
                             {selectedCategory && (
-                                <Box sx={{ marginTop: 2 }}
+                                <Box sx={{
+                                    marginTop:
+                                        selectedCategory?.id == '1' ? 1 :
+                                            selectedCategory?.id == '2' ? 7 : selectedCategory?.id == '3' ? 14 :
+                                                selectedCategory?.id == '4' ? 20 : selectedCategory?.id == '5' ? 25 :
+                                                    selectedCategory?.id == '6' ? 32 : selectedCategory?.id == '7' ? 38 :
+                                                        selectedCategory?.id == '8' ? 29 : selectedCategory?.id == '9' ? 32 : 0
+
+                                }}
+                                    onMouseLeave={() => setSelectedCategory(null)}
 
                                 >
                                     {AddsSubCategory.find((subCat) => subCat.id === selectedCategory.id)?.subCategory.map((subItem, index) => (
@@ -130,14 +145,16 @@ const PostAdsModal = ({ open, handleClose }) => {
                                             display="flex"
                                             alignItems="center"
                                             justifyContent="space-between"
-                                            width={'93%'}
+                                            // width={'93%'}
+                                            width={isMobile ? 120 : '93%'}
+
                                             border={0.5}
                                             borderColor="gray"
                                             borderRadius={2}
                                             marginTop={0.1}
                                             marginBottom={0.5}
                                             position={'relative'}
-                                            // onMouseLeave={() => handleMouseLeave(item)}
+                                            // position={'absolute'}
                                             onClick={() => handleNavigate(subItem.subCategoryName, subItem.CategorName)}
 
                                             sx={{
@@ -148,11 +165,11 @@ const PostAdsModal = ({ open, handleClose }) => {
                                             }}
                                         >
                                             {subItem.Icon}
-                                            <Typography variant="body1" component="p" textAlign="center" sx={{ fontWeight: '300', fontSize: 14, marginRight: 3 }}>
+                                            <Typography variant="body1" component="p" textAlign="center" sx={{ fontWeight: '300', fontSize: 12, marginRight: 3 }}>
                                                 {subItem.subCategoryName}
                                             </Typography>
                                             <IconButton>
-                                                <ArrowForwardIosIcon />
+                                                <ArrowForwardIosIcon sx={{ height: 15, width: 15 }} />
                                             </IconButton>
                                         </Box>
                                     ))}
@@ -173,48 +190,48 @@ const AddsCategory = [
     {
         id: '1',
         CategoryName: 'DIRECT BY FARM',
-        Icon: <DirectByFarmIcon />
+        Icon: <DirectByFarmIcon sx={{ height: 18, width: 18 }} />
     },
     {
         id: '2',
         CategoryName: 'RENTAL ITEMS',
-        Icon: <RentalItemsIcon />
+        Icon: <RentalItemsIcon sx={{ height: 18, width: 18 }} />
     },
     {
         id: '3',
         CategoryName: 'REAL ESTATE',
-        Icon: <RealEstateIcon />
+        Icon: <RealEstateIcon sx={{ height: 18, width: 18 }} />
     },
     {
         id: '4',
         CategoryName: 'VEHICLE',
-        Icon: <VehiclesIcon />
+        Icon: <VehiclesIcon sx={{ height: 18, width: 18 }} />
     },
     {
         id: '5',
         CategoryName: 'MOBILES',
-        Icon: <MobilesIcon />
+        Icon: <MobilesIcon sx={{ height: 18, width: 18 }} />
 
     },
     {
         id: '6',
         CategoryName: 'FURNITURE',
-        Icon: <FurnitureIcon />
+        Icon: <FurnitureIcon sx={{ height: 18, width: 18 }} />
     },
     {
         id: '7',
         CategoryName: 'FASHION',
-        Icon: <FashionIcon />
+        Icon: <FashionIcon sx={{ height: 18, width: 18 }} />
     },
     {
         id: '8',
         CategoryName: 'ELECTRONICS',
-        Icon: <ElectronicsIcon />
+        Icon: <ElectronicsIcon sx={{ height: 18, width: 18 }} />
     },
     {
         id: '9',
         CategoryName: 'TOUR & TRAVELS',
-        Icon: <TourAndTravelsIcon />
+        Icon: <TourAndTravelsIcon sx={{ height: 18, width: 18 }} />
     },
 
 

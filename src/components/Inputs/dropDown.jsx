@@ -8,7 +8,7 @@ const CustomDropdown = ({ label, options, value, onChange }) => {
 
     return (
         <FormControl fullWidth >
-            <InputLabel>{label}</InputLabel>
+            <InputLabel sx={{fontSize:13}}>{label}</InputLabel>
             <Select value={value} onChange={handleDropdownChange} >
                 {options.map((option) => (
                     <MenuItem key={option.value} value={option.value}>

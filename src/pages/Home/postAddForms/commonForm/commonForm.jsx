@@ -6,6 +6,7 @@ import CustomNumberInput from '../../../../components/Inputs/NumberInput';
 import PhotoUpload from '../../../../components/Inputs/UploadPhoto';
 import ReviewDetailsForm from '../../../../components/Inputs/ReviewYourDetails';
 import CustomDropdown from '../../../../components/Inputs/dropDown';
+import Buy_Rent from '../realStateForms/Buy/buy-rent';
 
 
 const CommonForm = ({ categoryName, subCategoryName }) => {
@@ -31,6 +32,13 @@ const CommonForm = ({ categoryName, subCategoryName }) => {
 
                 )}
 
+            {(subCategoryName === 'BUY' || subCategoryName === 'COMMERCIAL' ||
+                subCategoryName === 'RENT'
+
+            ) && (
+                    <Buy_Rent subCategoryName={subCategoryName}/>
+                )}
+
             <CommonInputField label="Title" multiline={false} required />
             <CommonInputField label="Description" multiline={true} required />
             <CustomNumberInput aria-label="Demo number input" placeholder="Type a number…" label="Set Price" />
@@ -47,51 +55,38 @@ const CommonForm = ({ categoryName, subCategoryName }) => {
 export default CommonForm;
 
 
+
 const VehicleForms = () => {
     return (
-        <>
-            <Box display="flex" alignItems="center" justifyContent="space-between" mb={2} mt={2}
-                sx={{ gap: 5 }}
-            >
-                <CustomDropdown
-                    label="Brand"
-                    options={[1, 2, 3, 4]}
-                // value={selectedOption}
-                // onChange={handleDropdownChange}
-                />
-                <div style={{ marginTop: -30 }}>
-
-                    <CustomNumberInput aria-label="Demo number input" placeholder="" label="Year" />
-                </div>
-                <CustomDropdown
-                    label="Select an Option"
-                    options={[1, 2, 3, 4]}
-                // value={selectedOption}
-                // onChange={handleDropdownChange}
-                />
-            </Box>
-            <Box display="flex" alignItems="center" justifyContent="space-between" mb={2}
-                sx={{ gap: 5 }}
-            >
-                <CustomDropdown
-                    label="Transmission"
-                    options={['Manual', 'Automatic']}
-                // value={selectedOption}
-                // onChange={handleDropdownChange}
-                />
-                <div style={{ marginTop: -30 }}>
-
-                    <CustomNumberInput aria-label="Demo number input" placeholder="" label="KM Driven" />
-                </div>
-
-                <CustomDropdown
-                    label="No. of Owners"
-                    options={[1, 2, 3, 4]}
-                // value={selectedOption}
-                // onChange={handleDropdownChange}
-                />
-            </Box>
-        </>
-
-    )
-}
+      <>
+        <Box
+          display="flex"
+          flexDirection="column"
+          gap={2}
+          sx={{
+            '@media (max-width: 600px)': {
+              marginTop: 10,
+            },
+          }}
+        >
+          <CustomDropdown label="Brand" options={[1, 2, 3, 4]} />
+          <CustomNumberInput
+            aria-label="Demo number input"
+            placeholder="Year"
+            label="Year"
+          />
+          <CustomDropdown
+            label="Select an Option"
+            options={[1, 2, 3, 4]}
+          />
+          <CustomDropdown label="Transmission" options={['Manual', 'Automatic']} />
+          <CustomNumberInput
+            aria-label="Demo number input"
+            placeholder="KM Driven"
+            label="KM Driven"
+          />
+          <CustomDropdown label="No. of Owners" options={[1, 2, 3, 4]} />
+        </Box>
+      </>
+    );
+  };

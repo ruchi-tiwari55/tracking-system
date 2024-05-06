@@ -33,7 +33,8 @@ const StyledLabel = styled('label')(({ theme }) => `
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 500;
   color: ${theme.palette.mode === 'dark' ? 'black' : 'black'};
-  padding: 9px;
+  padding: 1px
+  marginRight:1px
 
 `);
 
@@ -124,7 +125,7 @@ const CustomNumberInput = React.forwardRef(function CustomNumberInput(
 
   return (
     <div>
-      <StyledLabel>{'Set Price *'}</StyledLabel>
+      <StyledLabel>{label}</StyledLabel>
       <StyledInputRoot {...getRootProps()} className={focused ? 'focused' : null}>
         <StyledStepperButton {...getIncrementButtonProps()} className="increment">
           ▴
