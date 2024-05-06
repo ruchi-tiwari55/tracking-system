@@ -33,7 +33,9 @@ const Profile = () => {
                     </span>
                 </p>: 
                 <h5>
-                <i className="fa fa-copy" onClick={handleCopyClick}>
+                <i className="fa fa-copy" onClick={handleCopyClick}
+                style={{marginRight:10}}
+                >
                 </i>
                 REFERAL LINK :{" "}
                 <span>
