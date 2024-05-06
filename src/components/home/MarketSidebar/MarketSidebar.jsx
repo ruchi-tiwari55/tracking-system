@@ -25,7 +25,7 @@ const Sidebar = () => {
         const responseData = await response.json();
         console.log("Fetched data:", responseData);
         if (responseData.code === 200 && Array.isArray(responseData.data)) {
-          setCategories(responseData.data);
+          setCategories(responseData?.data);
         } else {
           throw new Error("Invalid data format received from the server");
         }

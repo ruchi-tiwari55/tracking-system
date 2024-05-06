@@ -2,14 +2,24 @@ import React, { useState, useEffect, useRef } from 'react';
 import './navbar.css';
 import { Link } from 'react-router-dom';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import PostAdsModal from '../../pages/Home/postAddForms/postAddModal';
+import { useModal } from '../../pages/Home/postAddForms/ModalContext';
 
 
-const Navbar = ({toggleDrawer}) => {
+const Navbar = ({ toggleDrawer }) => {
     const [showDropdown, setShowDropdown] = useState(false);
+    const { toggleModal, isModalOpen } = useModal();
+
     const dropdownRef = useRef(null);
     const isMobile = useMediaQuery('(max-width:600px)');
-    
 
+
+    const handleOpenAddModal = () => {
+        toggleModal()
+
+    };
+
+    
     const toggleDropdown = () => {
         setShowDropdown(!showDropdown);
     };
@@ -50,11 +60,9 @@ const Navbar = ({toggleDrawer}) => {
                         Market Place
                     </Link>
                 </div>
-                <div>
-                    <Link to="/my-ads">
-                        <i className="fab fa-buysellads fa-2x"></i>
-                        Post Ads
-                    </Link>
+                <div onClick={handleOpenAddModal} style={{ cursor: 'pointer' }}>
+                    <i className="fab fa-buysellads fa-2x"></i>
+                    Post Ads
                 </div>
             </div>
 
@@ -75,10 +83,10 @@ const Navbar = ({toggleDrawer}) => {
                             <i className="fas fa-cog fa-2x"></i>
                             Settings
                         </Link> : <>
-                            <Link to="/my-ads">
+                            <div onClick={handleOpenAddModal} style={{ cursor: 'pointer' }}>
                                 <i className="fab fa-buysellads fa-2x"></i>
                                 Post Ads
-                            </Link>
+                            </div>
 
                         </>
 
@@ -123,6 +131,8 @@ const Navbar = ({toggleDrawer}) => {
                     <span>Profile</span>
                 </Link>
             </div>}
+
+            <PostAdsModal open={isModalOpen} handleClose={toggleModal} />
         </div>
     );
 

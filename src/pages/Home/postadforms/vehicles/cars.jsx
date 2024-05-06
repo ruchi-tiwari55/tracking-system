@@ -13,8 +13,17 @@ const brands = [
     "Lexus", "Mahindra Renault", "Maserati", "Maybach", "Mazda", "Mercedes-Benz", "MG", "Mini",
     "Mitsubishi", "Nissan", "Opel", "Peugeot", "Porsche", "Premier", "Renault", "Rolls-Royce", "San",
     "Sipani", "Skoda", "Smart", "Ssangyong", "Subaru", "Volkswagen", "Volvo"
-  ];
+];
 const HousesAppartments = () => {
+    const [bikestate1, setbikestate1] = useState(null)
+    const [bikestate2, setbikestate2] = useState(null)
+    const [bikestate3, setbikestate3] = useState(null)
+
+
+
+    const handleButtonClick = (value, setter) => {
+        setter(value === setter ? null : value);
+    };
 
     const options = brands.map(brand => ({ value: brand, label: brand }));
     return (
@@ -47,21 +56,37 @@ const HousesAppartments = () => {
                                 <input></input>
                             </div>
                         </div>
+
+
                         <div>
-                            <p>Fuel *</p>
-                            <div className={styles.details1_1}>
-                                <div>CNG & Hybrids</div>
-                                <div>Diesel</div>
-                                <div>Electric</div>
-                                <div>LPG</div>
-                                <div>Petrol</div>
+                            <p style={{ margin: 20 }}>CNG & Hybrids</p>
+                            <div className={styles.option}>
+                                {['CNG & Hybrids', 'Diesel', 'Electric', 'LPG', 'Petrol'].map((type) => (
+                                    <div
+                                        key={type}
+                                        onClick={() => handleButtonClick(type, setbikestate1)}
+                                        className={`${styles.option} ${bikestate1 === type && styles.selected}`}
+                                    >
+                                        {type}
+                                    </div>
+                                ))}
                             </div>
                         </div>
+
+
                         <div>
-                            <p>Transmission *</p>
-                            <div className={styles.details1_1}>
-                                <div>Automatic</div>
-                                <div>Manual</div>
+                           
+                            <p style={{ margin: 20 }}>Transmissions</p>
+                            <div className={styles.option}>
+                                {['Automatic', 'Manual'].map((type) => (
+                                    <div
+                                        key={type}
+                                        onClick={() => handleButtonClick(type, setbikestate2)}
+                                        className={`${styles.option} ${bikestate2 === type && styles.selected}`}
+                                    >
+                                        {type}
+                                    </div>
+                                ))}
                             </div>
                         </div>
                         <div>
@@ -71,14 +96,29 @@ const HousesAppartments = () => {
                             </div>
                         </div>
                         <div>
-                            <p>No. of Owners *</p>
+                            {/* <p>No. of Owners *</p>
                             <div className={styles.details1_1}>
                                 <div>1st</div>
                                 <div>2nd</div>
                                 <div>3rd</div>
                                 <div>4th</div>
                                 <div>4+</div>
-                            </div>
+                            </div> */}
+                             <div>
+                           
+                           <p style={{ margin: 20 }}>No. of Owners</p>
+                           <div className={styles.option}>
+                               {['1st', '2nd','3rd','4rth','5th'].map((type) => (
+                                   <div
+                                       key={type}
+                                       onClick={() => handleButtonClick(type, setbikestate3)}
+                                       className={`${styles.option} ${bikestate3 === type && styles.selected}`}
+                                   >
+                                       {type}
+                                   </div>
+                               ))}
+                           </div>
+                       </div>
                         </div>
                         <div className={styles.details1} style={{ gap: "2.5rem" }}>
                             <div className={styles.details2}>
