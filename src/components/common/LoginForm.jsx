@@ -23,7 +23,7 @@ const LoginForm = ({ toggleSignupForm }) => {
   
     try {
       const response = await axios.post(
-        'https://lzycrazy-tracking-backend-1.onrender.com/v1/users/login',
+        'https://lzycrazy-tracking-backend.onrender.com/v1/users/login',
         {
           email: email,
           password: password
