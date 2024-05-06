@@ -40,7 +40,7 @@ const LoginForm = ({ toggleSignupForm }) => {
       // You can handle the response here, maybe redirect the user to dashboard or show a success message
       
       navigate('/dashboard');
-      alert('Login successful');
+      alert('Login successful..');
     } catch (error) {
       console.error('Login Error:', error);
       // Handle login errors here, show an error message to the user, etc.
