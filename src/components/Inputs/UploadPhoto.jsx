@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Box, Typography, IconButton, Grid, Paper } from '@mui/material';
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
+import CloseIcon from '@mui/icons-material/Close';
 
 const PhotoUpload = () => {
     const [selectedFiles, setSelectedFiles] = useState([]);
 
-    // Function to handle file selection
     const handleFileSelect = (event) => {
         const files = event.target.files;
         if (files.length + selectedFiles.length > 8) {
@@ -13,17 +13,19 @@ const PhotoUpload = () => {
             return;
         }
 
-        const newFiles = Array.from(files).slice(0, 8 - selectedFiles.length); // Limit to remaining slots
+        const newFiles = Array.from(files).slice(0, 8 - selectedFiles.length);
         setSelectedFiles([...selectedFiles, ...newFiles]);
     };
 
+    const handleRemoveImage = (index) => {
+        const updatedFiles = [...selectedFiles];
+        updatedFiles.splice(index, 1);
+        setSelectedFiles(updatedFiles);
+    };
+
     return (
-        <Box mt={2}
-        sx={{marginBottom:3}}
-        p={2} bgcolor="white" borderRadius={2} border="1px dashed #aaa" width="100%">
-
+        <Box mt={2} p={2} bgcolor="white" borderRadius={2} border="1px dashed #aaa" width="100%">
             <Box mt={2}>
-
                 <Grid container spacing={1}>
                     {selectedFiles.map((file, index) => (
                         <Grid key={index} item xs={3}>
@@ -33,13 +35,16 @@ const PhotoUpload = () => {
                                     alt={`Selected ${index + 1}`}
                                     style={{ width: '100%', height: 'auto' }}
                                 />
-
+                                <IconButton
+                                    onClick={() => handleRemoveImage(index)}
+                                    style={{ position: 'absolute', top: 5, right: 5, color: 'red' }}
+                                >
+                                    <CloseIcon />
+                                </IconButton>
                             </Paper>
                         </Grid>
                     ))}
                 </Grid>
-
-
             </Box>
             <Box mt={2} p={2} bgcolor="rgba(0, 0, 0, 0.1)" borderRadius={4} border="1px dashed #aaa" width="30%">
                 <Typography variant="subtitle1" mb={1}>
@@ -53,16 +58,12 @@ const PhotoUpload = () => {
                     style={{ display: 'none' }}
                     onChange={handleFileSelect}
                 />
-
                 <label htmlFor="photo-upload-input">
                     <IconButton component="span">
                         <PhotoCameraIcon />
                     </IconButton>
                 </label>
             </Box>
-
-
-
         </Box>
     );
 };
