@@ -17,7 +17,7 @@ const Sidebar = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://lzycrazy-backend.onrender.com/api/admins/all-category"
+          "https://lzycrazy-tracking-backend.onrender.com/categories/getAll"
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
