@@ -19,6 +19,233 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 // import "./MarketPlace.css"
 
 function VideoComponent() {
+
+  const isMobile = useMediaQuery('(max-width:600px)');
+
+  var slidersettings = {
+    dots: true,
+    infinite: true,
+    speed: 1500,
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+  var slidersetting = {
+    dots: true,
+    infinite: true,
+    speed: 2500,
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+  var slidersettingt = {
+    dots: true,
+    infinite: true,
+    speed: 3500,
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+  var slidersettingu = {
+    dots: true,
+    infinite: true,
+    speed: 5500,
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+
+  const fixedHeight = '130px';
+  const fixedWidth = 400;
+  const ImageWithFixedSize = ({ src, alt }) => (
+    <img
+      src={src}
+      alt={alt}
+      style={{
+        height: isMobile ? 117 : fixedHeight,
+        width: isMobile ? "100%" : fixedWidth,
+        objectFit: 'cover',
+        borderRadius: '10px',
+      }}
+    />
+  );
+  return (
+    <>
+     { isMobile? <ForMobileVideoComponent/>: 
+     <div className="container col-lg-12 col-md-2" style={{
+        width: isMobile ? "77%" : "100%",
+        padding: isMobile ? "0rem 0.8rem" : "1rem 2rem",
+        marginLeft: isMobile ? 85 : 0,
+
+      }}>
+        <div style={{ display: 'flex', gap: 20,flexDirection: isMobile ? 'column' : 'row' }}>
+          <div style={{ textAlign: "left", width:isMobile?'80%': '60%' ,marginLeft:isMobile?5:0}}
+
+          >
+            <div
+              className="video-wrapper"
+              style={{ borderRadius: "15px", overflow: "hidden" }}
+            >
+              <video
+                // className="video-size"
+                preload="metadata"
+                controls
+                style={{ width: 400, height: isMobile ? 117 : "130px", }}
+                poster={banner1}
+              >
+                <source src={video1} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+          <div style={{ textAlign: "left", width:isMobile?'80%': '60%', marginLeft:isMobile?5:0 }}>
+            <div
+              className="video-wrapper"
+              style={{ borderRadius: "15px", overflow: "hidden" }}
+            >
+              <video
+                // className="video-size"
+                preload="metadata"
+                controls
+                style={{ width: 400, height: isMobile ? 117 : "130px", }}
+                poster={banner3}
+              >
+                <source src={video2} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+        {/* FIRST IMAGE SLIDER */}
+        <div style={{ display: 'flex', gap: isMobile?30:18, width:isMobile?200: 900, height: 200, flexDirection: isMobile ? 'column' : 'row', marginLeft:isMobile?10:0 }}>
+          <div className="col-lg-6">
+            <Slider {...slidersettings}>
+              <div>
+                <ImageWithFixedSize src={banner77} alt="Banner 77" />
+              </div>
+              <div>
+                <ImageWithFixedSize src={banner22} alt="banner 22" />
+              </div>
+              <div>
+                <ImageWithFixedSize src={banner33} alt="banner 33" />
+              </div>
+            </Slider>
+          </div>
+
+
+          <div className="col-lg-6">
+            <Slider {...slidersetting}>
+              <div>
+                <ImageWithFixedSize
+                  src={banner55}
+                  alt="Banner 55"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    borderRadius: "10px"
+                  }}
+                />
+              </div>
+              <div>
+                <ImageWithFixedSize
+                  src={banner44}
+                  alt="banner 33"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    borderRadius: "10px"
+                  }}
+                />
+              </div>
+              <div>
+                <ImageWithFixedSize
+                  src={banner33}
+                  alt="banner 44"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    borderRadius: "10px"
+                  }}
+                />
+              </div>
+            </Slider>
+          </div>
+        </div>
+
+        {/* SECOND IMAGE SLIDER */}
+      
+
+        <div style={{ display: 'flex', gap: isMobile?20:18,width:isMobile?200: 900, height: 200, flexDirection: isMobile ? 'column' : 'row',marginLeft:isMobile?10:0, }}>
+          <div className="col-lg-6">
+            <Slider {...slidersettings}>
+              <div>
+                <ImageWithFixedSize src={banner1}
+                  alt="Banner 1" />
+              </div>
+              <div>
+                <ImageWithFixedSize src={banner5}
+                  alt="banner 5" />
+              </div>
+              <div>
+                <ImageWithFixedSize src={banner3}
+                  alt="banner 3" />
+              </div>
+            </Slider>
+          </div>
+
+
+          <div className="col-lg-6">
+            <Slider {...slidersetting}>
+              <div>
+                <ImageWithFixedSize
+                  src={banner55}
+                  alt="Banner 55"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    borderRadius: "10px"
+                  }}
+                />
+              </div>
+              <div>
+                <ImageWithFixedSize
+                  src={banner4}
+                  alt="banner 4"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    borderRadius: "10px"
+                  }}
+                />
+              </div>
+              <div>
+                <ImageWithFixedSize
+               src={banner5}
+               alt="banner 5"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    borderRadius: "10px"
+                  }}
+                />
+              </div>
+            </Slider>
+          </div>
+        </div>
+      </div>}
+    </>
+  );
+}
+
+export default VideoComponent;
+
+
+
+
+
+
+function ForMobileVideoComponent() {
   const isMobile = useMediaQuery('(max-width:600px)');
 
   var slidersettings = {
@@ -252,4 +479,3 @@ function VideoComponent() {
   );
 }
 
-export default VideoComponent;

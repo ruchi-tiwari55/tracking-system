@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Box, Typography, Button, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import CustomDropdown from './dropDown';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import CommonInputField from './InputFeild';
 
 const ReviewDetailsForm = () => {
     const [selectedOption1, setSelectedOption1] = useState('');
     const [selectedOption2, setSelectedOption2] = useState('');
+    const isMobile = useMediaQuery('(max-width:600px)');
 
     const options = [
         { label: 'Option 1', value: 'option1' },
@@ -40,20 +42,20 @@ const ReviewDetailsForm = () => {
             </Typography>
 
             <Box display="flex" alignItems="center" justifyContent="space-between" mb={2}
-            sx={{gap:5}}
+                sx={{ gap: 5, flexDirection: isMobile? 'column':'row' }}
             >
-            <CustomDropdown
-                label="state"
-                options={options}
+                <CustomDropdown
+                    label="state"
+                    options={options}
                 // value={selectedOption}
                 // onChange={handleDropdownChange}
-            />
-            <CustomDropdown
-                label="city"
-                options={options}
+                />
+                <CustomDropdown
+                    label="city"
+                    options={options}
                 // value={selectedOption}
                 // onChange={handleDropdownChange}
-            />
+                />
             </Box>
 
             <CommonInputField label="Your Area*" multiline={true} required />
