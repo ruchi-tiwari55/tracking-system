@@ -46,7 +46,7 @@ const MarketSubcategory = ({ categoryName, setShowMarketSidebar }) => {
       {subcategories.map((subcategory) => (
         <div key={subcategory._id} className="subcategory-item">
           <Link to="/marketplacePage" className="subcategory-link">
-            {subcategory.addIcon && <img src={subcategory.addIcon} alt="" className="subcategory-icon" />}
+            {subcategory.addIcon && <img src={subcategory.addIcon} alt="" className="subcategory-icon" style={{height:20, width:20, borderRadius:40}}/>}
             <span className="subcategory-name">{subcategory.subCategoryName}</span>
           </Link>
         </div>

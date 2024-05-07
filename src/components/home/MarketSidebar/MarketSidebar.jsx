@@ -63,7 +63,7 @@ const Sidebar = () => {
                   to="#"
                   onClick={() => handleCategoryClick(category.categoryName)}
                 >
-                  <img src="assets/images/response.png" alt="category" />
+                  <img src="assets/images/response.png" alt="category" style={{height:20, width:20, borderRadius:40}}/>
                   <span>{category.categoryName}</span>
                 </Link>
               </div>
