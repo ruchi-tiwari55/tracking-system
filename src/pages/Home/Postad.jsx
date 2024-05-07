@@ -1,266 +1,136 @@
 import React, { useState } from 'react';
-import styles from '../../styles/home/postad.module.css'
-import '../../styles/globals.css';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import VehiclesIcon from '@mui/icons-material/DriveEtaOutlined';
-import RealEstateIcon from '@mui/icons-material/MapsHomeWorkOutlined';
-import MobilesIcon from '@mui/icons-material/PhoneIphoneOutlined';
-import FurnitureIcon from '@mui/icons-material/ChairOutlined';
-import FashionIcon from '@mui/icons-material/WomanOutlined';
-import ElectronicsIcon from '@mui/icons-material/CableOutlined';
-import TourAndTravelsIcon from '@mui/icons-material/PublicOutlined';
-import RentalItemsIcon from '@mui/icons-material/ShoppingCartOutlined';
-import SelfMadeIcon from '@mui/icons-material/Inventory2Outlined';
-import DirectByFarmIcon from '@mui/icons-material/Agriculture';
-import { Link } from 'react-router-dom';
-import { Modal, Box, Typography, Divider, Button } from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
-
-
-function HomePage() {
-  const [selectedCategory, setSelectedCategory] = useState(null);
-
-  const handleCategoryClick = (category) => {
-    setSelectedCategory(category);
-  };
-
-  const handleCloseModal = () => {
-    setSelectedCategory(null);
-  };
-
-  const generateOptions = () => {
-    switch (selectedCategory) {
-      case 'DIRECT BY FARM':
-        return (
-          <>
-            <Link to="/anaaj-grain" style={{ color: "inherit", textDecoration: "none" }}><div>ANAAJ/GRAIN</div></Link>
-            <Link to="/eggs" style={{ color: "inherit", textDecoration: "none" }}><div>EGGS</div></Link>
-            <Link to="/fish" style={{ color: "inherit", textDecoration: "none" }}><div>FISH</div></Link>
-            <Link to="/fruits" style={{ color: "inherit", textDecoration: "none" }}><div>FRUITS</div></Link>
-            <Link to="/milk" style={{ color: "inherit", textDecoration: "none" }}><div>MILK</div></Link>
-            <Link to="/vegetables" style={{ color: "inherit", textDecoration: "none" }}><div>VEGETABLES</div></Link>
-          </>
-        );
-      case 'SELF MADE':
-        return (
-          <>
-            <Link to="/artificial-jewellery" style={{ color: "inherit", textDecoration: "none" }}><div>ARTIFICIAL JEWELLERY</div></Link>
-            <Link to="/cloth" style={{ color: "inherit", textDecoration: "none" }}><div>CLOTH/STITCHING</div></Link>
-            <Link to="/home-decor" style={{ color: "inherit", textDecoration: "none" }}><div>HOME DECOR</div></Link>
-            <Link to="/home-made" style={{ color: "inherit", textDecoration: "none" }}><div>HOME MADE</div></Link>
-            <Link to="/plant-pot" style={{ color: "inherit", textDecoration: "none" }}><div>PLANT & POT</div></Link>
-          </>
-        );
-      case 'RENTAL ITEMS':
-        return (
-          <>
-            <Link to="/ac" style={{ color: "inherit", textDecoration: "none" }}><div>AC</div></Link>
-            <Link to="/computer-laptop" style={{ color: "inherit", textDecoration: "none" }}><div>COMPUTER/LAPTOP</div></Link>
-            <Link to="/costume" style={{ color: "inherit", textDecoration: "none" }}><div>COSTUME/CLOTH</div></Link>
-            <Link to="/fridge" style={{ color: "inherit", textDecoration: "none" }}><div>FRIDGE</div></Link>
-            <Link to="/furniture" style={{ color: "inherit", textDecoration: "none" }}><div>FURNITURE</div></Link>
-            <Link to="/home-appliance" style={{ color: "inherit", textDecoration: "none" }}><div>HOME APPLIANCE</div></Link>
-            <Link to="/inverter" style={{ color: "inherit", textDecoration: "none" }}><div>INVERTER</div></Link>
-          </>
-        );
-      case 'REAL ESTATE':
-        return (
-          <>
-            <Link to="/buy" style={{ color: "inherit", textDecoration: "none" }}><div>BUY</div></Link>
-            <Link to="/commercials" style={{ color: "inherit", textDecoration: "none" }}><div>COMMERCIALS</div></Link>
-            <Link to="/rent" style={{ color: "inherit", textDecoration: "none" }}><div>RENT</div></Link>
-          </>
-        );
-      case 'VEHICLES':
-        return (
-          <>
-            <Link to="/bicycle" style={{ color: "inherit", textDecoration: "none" }}><div>BICYCLES</div></Link>
-            <Link to="/bikes" style={{ color: "inherit", textDecoration: "none" }}><div>BIKES</div></Link>
-            <Link to="/cars" style={{ color: "inherit", textDecoration: "none" }}><div>CARS</div></Link>
-            <Link to="/scooters" style={{ color: "inherit", textDecoration: "none" }}><div>SCOOTERS</div></Link>
-            <Link to="/spareparts" style={{ color: "inherit", textDecoration: "none" }}><div>SPARE PARTS</div></Link>
-          </>
-        );
-      case 'MOBILES':
-        return (
-          <>
-            <Link to="/accessories" style={{ color: "inherit", textDecoration: "none" }}><div>ACCESSORIES</div></Link>
-            <Link to="/mobile-phones" style={{ color: "inherit", textDecoration: "none" }}><div>MOBILE PHONES</div></Link>
-            <Link to="/tablets" style={{ color: "inherit", textDecoration: "none" }}><div>TABLETS</div></Link>
-          </>
-        );
-      case 'FURNITURE':
-        return (
-          <>
-            <Link to="/beds" style={{ color: "inherit", textDecoration: "none" }}><div>BEDS</div></Link>
-            <Link to="/chairs" style={{ color: "inherit", textDecoration: "none" }}><div>CHAIRS</div></Link>
-            <Link to="/dining-tables" style={{ color: "inherit", textDecoration: "none" }}><div>DINING TABLES</div></Link>
-            <Link to="/kids-furniture" style={{ color: "inherit", textDecoration: "none" }}><div>KIDS FURNITURE</div></Link>
-            <Link to="/office-furniture" style={{ color: "inherit", textDecoration: "none" }}><div>OFFICE FURNITURE</div></Link>
-            <Link to="/sofa" style={{ color: "inherit", textDecoration: "none" }}><div>SOFA</div></Link>
-            <Link to="/wardrobes" style={{ color: "inherit", textDecoration: "none" }}><div>WARDROBES</div></Link>
-          </>
-        );
-      case 'FASHION':
-        return (
-          <>
-            <Link to="/kids" style={{ color: "inherit", textDecoration: "none" }}><div>KIDS</div></Link>
-            <Link to="/men" style={{ color: "inherit", textDecoration: "none" }}><div>MEN</div></Link>
-            <Link to="/women" style={{ color: "inherit", textDecoration: "none" }}><div>WOMEN</div></Link>
-          </>
-        );
-      case 'ELECTRONICS':
-        return (
-          <>
-            <Link to="/air-conditioner" style={{ color: "inherit", textDecoration: "none" }}><div>AC</div></Link>
-            <Link to="/camera-lenses" style={{ color: "inherit", textDecoration: "none" }}><div>CAMERAS & LENSES</div></Link>
-            <Link to="/computerlaptop" style={{ color: "inherit", textDecoration: "none" }}><div>COMPUTER/LAPTOP</div></Link>
-            <Link to="/fridgee" style={{ color: "inherit", textDecoration: "none" }}><div>FRIDGE</div></Link>
-            <Link to="/kitchen-appliance" style={{ color: "inherit", textDecoration: "none" }}><div>KITCHEN APPLIANCES</div></Link>
-            <Link to="/printers" style={{ color: "inherit", textDecoration: "none" }}><div>PRINTERS</div></Link>
-            <Link to="/television" style={{ color: "inherit", textDecoration: "none" }}><div>TV</div></Link>
-            <Link to="/washing-machines" style={{ color: "inherit", textDecoration: "none" }}><div>WASHING MACHINES</div></Link>
-          </>
-        );
-      case 'TOUR & TRAVELS':
-        return (
-          <>
-          </>
-        );
-      default:
-        return null;
-    }
-  };
-
-  return (
-    <>
-      <div className={styles.navbar}></div>
-      <h1 className={styles.head1}>POST YOUR AD</h1>
-      <div className={styles.inner}>
-        <div className={styles.top}>
-          <h3>CHOOSE A CATEGORY</h3>
-        </div>
-        <div className={styles.bottom}>
-          <div className={styles.left}>
-            <div className={selectedCategory === 'DIRECT BY FARM' ? styles.clicked : ''} onClick={() => handleCategoryClick('DIRECT BY FARM')}>
-              <DirectByFarmIcon />
-              <p>DIRECT BY FARM</p>
-              <ArrowForwardIosIcon />
-            </div>
-
-            <div className={selectedCategory === 'SELF MADE' ? styles.clicked : ''} onClick={() => handleCategoryClick('SELF MADE')}>
-              <SelfMadeIcon />
-              <p>SELF MADE</p>
-              <ArrowForwardIosIcon />
-            </div>
-
-            <div className={selectedCategory === 'RENTAL ITEMS' ? styles.clicked : ''} onClick={() => handleCategoryClick('RENTAL ITEMS')}>
-              <RentalItemsIcon />
-              <p>RENTAL ITEMS</p>
-              <ArrowForwardIosIcon />
-            </div>
-
-            <div className={selectedCategory === 'REAL ESTATE' ? styles.clicked : ''} onClick={() => handleCategoryClick('REAL ESTATE')}>
-              <RealEstateIcon />
-              <p>REAL ESTATE</p>
-              <ArrowForwardIosIcon />
-            </div>
-
-            <div className={selectedCategory === 'VEHICLES' ? styles.clicked : ''} onClick={() => handleCategoryClick('VEHICLES')}>
-              <VehiclesIcon />
-              <p>VEHICLES</p>
-              <ArrowForwardIosIcon />
-            </div>
-
-            <div className={selectedCategory === 'MOBILES' ? styles.clicked : ''} onClick={() => handleCategoryClick('MOBILES')}>
-              <MobilesIcon />
-              <p>MOBILES</p>
-              <ArrowForwardIosIcon />
-            </div>
-
-            <div className={selectedCategory === 'FURNITURE' ? styles.clicked : ''} onClick={() => handleCategoryClick('FURNITURE')}>
-              <FurnitureIcon />
-              <p>FURNITURE</p>
-              <ArrowForwardIosIcon />
-            </div>
-
-            <div className={selectedCategory === 'FASHION' ? styles.clicked : ''} onClick={() => handleCategoryClick('FASHION')}>
-              <FashionIcon />
-              <p>FASHION</p>
-              <ArrowForwardIosIcon />
-            </div>
-
-            <div className={selectedCategory === 'ELECTRONICS' ? styles.clicked : ''} onClick={() => handleCategoryClick('ELECTRONICS')}>
-              <ElectronicsIcon />
-              <p>ELECTRONICS</p>
-              <ArrowForwardIosIcon />
-            </div>
-
-            <div className={selectedCategory === 'TOUR & TRAVELS' ? styles.clicked : ''} onClick={() => handleCategoryClick('TOUR & TRAVELS')}>
-              <TourAndTravelsIcon />
-              <p>TOUR & TRAVELS</p>
-              <ArrowForwardIosIcon />
-            </div>
-          </div>
-          {/* <div className={styles.right}>
-            <div className={styles.right_inner}>
-              {selectedCategory && generateOptions()}
-            </div>
-          </div> */}
-          {selectedCategory && <ModalComponent selectedCategory={selectedCategory} 
-          generateOptions={generateOptions} 
-          handleClose={handleCloseModal}
-          />
-          
-          }
-        </div>
-      </div>
-    </>
-  );
-}
-
-export default HomePage;
-
-
-const ModalComponent = ({ selectedCategory, handleClose, generateOptions }) => {
-  return (
-    <Modal open={true} onClose={handleClose}>
-      <Box
-        sx={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: 300,
-          bgcolor: 'background.paper',
-          boxShadow: 24,
-          p: 2,
-          borderRadius:5
-        }}
-      >
-        <Typography variant="h7">Options for {selectedCategory}</Typography>
-        <Divider sx={{ my: 2 }} />
-        <Typography variant="h7"> {generateOptions(selectedCategory)}</Typography>
-       
-        <Button onClick={handleClose}>Close</Button>
-      </Box>
-    </Modal>
-  );
-};
-
-const style = {
-  link: {
-    display: 'block',
-    textDecoration: 'none',
-    color: 'inherit',
-    marginTop: '8px',
-  },
-  linkText: {
-    textDecoration: 'none',
-    color: 'inherit',
-    '&:hover': {
-      color: 'blue', // Change color on hover
-      textDecoration: 'underline', // Underline on hover
+const MyAds = () => {
+  const [ads, setAds] = useState([
+    {
+      images: [
+        'https://via.placeholder.com/50',
+        'https://via.placeholder.com/50',
+        'https://via.placeholder.com/50',
+        'https://via.placeholder.com/50'
+      ],
+      category: 'Electronics',
+      title: 'Laptop',
+      sellingPrice: '500',
+      description: 'A used laptop in good condition.',
     },
-  },
+    {
+      images: [
+        'https://via.placeholder.com/50',
+        'https://via.placeholder.com/50',
+        'https://via.placeholder.com/50',
+        'https://via.placeholder.com/50'
+      ],
+      category: 'Furniture',
+      title: 'Chair',
+      sellingPrice: '50',
+      description: 'A wooden chair.',
+    },
+    {
+      images: [
+        'https://via.placeholder.com/50',
+        'https://via.placeholder.com/50',
+        'https://via.placeholder.com/50',
+        'https://via.placeholder.com/50'
+      ],
+      category: 'Automotive',
+      title: 'Car',
+      sellingPrice: '15000',
+      description: 'A used car in excellent condition.',
+    },
+  ]);
+
+  const [searchTerm, setSearchTerm] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [adsPerPage] = useState(5);
+
+  const indexOfLastAd = currentPage * adsPerPage;
+  const indexOfFirstAd = indexOfLastAd - adsPerPage;
+
+  const currentAds = ads
+    .filter((ad) => {
+      const values = Object.values(ad).join(' ').toLowerCase();
+      return values.includes(searchTerm.toLowerCase());
+    })
+    .slice(indexOfFirstAd, indexOfLastAd);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  return (
+    <div style={{ width: '80%', margin: '20px auto', padding: '20px', backgroundColor: '#f9f9f9', borderRadius: '5px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>
+      <h2 style={{ textAlign: 'center', marginBottom: '20px', color: '#333', textTransform: 'uppercase' }}>My Ads</h2>
+      <input
+        type="text"
+        placeholder="Search..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        style={{ marginBottom: '20px', padding: '8px', borderRadius: '5px', border: '1px solid #ddd', width: '100%', boxSizing: 'border-box' }}
+      />
+
+      <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+        <thead>
+          <tr>
+            <th style={{ padding: '10px', borderBottom: '1px solid #ddd', backgroundColor: '#f2f2f2' }}>S.No.</th>
+             <th style={{ padding: '10px', borderBottom: '1px solid #ddd', backgroundColor: '#f2f2f2' }}>Image</th>
+             <th style={{ padding: '10px', borderBottom: '1px solid #ddd', backgroundColor: '#f2f2f2' }}>Category</th>
+             <th style={{ padding: '10px', borderBottom: '1px solid #ddd', backgroundColor: '#f2f2f2' }}>Title</th>
+             <th style={{ padding: '10px', borderBottom: '1px solid #ddd', backgroundColor: '#f2f2f2' }}>Selling Price</th>
+             <th style={{ padding: '10px', borderBottom: '1px solid #ddd', backgroundColor: '#f2f2f2' }}>Description</th>
+             <th style={{ padding: '10px', borderBottom: '1px solid #ddd', backgroundColor: '#f2f2f2' }}>Edit</th>
+            {/* <th>S.No.</th>
+            <th>Images</th>
+            <th>Category</th>
+            <th>Title</th>
+            <th>Selling Price</th>
+            <th>Description</th>
+            <th>Edit</th> */}
+          </tr>
+        </thead>
+        <tbody>
+          {currentAds.map((ad, index) => (
+            <tr key={index}>
+              <td>{index + 1 + (currentPage - 1) * adsPerPage}</td>
+              <td>
+                {ad.images.map((img, imgIndex) => (
+                  <img
+                    key={imgIndex}
+                    src={img}
+                    alt={`product ${imgIndex}`}
+                    style={{ height: '50px', width: '50px', borderRadius: '5px', marginRight: '5px' }}
+                  />
+                ))}
+              </td>
+              <td>{ad.category}</td>
+              <td>{ad.title}</td>
+              <td>{ad.sellingPrice}</td>
+              <td>{ad.description}</td>
+              <td>
+                <button onClick={() => console.log('Edit')} style={{ padding: '5px', borderRadius: '3px', backgroundColor: '#ffcc00', color: '#fff', border: 'none', cursor: 'pointer' }}>
+                  <FontAwesomeIcon icon={faEdit} />
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <div style={{ textAlign: 'center', marginTop: '20px' }}>
+        {adsPerPage < ads.length && (
+          <ul style={{ listStyle: 'none', padding: 0, display: 'flex', justifyContent: 'center' }}>
+            {Array.from({ length: Math.ceil(ads.length / adsPerPage) }, (_, i) => (
+              <li key={i} style={{ marginRight: '10px' }}>
+                <button onClick={() => paginate(i + 1)} style={{ padding: '5px 10px', borderRadius: '3px', backgroundColor: '#007bff', color: '#fff', border: 'none', cursor: 'pointer' }}>
+                  {i + 1}
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+  );
 };
+
+export default MyAds;
