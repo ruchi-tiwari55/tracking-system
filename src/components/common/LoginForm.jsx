@@ -23,7 +23,7 @@ const LoginForm = ({ toggleSignupForm }) => {
   
     try {
       const response = await axios.post(
-        'https://lzycrazy-tracking-backend-1.onrender.com/v1/users/login',
+        'https://lzycrazy-tracking-backend.onrender.com/v1/users/login',
         {
           email: email,
           password: password
@@ -40,7 +40,7 @@ const LoginForm = ({ toggleSignupForm }) => {
       // You can handle the response here, maybe redirect the user to dashboard or show a success message
       
       navigate('/dashboard');
-      alert('Login successful');
+      alert('Login successful..');
     } catch (error) {
       console.error('Login Error:', error);
       // Handle login errors here, show an error message to the user, etc.
