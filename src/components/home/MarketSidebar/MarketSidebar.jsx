@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import "./MarketSidebar.css";
 import MarketSubCategory from "../MarketSubcategory/MarketSubcategory";
 import useMediaQuery from '@mui/material/useMediaQuery';
-// import MobileMarketSideBar from "./MobileMarketSidebar";
 import MobileMarketSideBar from "./MobileMarketSidebar";
-
 
 const Sidebar = () => {
   const [categories, setCategories] = useState([]);
@@ -24,10 +22,10 @@ const Sidebar = () => {
         }
         const responseData = await response.json();
         console.log("Fetched data:", responseData);
-        if (responseData.code === 200 && Array.isArray(responseData.data)) {
-          setCategories(responseData?.data);
+        if (responseData && responseData.length > 0) {
+          setCategories(responseData);
         } else {
-          throw new Error("Invalid data format received from the server");
+          throw new Error("No categories found");
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -35,31 +33,50 @@ const Sidebar = () => {
     };
     fetchData();
   }, []);
-  const handleCategoryClick = async (categoryName) => {
+
+  const handleCategoryClick = (categoryName) => {
     setSelectedCategory(categoryName);
     setShowMarketSidebar(false);
-  }
+  };
 
   return (
     <>
-      {
-        isMobile ? <MobileMarketSideBar /> :
-          <div className="side-outer">
-            <div style={{ textAlign: 'center', fontWeight: "500", fontSize: "1.5rem", backgroundColor: 'white', display: showMarketSidebar ? 'block' : 'none' }}>CATEGORIES</div>
-            {showMarketSidebar &&
-              categories.map((category) => (
-                <div className="inner" key={category._id}>
-                  <Link onClick={() => handleCategoryClick(category.Categoryname)}>
-                    <img src="assets/images/response.png" alt="category" />
-                    <span>{category.Categoryname}</span>
-                  </Link>
-                </div>
-              ))}
-            {!showMarketSidebar && <MarketSubCategory categoryName={selectedCategory} setShowMarketSidebar={setShowMarketSidebar} />}
-          </div>}
-
+      {isMobile ? (
+        <MobileMarketSideBar />
+      ) : (
+        <div className="side-outer">
+          <div
+            style={{
+              textAlign: "center",
+              fontWeight: "500",
+              fontSize: "1.5rem",
+              backgroundColor: "white",
+              display: showMarketSidebar ? "block" : "none",
+            }}
+          >
+            CATEGORIES
+          </div>
+          {showMarketSidebar &&
+            categories.map((category) => (
+              <div className="inner" key={category._id}>
+                <Link
+                  to="#"
+                  onClick={() => handleCategoryClick(category.categoryName)}
+                >
+                  <img src="assets/images/response.png" alt="category" />
+                  <span>{category.categoryName}</span>
+                </Link>
+              </div>
+            ))}
+          {!showMarketSidebar && (
+            <MarketSubCategory
+              categoryName={selectedCategory}
+              setShowMarketSidebar={setShowMarketSidebar}
+            />
+          )}
+        </div>
+      )}
     </>
-
   );
 };
 
