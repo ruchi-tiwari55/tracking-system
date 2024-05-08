@@ -29,26 +29,26 @@ export default function MobileMarketSideBar() {
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const response = await fetch(
-                    "https://lzycrazy-backend.onrender.com/api/admins/all-category"
-                );
-                if (!response.ok) {
-                    throw new Error("Network response was not ok");
-                }
-                const responseData = await response.json();
-                console.log("Fetched data:", responseData);
-                if (responseData.code === 200 && Array.isArray(responseData.data)) {
-                    setCategories(responseData.data);
-                } else {
-                    throw new Error("Invalid data format received from the server");
-                }
-            } catch (error) {
-                console.error("Error fetching data:", error);
+          try {
+            const response = await fetch(
+              "https://lzycrazy-tracking-backend.onrender.com/categories/getAll"
+            );
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
             }
+            const responseData = await response.json();
+            console.log("Fetched data:", responseData);
+            if (responseData && responseData.length > 0) {
+              setCategories(responseData);
+            } else {
+              throw new Error("No categories found");
+            }
+          } catch (error) {
+            console.error("Error fetching data:", error);
+          }
         };
         fetchData();
-    }, []);
+      }, []);
 
 
     const handleCategoryClick = async (categoryName) => {

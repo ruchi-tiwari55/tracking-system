@@ -58,9 +58,9 @@
 /* Media query for mobile */
 @media (max-width: 768px) {
     .product-container {
-        width: 183%;
+        width: 73%;
         display: flex;
-        margin-left: -93%;
+        margin-left: 23%;
         padding-bottom: 60%;
     }
 
