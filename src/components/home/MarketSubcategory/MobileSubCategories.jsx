@@ -22,13 +22,31 @@ import { Link } from "react-router-dom";
 const drawerWidth = 230;
 
 export default function MobileSUbCategories({ categoryName, setShowMarketSidebar }) {
+    const [subcategories, setSubcategories] = useState([]);
 
 
     const isMobile = useMediaQuery('(max-width:600px)');
     const goBack = () => {
         setShowMarketSidebar(true)
     };
+    useEffect(() => {
+        const fetchSubcategories = async () => {
+            try {
+                const response = await fetch(
+                    "https://lzycrazy-tracking-backend.onrender.com/subcategories/getAll"
+                );
+                if (!response.ok) {
+                    throw new Error("Failed to fetch subcategories");
+                }
+                const data = await response.json();
+                setSubcategories(data);
+            } catch (error) {
+                console.error("Error fetching subcategories:", error);
+            }
+        };
 
+        fetchSubcategories();
+    }, []);
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', }}>
             <CssBaseline />
@@ -46,71 +64,33 @@ export default function MobileSUbCategories({ categoryName, setShowMarketSidebar
                 }}
             >
                 <Box sx={{ marginTop: 12 }}>
-                    <div style={{ textAlign: 'center', fontWeight: "500", fontSize: "14px", backgroundColor: 'white', display: 'flex', alignItems: 'center', marginBottom:10, gap:10  }}>
-                        <i className="fas fa-arrow-left fa-1x" onClick={goBack} style={{ cursor: "pointer", marginLeft:5}} ></i>
+                    <div style={{ textAlign: 'center', fontWeight: "500", fontSize: "14px", backgroundColor: 'white', display: 'flex', alignItems: 'center', marginBottom: 10, gap: 10 }}>
+                        <i className="fas fa-arrow-left fa-1x" onClick={goBack} style={{ cursor: "pointer", marginLeft: 5 }} ></i>
                         <span>{categoryName?.Categoryname}</span>
 
                     </div>
                     <div style={{ alignItems: 'center', marginBottom: 100, }}>
-                        <div style={{ margin: 0, padding: 0 }}>
-                            <Link to="/marketplacePage">
-                                <img src="assets/images/response.png" alt="category" style={{ alignSelf: 'center', marginLeft: 30 }} />
-                                <p style={{
-                                    textAlign: 'center',
-                                    fontSize: '12px',
-                                    fontWeight: 'bold',
-                                    color: 'black'
+                        {
+                            subcategories.map((subcategory) => {
+                                return (
+                                    <div style={{ margin: 0, padding: 0, alignItems:'center' }}>
+                                        <Link to="/marketplacePage" className="subcategory-link">
+                                          { subcategory.addIcon && <img src={subcategory.addIcon}  style={{ alignSelf: 'center', marginLeft: 30, height:30, width:30, borderRadius:40 }} />}
+                                            <p style={{
+                                                textAlign: 'center',
+                                                fontSize: '12px',
+                                                fontWeight: 'bold',
+                                                color: 'black'
 
-                                }}>Grain</p>
-                            </Link>
-                        </div>
-                        <div style={{ margin: 0, padding: 0 }}>
-                            <Link to="/marketplacePage">
-                                <img src="assets/images/response.png" alt="category" style={{ alignSelf: 'center', marginLeft: 30 }} />
-                                <p style={{
-                                    textAlign: 'center',
-                                    fontSize: '12px',
-                                    fontWeight: 'bold',
-                                    color: 'black'
+                                            }}>{subcategory.subCategoryName}</p>
+                                        </Link>
+                                    </div>
+                                )
+                            })
 
-                                }}>Milk</p>
-                            </Link>
-                        </div>
-                        <div style={{ margin: 0, padding: 0 }}>
-                            <Link to="/marketplacePage">
-                                <img src="assets/images/response.png" alt="category" style={{ alignSelf: 'center', marginLeft: 30 }} />
-                                <p style={{
-                                    textAlign: 'center',
-                                    fontSize: '12px',
-                                    fontWeight: 'bold',
-                                    color: 'black'
+                        }
 
-                                }}>Fruits</p>
-                            </Link>
-                        </div>
-                        <div style={{ margin: 0, padding: 0 }}>
-                            <Link to="/marketplacePage">
-                                <img src="assets/images/response.png" alt="category" style={{ alignSelf: 'center', marginLeft: 30 }} />
-                                <p style={{
-                                    textAlign: 'center',
-                                    fontSize: '12px',
-                                    fontWeight: 'bold',
-                                    color: 'black'
 
-                                }}>Fish</p>
-                            </Link>
-                        </div>
-                        <Link to="/marketplacePage">
-                            <div style={{ margin: 0, padding: 0 }}>
-                                <img src="assets/images/response.png" alt="category" style={{ alignSelf: 'center', marginLeft: 30 }} />
-                                <p style={{
-                                    textAlign: 'center',
-                                    fontSize: '12px',
-                                    fontWeight: 'bold',
-                                    color: 'black'
-                                }}>Vegetables</p>
-                            </div>
-                        </Link>
 
                     </div>
                 </Box>
