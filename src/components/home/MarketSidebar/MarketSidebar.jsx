@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./MarketSidebar.css";
 import MarketSubCategory from "../MarketSubcategory/MarketSubcategory";
-import useMediaQuery from '@mui/material/useMediaQuery';
+import useMediaQuery from "@mui/material/useMediaQuery";
 import MobileMarketSideBar from "./MobileMarketSidebar";
 
 const Sidebar = () => {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [showMarketSidebar, setShowMarketSidebar] = useState(true);
-  const isMobile = useMediaQuery('(max-width:600px)');
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -44,36 +44,44 @@ const Sidebar = () => {
       {isMobile ? (
         <MobileMarketSideBar />
       ) : (
-        <div className="side-outer">
+        <div className="side-outer" style={{ position: "sticky", top: "20px" }}>
           <div
             style={{
               textAlign: "center",
               fontWeight: "500",
               fontSize: "1.5rem",
               backgroundColor: "white",
-              display: showMarketSidebar ? "block" : "none",
+              // display: showMarketSidebar ? "block" : "none",
+              maxHeight: "calc(100vh - 80px)", // Adjust height based on your layout
+              overflowY: "auto",
+              width:'42vh',
+              gap:5
             }}
           >
             CATEGORIES
+            {showMarketSidebar &&
+              categories.map((category) => (
+                <div className="inner" key={category._id}>
+                  <Link
+                    to="#"
+                    onClick={() => handleCategoryClick(category.categoryName)}
+                  >
+                    <img
+                      src="assets/images/response.png"
+                      alt="category"
+                      style={{ height: 20, width: 20, borderRadius: 40 }}
+                    />
+                    <span>{category.categoryName}</span>
+                  </Link>
+                </div>
+              ))}
+            {!showMarketSidebar && (
+              <MarketSubCategory
+                categoryName={selectedCategory}
+                setShowMarketSidebar={setShowMarketSidebar}
+              />
+            )}
           </div>
-          {showMarketSidebar &&
-            categories.map((category) => (
-              <div className="inner" key={category._id}>
-                <Link
-                  to="#"
-                  onClick={() => handleCategoryClick(category.categoryName)}
-                >
-                  <img src="assets/images/response.png" alt="category" style={{height:20, width:20, borderRadius:40}}/>
-                  <span>{category.categoryName}</span>
-                </Link>
-              </div>
-            ))}
-          {!showMarketSidebar && (
-            <MarketSubCategory
-              categoryName={selectedCategory}
-              setShowMarketSidebar={setShowMarketSidebar}
-            />
-          )}
         </div>
       )}
     </>
