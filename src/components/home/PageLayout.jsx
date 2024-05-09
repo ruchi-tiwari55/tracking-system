@@ -23,7 +23,7 @@ const PageLayout = () => {
     const sidebarComponent = isMarketSection ? <MarketSidebar /> : <Sidebar showDrawer={showDrawer} onCloseDrawer={onCloseDrawer} />;
 
     return (
-        <div style={{ backgroundColor: "rgba(239, 238, 238, 0.71)", width: "100%", height: "100vh" }}>
+        <div style={{ backgroundColor: "rgba(239, 238, 238, 0.71)", width: "100%", height: "100vh" , overflow:'hidden'}}>
             <div>
                 <Navbar toggleDrawer={toggleDrawer} onCloseDrawer={onCloseDrawer} />
             </div>

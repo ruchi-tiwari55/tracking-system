@@ -13,6 +13,13 @@ import banner1 from "../../../assets/banner1.jpg";
 import banner3 from "../../../assets/banner3.jpg";
 import banner4 from "../../../assets/banner4.jpg";
 import banner5 from "../../../assets/banner5.jpg";
+
+import Banner1 from "../../../assets/updatedBanners/BANNER 1.jpg";
+import Banner2 from "../../../assets/updatedBanners/dw6.png";
+import Banner3 from "../../../assets/updatedBanners/INviting india.jpg";
+
+
+
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 // import MarketSidebar from "../../../components/home/MarketSidebar/MarketSidebar"
@@ -23,7 +30,7 @@ function VideoComponent() {
   const isMobile = useMediaQuery('(max-width:600px)');
 
   var slidersettings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 1500,
     autoplay: true,
@@ -31,33 +38,18 @@ function VideoComponent() {
     slidesToScroll: 1,
   };
   var slidersetting = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 2500,
     autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-  var slidersettingt = {
-    dots: true,
-    infinite: true,
-    speed: 3500,
-    autoplay: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-  var slidersettingu = {
-    dots: true,
-    infinite: true,
-    speed: 5500,
-    autoplay: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
 
 
-  const fixedHeight = '130px';
-  const fixedWidth = 400;
+
+  const fixedHeight = '100%';
+  const fixedWidth = 420;
   const ImageWithFixedSize = ({ src, alt }) => (
     <img
       src={src}
@@ -73,14 +65,17 @@ function VideoComponent() {
   return (
     <>
      { isMobile? <ForMobileVideoComponent/>: 
+       <div style={{ overflow: 'auto', height: 'calc(100vh - 80px)' }} >
      <div className="container col-lg-12 col-md-2" style={{
-        width: isMobile ? "77%" : "100%",
+       width: isMobile ? "77%" : "100%",
         padding: isMobile ? "0rem 0.8rem" : "1rem 2rem",
         marginLeft: isMobile ? 85 : 0,
+        marginTop:40,
+        // flex:1
 
       }}>
         <div style={{ display: 'flex', gap: 20,flexDirection: isMobile ? 'column' : 'row' }}>
-          <div style={{ textAlign: "left", width:isMobile?'80%': '60%' ,marginLeft:isMobile?5:0}}
+          <div style={{ textAlign: "left", width:isMobile?'80%': '90%' ,marginLeft:isMobile?5:0}}
 
           >
             <div
@@ -91,15 +86,15 @@ function VideoComponent() {
                 // className="video-size"
                 preload="metadata"
                 controls
-                style={{ width: 400, height: isMobile ? 117 : "130px", }}
-                poster={banner1}
+                style={{ width: 400, height: isMobile ? 117 : "140px", }}
+                poster={Banner1}
               >
                 <source src={video1} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
           </div>
-          <div style={{ textAlign: "left", width:isMobile?'80%': '60%', marginLeft:isMobile?5:0 }}>
+          <div style={{ textAlign: "left", width:isMobile?'80%': '90%', marginLeft:isMobile?5:0 }}>
             <div
               className="video-wrapper"
               style={{ borderRadius: "15px", overflow: "hidden" }}
@@ -108,7 +103,7 @@ function VideoComponent() {
                 // className="video-size"
                 preload="metadata"
                 controls
-                style={{ width: 400, height: isMobile ? 117 : "130px", }}
+                style={{ width: 400, height: isMobile ? 117 : "140px", }}
                 poster={banner3}
               >
                 <source src={video2} type="video/mp4" />
@@ -118,17 +113,17 @@ function VideoComponent() {
           </div>
         </div>
         {/* FIRST IMAGE SLIDER */}
-        <div style={{ display: 'flex', gap: isMobile?30:18, width:isMobile?200: 900, height: 200, flexDirection: isMobile ? 'column' : 'row', marginLeft:isMobile?10:0 }}>
+        <div style={{ display: 'flex', gap: isMobile?30:0, width:isMobile?200: 900, height: 200, flexDirection: isMobile ? 'column' : 'row', marginLeft:isMobile?10:0 }}>
           <div className="col-lg-6">
             <Slider {...slidersettings}>
               <div>
-                <ImageWithFixedSize src={banner77} alt="Banner 77" />
+                <ImageWithFixedSize src={Banner1} alt="Banner 77" />
               </div>
               <div>
-                <ImageWithFixedSize src={banner22} alt="banner 22" />
+                <ImageWithFixedSize src={Banner2} alt="banner 22" />
               </div>
               <div>
-                <ImageWithFixedSize src={banner33} alt="banner 33" />
+                <ImageWithFixedSize src={Banner3} alt="banner 33" />
               </div>
             </Slider>
           </div>
@@ -138,7 +133,7 @@ function VideoComponent() {
             <Slider {...slidersetting}>
               <div>
                 <ImageWithFixedSize
-                  src={banner55}
+                  src={Banner1}
                   alt="Banner 55"
                   style={{
                     width: "100%",
@@ -149,7 +144,7 @@ function VideoComponent() {
               </div>
               <div>
                 <ImageWithFixedSize
-                  src={banner44}
+                  src={Banner2}
                   alt="banner 33"
                   style={{
                     width: "100%",
@@ -160,7 +155,7 @@ function VideoComponent() {
               </div>
               <div>
                 <ImageWithFixedSize
-                  src={banner33}
+                  src={Banner3}
                   alt="banner 44"
                   style={{
                     width: "100%",
@@ -176,19 +171,19 @@ function VideoComponent() {
         {/* SECOND IMAGE SLIDER */}
       
 
-        <div style={{ display: 'flex', gap: isMobile?20:18,width:isMobile?200: 900, height: 200, flexDirection: isMobile ? 'column' : 'row',marginLeft:isMobile?10:0, }}>
+        <div style={{ display: 'flex', gap: isMobile?20:0,width:isMobile?200: 900, height: 200, flexDirection: isMobile ? 'column' : 'row',marginLeft:isMobile?10:0, }}>
           <div className="col-lg-6">
             <Slider {...slidersettings}>
               <div>
-                <ImageWithFixedSize src={banner1}
+                <ImageWithFixedSize src={Banner1}
                   alt="Banner 1" />
               </div>
               <div>
-                <ImageWithFixedSize src={banner5}
+                <ImageWithFixedSize src={Banner2}
                   alt="banner 5" />
               </div>
               <div>
-                <ImageWithFixedSize src={banner3}
+                <ImageWithFixedSize src={Banner3}
                   alt="banner 3" />
               </div>
             </Slider>
@@ -199,7 +194,7 @@ function VideoComponent() {
             <Slider {...slidersetting}>
               <div>
                 <ImageWithFixedSize
-                  src={banner55}
+                  src={Banner1}
                   alt="Banner 55"
                   style={{
                     width: "100%",
@@ -210,7 +205,7 @@ function VideoComponent() {
               </div>
               <div>
                 <ImageWithFixedSize
-                  src={banner4}
+                  src={Banner2}
                   alt="banner 4"
                   style={{
                     width: "100%",
@@ -221,7 +216,7 @@ function VideoComponent() {
               </div>
               <div>
                 <ImageWithFixedSize
-               src={banner5}
+               src={Banner3}
                alt="banner 5"
                   style={{
                     width: "100%",
@@ -233,8 +228,10 @@ function VideoComponent() {
             </Slider>
           </div>
         </div>
+      </div>
       </div>}
     </>
+
   );
 }
 
