@@ -68,6 +68,7 @@ const LoginForm = ({ toggleSignupForm }) => {
           placeholder="Email address or phone number"
           value={email}
           onBlur={checkEmailerr}
+
           onChange={(e) => {
             setEmail(e.target.value);
             setEmailError('');

@@ -87,6 +87,9 @@ function Signup({ toggleSignupForm }) {
 
               />
             </div>
+            <div style={{display:'flex', gap:20, width:'90%'}}>
+
+           
             <input
               type="text"
               name="email"
@@ -107,6 +110,7 @@ function Signup({ toggleSignupForm }) {
               style={{ height: 35 }}
 
             />
+             </div>
             <input
               type="password"
               name="password"
