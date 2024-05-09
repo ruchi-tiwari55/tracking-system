@@ -1,86 +1,162 @@
 
-.container {
-  width: 100%;
-  padding: 0;
-}
 
-.row {
-  display: flex;
-  justify-content: space-between; 
-}
 
-.col {
-  flex: 1; 
-  margin: 0;  
-  padding: 0; 
-}
 
-.video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%;  
-  height: 0;
-}
+/* '---------------------' */
 
- .video-size {
-  width: 100%;
-}
 
-@media (max-width: 768px) {
-  .row {
-    flex-direction: column; 
-  }
 
-  .col {
-    flex: none; 
-    max-width: 100%; 
-  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
-/* VideoComponent.css */
-
-.video-component-container {
-  width: 100%;
-  padding: 1rem;
+.container-market {
+    /* background-color: rgb(23, 81, 157); */
+    background-color: #eeeeee;
+    /* height: 100%; */
 }
 
-.video-wrapper {
-  margin-bottom: 1rem;
-  border-radius: 15px;
-  overflow: hidden;
+.container-market-main {
+    background-color: #eeeeee;
+    /* height: 100vh; */
+    display: flex;
+    margin-top: 55px;
+}
+
+.main-left {
+    /* background-color: rgb(246, 146, 65); */
+    flex-basis: 15%;
+    position: relative;
+}
+
+/* ===for right content post */
+.main-right {
+    /* background-color: rgb(239, 246, 246); */
+    flex-basis: 85%;   
+    max-height: 90vh;
+}
+
+
+/* mediaQuary------------------- */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------scroll styelingp-----*/
+.main-section::-webkit-scrollbar {
+    width: 6px;
+    /* width of the vertical scrollbar */
+}
+
+.main-section::-webkit-scrollbar {
+    width: 4px;
+    /* width of the vertical scrollbar */
+}
+
+.main-section::-webkit-scrollbar-thumb {
+    background-color: #120748;
+    /* color of the thumb */
+    border-radius: 6px;
+    /* roundness of the thumb */
+}
+
+.main-section::-webkit-scrollbar-track {
+    background-color: #ffffff;
+    /* color of the track */
+}
+
+.main-section {
+    /* background-color: rgb(223, 85, 85); */
+    /* border: 1px solid black; */
+    padding: 5px;
+    margin-top: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-around;
+    /* height: 98%; */
+    overflow-y: scroll;
+}
+
+.banner {
+    /* background-color: rgb(147, 150, 145); */
+    border: 1px solid rgb(176, 174, 174);
+    border-radius: 10px;
+    width: 49%;
+    height: 202px;
+    /* margin: 1px; */
+    display: flex;
+    justify-items: center;
+    align-items: center;
 }
 
 .video-size {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-}
-
-.image-sliders {
-  margin-top: 1rem;
-}
-
-.slider {
-  margin-bottom: 1rem;
-}
-
-.responsive-image {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-@media (max-width: 768px) {
-  .video-size {
-    height: 200px;
-  }
-}
-
-@media (max-width: 600px) {
-  .video-wrapper {
     width: 100%;
-  }
+    height: 200px;
+    border-radius: 10px;
+    margin: 0px 0px;
+}
+
+.banner-img {
+    border-radius: 10px;
+    width: 100%;
+    height: 200px;
+    margin: 0px 0px;
+}
+
+/* mediaQuary------------------- */
+@media only screen and (max-width : 930px) {
+    .main-section {
+        /* background-color: rgb(223, 85, 85); */
+        /* border: 1px solid black; */
+        padding: 5px;
+        margin-top: 4px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        align-items: center;
+        justify-content: space-around;
+        height: 72%;
+        overflow-y: scroll;
+    }
+
+    .video-size {
+        width: 90%;
+        height: 99%;
+        border-radius: 10px;
+        margin: 0px 2px
+    }
 }
 
 
+@media only screen and (max-width : 700px) {
+    .banner {
+        width: 100%;
+    }
+}
 
+@media only screen and (max-width : 510px) {
+    .main-section {
+        height: 90%;
+        margin-left: 27%;
+    }
+
+    .banner {
+        width: 100%;
+        height: 110px;
+    }
+
+    .banner-img {
+        width: 90%;
+        height: 108px;
+        margin: 0px 1px;
+    }
+}

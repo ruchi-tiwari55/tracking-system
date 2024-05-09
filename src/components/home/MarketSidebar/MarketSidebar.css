@@ -7,10 +7,35 @@
 }
 
 .side-outer div {
-  width: 15rem;
+  width: 10rem;
   border-radius: 5px;
   padding: 0.2rem 1rem;
-  box-shadow: 1px 2px 6px 0 rgba(25, 25, 25, 0.2)
+  /* box-shadow: 1px 2px 6px 0 rgba(25, 25, 25, 0.2) */
+}
+.inner:hover {
+  background-color: rgb(225, 224, 222);/* Gray background color */
+}
+
+.nav-item::-webkit-scrollbar {
+  width: 6px;
+  /* width of the vertical scrollbar */
+}
+
+#nav-item::-webkit-scrollbar {
+  width: 4px;
+  /* width of the vertical scrollbar */
+}
+
+#nav-item::-webkit-scrollbar-thumb {
+  background-color: #120748;
+  /* color of the thumb */
+  border-radius: 6px;
+  /* roundness of the thumb */
+}
+
+#nav-item::-webkit-scrollbar-track {
+  background-color: #ffffff;
+  /* color of the track */
 }
 
 .side-outer a {
@@ -25,7 +50,7 @@
 }
 
 .side-outer div:hover {
-  background-color: white;
+  /* background-color: white; */
 }
 
 @media (max-width: 768px) {

@@ -44,36 +44,52 @@ const Sidebar = () => {
       {isMobile ? (
         <MobileMarketSideBar />
       ) : (
-        <div className="side-outer" style={{ overflow: 'auto', height: 'calc(100vh - 80px)' }}>
+        <div  >
           <div
             style={{
               textAlign: "center",
               fontWeight: "500",
-              fontSize: "1.5rem",
-              backgroundColor: "white",
+              fontSize: "18px",
+              // backgroundColor: "white",
+              marginTop: 20,
               display: showMarketSidebar ? "block" : "none",
             }}
           >
             CATEGORIES
           </div>
-          {showMarketSidebar &&
-            categories.map((category) => (
-              <div className="inner" key={category._id}>
-                <Link
-                  to="#"
-                  onClick={() => handleCategoryClick(category.categoryName)}
-                >
-                  <img src="assets/images/response.png" alt="category" style={{height:20, width:20, borderRadius:40}}/>
-                  <span>{category.categoryName}</span>
-                </Link>
-              </div>
-            ))}
-          {!showMarketSidebar && (
-            <MarketSubCategory
-              categoryName={selectedCategory}
-              setShowMarketSidebar={setShowMarketSidebar}
-            />
-          )}
+          <div className="side-outer" id="nav-item" style={{ overflow: 'auto', height: 'calc(100vh - 80px)' }}>
+            {showMarketSidebar &&
+              categories.map((category) => (
+                <div className="inner" key={category._id}>
+                  <Link
+                    to="#"
+                    onClick={() => handleCategoryClick(category.categoryName)}
+                  >
+                    <div style={{
+                     height: '30px',
+                     width: '30px',
+                     backgroundColor: 'rgb(225, 224, 222)',
+                     borderRadius: '50%', /* This makes the div circular */
+                     display: 'flex',
+                     alignItems: 'center',
+                     justifyContent: 'center'
+                    }}>
+
+                      <img src="assets/images/response.png" alt="category" style={{ height: 20, width: 20, borderRadius: 40 }} />
+                    </div>
+                    <span style={{ fontSize: 16 }}>{category.categoryName}</span>
+                  </Link>
+                </div>
+              ))}
+            {!showMarketSidebar && (
+              <MarketSubCategory
+                categoryName={selectedCategory}
+                setShowMarketSidebar={setShowMarketSidebar}
+              />
+            )}
+          </div>
+
+
         </div>
       )}
     </div>
