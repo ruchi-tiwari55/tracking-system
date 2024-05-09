@@ -52,6 +52,7 @@ const Sidebar = () => {
               fontSize: "18px",
               // backgroundColor: "white",
               marginTop: 20,
+              marginBottom:20,
               display: showMarketSidebar ? "block" : "none",
             }}
           >

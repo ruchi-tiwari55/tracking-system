@@ -22,15 +22,17 @@
 .banner_heading {
   font-family: "Poppins", sans-serif;
   width: 700px;
-  margin-top: 8rem;
   flex-direction: column;
   text-align: center;
   align-items: center;
   display: flex;
+  margin-top: '20px';
 }
 .content_a h3 {
-  margin: auto;
-  font-weight: bolder;
+  /* margin: auto; */
+  margin-top: 30px;
+  /* font-weight: bolder; */
+  line-height: 0;
   font-size: 2.8rem;
 }
 
