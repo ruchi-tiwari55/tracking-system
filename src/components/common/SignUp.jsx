@@ -57,8 +57,8 @@ function Signup({ toggleSignupForm }) {
       <div className={styles.modal_content}>
         <div className={styles.top}>
           <div>
-            <h2>Signup</h2>
-            <p>It's quick and easy.</p>
+            <h4>Signup</h4>
+            <p style={{ fontSize: 12 }}>It's quick and easy.</p>
           </div>
           <span className={styles.close} onClick={toggleSignupForm}>
             &times;
@@ -74,6 +74,7 @@ function Signup({ toggleSignupForm }) {
                 value={formData.firstName}
                 onChange={handleChange}
                 required
+                style={{ height: 35, }}
               />
               <input
                 type="text"
@@ -82,6 +83,8 @@ function Signup({ toggleSignupForm }) {
                 value={formData.lastName}
                 onChange={handleChange}
                 required
+                style={{ height: 35 }}
+
               />
             </div>
             <input
@@ -91,6 +94,8 @@ function Signup({ toggleSignupForm }) {
               value={formData.email}
               onChange={handleChange}
               required
+              style={{ height: 35 }}
+
             />
             <input
               type="text"
@@ -99,6 +104,8 @@ function Signup({ toggleSignupForm }) {
               value={formData.mobileNumber}
               onChange={handleChange}
               required
+              style={{ height: 35 }}
+
             />
             <input
               type="password"
@@ -107,10 +114,12 @@ function Signup({ toggleSignupForm }) {
               value={formData.password}
               onChange={handleChange}
               required
+              style={{ height: 35 }}
+
             />
           </div>
           <div className={styles.dob}>
-            <p>Date of birth</p>
+            <p style={{ fontSize: 12 }}>Date of birth</p>
             <div className={styles.dob_select}>
               <select name="day" value={formData.day} onChange={handleChange}>
                 <option value="">Day</option>
@@ -156,8 +165,8 @@ function Signup({ toggleSignupForm }) {
             </div>
           </div>
           <div className={styles.gender_p}>
-            <p>Gender</p>
-            <div className={styles.gender}>
+            <p style={{ fontSize: 10 , marginTop:10 }}>Gender</p>
+            <div className={styles.gender} style={{ height: 40 }}>
               <label>
                 Male
                 <input
@@ -191,21 +200,21 @@ function Signup({ toggleSignupForm }) {
             </div>
           </div>
           <div className={styles.location}>
-            <p>Country</p>
+            <p style={{ fontSize: 10, marginTop:20 }}>Country</p>
             <div>
-              <div className={styles.country}>
+              <div className={styles.country} style={{ height: 40 }}>
                 <div>
-                  <img src="assets/about/india.png" alt="flag" width={35} />
+                  <img src="assets/about/india.png" alt="flag" width={30} />
                   India
                 </div>
               </div>
-              <div className={styles.state}>
+              <div className={styles.state} style={{ height: 40, }}>
                 <select
                   name="state"
                   value={formData.state}
                   onChange={handleChange}
                 >
-                  <option value="">State</option>
+                  <option value="" style={{ fontSize: 10 }}>State</option>
                   <option value="Andaman and Nicobar Islands">
                     Andaman and Nicobar Islands
                   </option>
@@ -248,7 +257,7 @@ function Signup({ toggleSignupForm }) {
                   <option value="West Bengal">West Bengal</option>
                 </select>
               </div>
-              <div className={styles.city}>
+              <div className={styles.city} style={{ height: 40 }}>
                 <input
                   type="text"
                   name="city"
@@ -260,17 +269,15 @@ function Signup({ toggleSignupForm }) {
             </div>
           </div>
           <div className={styles.bottom}>
-            <p>
-              People who use our service may have uploaded your contact
-              <br /> information to Lzycrazy.<span> Learn more.</span>
-            </p>
-            <p>
-              By clicking Sign Up, you agree to our <span>Terms</span>,
+
+            <p style={{ fontSize: 10, paddingLeft:20, paddingRight:20}}>
+              {/* By clicking Sign Up, you agree to our <span>Terms</span>,
               <span> Privacy Policy</span> and <br />
               <span>Cookies Policy</span>. You may receive SMS notifications
               from us
               <br />
-              and can opt out at any time.
+              and can opt out at any time. */}
+              By Continuing, You Agree to Lzy Crazy <span>Term & Conditions</span> and Confirm that You have Read Lzy Crazy <span>Privacy Policy </span>.
             </p>
             <button type="submit">Signup</button>
           </div>

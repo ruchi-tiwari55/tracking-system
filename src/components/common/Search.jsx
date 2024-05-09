@@ -10,8 +10,9 @@ const SearchContainer = styled("div")({
   alignItems: "center",
   maxWidth: "104%",
   margin: "0 auto", 
-  width: "70%",
+  width: "63%",
   marginBottom: 5,
+  
   "@media (max-width: 600px)": {
     marginHorizontal: 0,
     width: "100%",

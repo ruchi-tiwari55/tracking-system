@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./MarketSidebar.css";
 import MarketSubCategory from "../MarketSubcategory/MarketSubcategory";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import useMediaQuery from '@mui/material/useMediaQuery';
 import MobileMarketSideBar from "./MobileMarketSidebar";
 
 const Sidebar = () => {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [showMarketSidebar, setShowMarketSidebar] = useState(true);
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery('(max-width:600px)');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,25 +40,25 @@ const Sidebar = () => {
   };
 
   return (
-    <>
+    <div  >
       {isMobile ? (
         <MobileMarketSideBar />
       ) : (
-        <div className="side-outer" style={{ position: "sticky", top: "20px" }}>
+        <div  >
           <div
             style={{
               textAlign: "center",
               fontWeight: "500",
-              fontSize: "1.5rem",
-              backgroundColor: "white",
-              // display: showMarketSidebar ? "block" : "none",
-              maxHeight: "calc(100vh - 80px)", // Adjust height based on your layout
-              overflowY: "auto",
-              width:'42vh',
-              gap:5
+              fontSize: "18px",
+              // backgroundColor: "white",
+              marginTop: 20,
+              marginBottom:20,
+              display: showMarketSidebar ? "block" : "none",
             }}
           >
             CATEGORIES
+          </div>
+          <div className="side-outer" id="nav-item" style={{ overflow: 'auto', height: 'calc(100vh - 80px)' }}>
             {showMarketSidebar &&
               categories.map((category) => (
                 <div className="inner" key={category._id}>
@@ -66,12 +66,19 @@ const Sidebar = () => {
                     to="#"
                     onClick={() => handleCategoryClick(category.categoryName)}
                   >
-                    <img
-                      src="assets/images/response.png"
-                      alt="category"
-                      style={{ height: 20, width: 20, borderRadius: 40 }}
-                    />
-                    <span>{category.categoryName}</span>
+                    <div style={{
+                     height: '30px',
+                     width: '30px',
+                     backgroundColor: 'rgb(225, 224, 222)',
+                     borderRadius: '50%', /* This makes the div circular */
+                     display: 'flex',
+                     alignItems: 'center',
+                     justifyContent: 'center'
+                    }}>
+
+                      <img src="assets/images/response.png" alt="category" style={{ height: 20, width: 20, borderRadius: 40 }} />
+                    </div>
+                    <span style={{ fontSize: 16 }}>{category.categoryName}</span>
                   </Link>
                 </div>
               ))}
@@ -82,9 +89,11 @@ const Sidebar = () => {
               />
             )}
           </div>
+
+
         </div>
       )}
-    </>
+    </div>
   );
 };
 

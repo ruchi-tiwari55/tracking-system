@@ -13,469 +13,140 @@ import banner1 from "../../../assets/banner1.jpg";
 import banner3 from "../../../assets/banner3.jpg";
 import banner4 from "../../../assets/banner4.jpg";
 import banner5 from "../../../assets/banner5.jpg";
+import './MarketPlace.css'
+
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-// import MarketSidebar from "../../../components/home/MarketSidebar/MarketSidebar"
-// import "./MarketPlace.css"
-
 function VideoComponent() {
-
   const isMobile = useMediaQuery('(max-width:600px)');
 
   var slidersettings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 1500,
     autoplay: true,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-  var slidersetting = {
-    dots: true,
-    infinite: true,
-    speed: 2500,
-    autoplay: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-  var slidersettingt = {
-    dots: true,
-    infinite: true,
-    speed: 3500,
-    autoplay: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-  var slidersettingu = {
-    dots: true,
-    infinite: true,
-    speed: 5500,
-    autoplay: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
 
-
-  const fixedHeight = '130px';
-  const fixedWidth = 400;
-  const ImageWithFixedSize = ({ src, alt }) => (
-    <img
-      src={src}
-      alt={alt}
-      style={{
-        height: isMobile ? 117 : fixedHeight,
-        width: isMobile ? "100%" : fixedWidth,
-        objectFit: 'cover',
-        borderRadius: '10px',
-      }}
-    />
-  );
   return (
     <>
-     { isMobile? <ForMobileVideoComponent/>: 
-     <div className="container col-lg-12 col-md-2" style={{
-        width: isMobile ? "77%" : "100%",
-        padding: isMobile ? "0rem 0.8rem" : "1rem 2rem",
-        marginLeft: isMobile ? 85 : 0,
+      <div className="main-right" style={{ overflow: 'auto', height: 'calc(100vh - 80px)' , marginBottom:50}}>
+        <div className="main-section">
+          <div className="banner">
+            <video className="video-size" controls poster={banner5}>
+              <source src={video1} type="video/mp4" />
+              <source src="" type="video/ogg" />
+            </video>
+          </div>
+          <div className="banner">
+            <video className="video-size" controls poster={banner3}>
+              <source src={video2} type="video/mp4" />
+              <source src="" type="video/ogg" />
+            </video>
+          </div>
 
-      }}>
-        <div style={{ display: 'flex', gap: 20,flexDirection: isMobile ? 'column' : 'row' }}>
-          <div style={{ textAlign: "left", width:isMobile?'80%': '60%' ,marginLeft:isMobile?5:0}}
-
-          >
-            <div
-              className="video-wrapper"
-              style={{ borderRadius: "15px", overflow: "hidden" }}
-            >
-              <video
-                // className="video-size"
-                preload="metadata"
-                controls
-                style={{ width: 400, height: isMobile ? 117 : "130px", }}
-                poster={banner1}
-              >
-                <source src={video1} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+          <div className="banner">
+            <div id="carouselExampleInterval-1" className="carousel slide" data-bs-ride="carousel">
+              <div className="carousel-inner">
+                <div className="carousel-item active" data-bs-interval="10000">
+                <img src={banner1} className="banner-img" alt="Banner 1" />
+                </div>
+                <div className="carousel-item" data-bs-interval="2000">
+                <img src={banner1} className="banner-img" alt="Banner 1" />
+                </div>
+                <div className="carousel-item">
+                <img src={banner1} className="banner-img" alt="Banner 1" />
+                </div>
+              </div>
+              <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval-1" data-bs-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
+              </button>
+              <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval-1" data-bs-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
-          <div style={{ textAlign: "left", width:isMobile?'80%': '60%', marginLeft:isMobile?5:0 }}>
-            <div
-              className="video-wrapper"
-              style={{ borderRadius: "15px", overflow: "hidden" }}
-            >
-              <video
-                // className="video-size"
-                preload="metadata"
-                controls
-                style={{ width: 400, height: isMobile ? 117 : "130px", }}
-                poster={banner3}
-              >
-                <source src={video2} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+
+          <div className="banner">
+            <div id="carouselExampleInterval-2" className="carousel slide" data-bs-ride="carousel">
+              <div className="carousel-inner">
+                <div className="carousel-item active" data-bs-interval="10000">
+                <img src={banner1} className="banner-img" alt="Banner 1" />
+                </div>
+                <div className="carousel-item" data-bs-interval="2000">
+                <img src={banner1} className="banner-img" alt="Banner 1" />
+                </div>
+                <div className="carousel-item">
+                <img src={banner1} className="banner-img" alt="Banner 1" />
+                </div>
+              </div>
+              <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval-2" data-bs-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
+              </button>
+              <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval-2" data-bs-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
-        </div>
-        {/* FIRST IMAGE SLIDER */}
-        <div style={{ display: 'flex', gap: isMobile?30:18, width:isMobile?200: 900, height: 200, flexDirection: isMobile ? 'column' : 'row', marginLeft:isMobile?10:0 }}>
-          <div className="col-lg-6">
-            <Slider {...slidersettings}>
-              <div>
-                <ImageWithFixedSize src={banner77} alt="Banner 77" />
+
+          <div className="banner">
+            <div id="carouselExampleInterval-3" className="carousel slide" data-bs-ride="carousel">
+              <div className="carousel-inner">
+                <div className="carousel-item active" data-bs-interval="10000">
+                  <img src={banner4} className="banner-img" alt="Banner 4" />
+                </div>
+                <div className="carousel-item" data-bs-interval="2000">
+                  <img src={banner5} className="banner-img" alt="Banner 5" />
+                </div>
+                <div className="carousel-item">
+                  <img src={banner1} className="banner-img" alt="Banner 1" />
+                </div>
               </div>
-              <div>
-                <ImageWithFixedSize src={banner22} alt="banner 22" />
-              </div>
-              <div>
-                <ImageWithFixedSize src={banner33} alt="banner 33" />
-              </div>
-            </Slider>
-          </div>
-
-
-          <div className="col-lg-6">
-            <Slider {...slidersetting}>
-              <div>
-                <ImageWithFixedSize
-                  src={banner55}
-                  alt="Banner 55"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: "10px"
-                  }}
-                />
-              </div>
-              <div>
-                <ImageWithFixedSize
-                  src={banner44}
-                  alt="banner 33"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: "10px"
-                  }}
-                />
-              </div>
-              <div>
-                <ImageWithFixedSize
-                  src={banner33}
-                  alt="banner 44"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: "10px"
-                  }}
-                />
-              </div>
-            </Slider>
-          </div>
-        </div>
-
-        {/* SECOND IMAGE SLIDER */}
-      
-
-        <div style={{ display: 'flex', gap: isMobile?20:18,width:isMobile?200: 900, height: 200, flexDirection: isMobile ? 'column' : 'row',marginLeft:isMobile?10:0, }}>
-          <div className="col-lg-6">
-            <Slider {...slidersettings}>
-              <div>
-                <ImageWithFixedSize src={banner1}
-                  alt="Banner 1" />
-              </div>
-              <div>
-                <ImageWithFixedSize src={banner5}
-                  alt="banner 5" />
-              </div>
-              <div>
-                <ImageWithFixedSize src={banner3}
-                  alt="banner 3" />
-              </div>
-            </Slider>
-          </div>
-
-
-          <div className="col-lg-6">
-            <Slider {...slidersetting}>
-              <div>
-                <ImageWithFixedSize
-                  src={banner55}
-                  alt="Banner 55"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: "10px"
-                  }}
-                />
-              </div>
-              <div>
-                <ImageWithFixedSize
-                  src={banner4}
-                  alt="banner 4"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: "10px"
-                  }}
-                />
-              </div>
-              <div>
-                <ImageWithFixedSize
-               src={banner5}
-               alt="banner 5"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: "10px"
-                  }}
-                />
-              </div>
-            </Slider>
-          </div>
-        </div>
-      </div>}
-    </>
-  );
-}
-
-export default VideoComponent;
-
-
-
-
-
-
-function ForMobileVideoComponent() {
-  const isMobile = useMediaQuery('(max-width:600px)');
-
-  var slidersettings = {
-    dots: true,
-    infinite: true,
-    speed: 1500,
-    autoplay: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-  var slidersetting = {
-    dots: true,
-    infinite: true,
-    speed: 2500,
-    autoplay: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-  var slidersettingt = {
-    dots: true,
-    infinite: true,
-    speed: 3500,
-    autoplay: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-  var slidersettingu = {
-    dots: true,
-    infinite: true,
-    speed: 5500,
-    autoplay: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-
-
-  const fixedHeight = '200px';
-  const fixedWidth = '100%';
-  const ImageWithFixedSize = ({ src, alt }) => (
-    <img
-      src={src}
-      alt={alt}
-      style={{
-        height:isMobile?117: fixedHeight,
-        width: isMobile?"100%":fixedWidth,
-        objectFit: 'cover',
-        borderRadius: '10px',
-      }}
-    />
-  );
-  return (
-    <>
-      <div className="container col-lg-12 col-md-2" style={{
-         width: isMobile? "77%":"100%",
-          padding: isMobile? "0rem 0.8rem" :"1rem 2rem",
-          marginLeft: isMobile? 85:0,
-          
-          }}>
-        <div className="row" style={{ justifyContent: "flex-start" }}>
-          <div className="col-lg-6" style={{ textAlign: "left" }}>
-            <div
-              className="video-wrapper"
-              style={{ borderRadius: "15px", overflow: "hidden" }}
-            >
-              <video
-                className="video-size"
-                preload="metadata"
-                controls
-                style={{ width: "100%", height:isMobile? 117:"210px" }}
-                poster={banner1}
-              >
-                <source src={video1} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval-3" data-bs-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
+              </button>
+              <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval-3" data-bs-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
-          <div className="col-lg-6" style={{ textAlign: "left" }}>
-            <div
-              className="video-wrapper"
-              style={{ borderRadius: "15px", overflow: "hidden" }}
-            >
-              <video
-                className="video-size"
-                preload="metadata"
-                controls
-                style={{ width: "100%", height:isMobile? 117:"210px" }}
-                poster={banner3}
-              >
-                <source src={video2} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+
+          <div className="banner">
+            <div id="carouselExampleInterval-1" className="carousel slide" data-bs-ride="carousel">
+              <div className="carousel-inner">
+                <div className="carousel-item active" data-bs-interval="10000">
+                <img src={banner1} className="banner-img" alt="Banner 1" />
+                </div>
+                <div className="carousel-item" data-bs-interval="2000">
+                <img src={banner1} className="banner-img" alt="Banner 1" />
+                </div>
+                <div className="carousel-item">
+                <img src={banner1} className="banner-img" alt="Banner 1" />
+                </div>
+              </div>
+              <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval-1" data-bs-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
+              </button>
+              <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval-1" data-bs-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Next</span>
+              </button>
             </div>
           </div>
-        </div>
-        {/* FIRST IMAGE SLIDER */}
-        <div className="row">
-          <div className="col-lg-6">
-            <Slider {...slidersettings}>
-              <div>
-                <ImageWithFixedSize src={banner77} alt="Banner 77" />
-              </div>
-              <div>
-                <ImageWithFixedSize src={banner22} alt="banner 22" />
-              </div>
-              <div>
-                <ImageWithFixedSize src={banner33} alt="banner 33" />
-              </div>
-            </Slider>
-          </div>
 
-
-          <div className="col-lg-6">
-            <Slider {...slidersetting}>
-              <div>
-                <ImageWithFixedSize
-                  src={banner55}
-                  alt="Banner 55"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: "10px"
-                  }}
-                />
-              </div>
-              <div>
-                <ImageWithFixedSize
-                  src={banner44}
-                  alt="banner 33"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: "10px"
-                  }}
-                />
-              </div>
-              <div>
-                <ImageWithFixedSize
-                  src={banner33}
-                  alt="banner 44"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: "10px"
-                  }}
-                />
-              </div>
-            </Slider>
-          </div>
-        </div>
-
-        {/* SECOND IMAGE SLIDER */}
-        <div className="row">
-          <div className="col-lg-6">
-            <Slider {...slidersettingt}>
-              <div>
-                <ImageWithFixedSize
-                  src={banner1}
-                  alt="Banner 1"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: "10px"
-                  }}
-                />
-              </div>
-              <div>
-                <ImageWithFixedSize
-                  src={banner5}
-                  alt="banner 5"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: "10px"
-                  }}
-                />
-              </div>
-              <div>
-                <ImageWithFixedSize
-                  src={banner3}
-                  alt="banner 3"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: "10px"
-                  }}
-                />
-              </div>
-            </Slider>
-          </div>
-
-          <div className="col-lg-6">
-            <Slider {...slidersettingu}>
-              <div>
-                <ImageWithFixedSize
-                  src={banner3}
-                  alt="Banner 3"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: "10px"
-                  }}
-                />
-              </div>
-              <div>
-                <ImageWithFixedSize
-                  src={banner4}
-                  alt="banner 4"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: "10px"
-                  }}
-                />
-              </div>
-              <div>
-                <ImageWithFixedSize
-                  src={banner5}
-                  alt="banner 5"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    borderRadius: "10px"
-                  }}
-                />
-              </div>
-            </Slider>
-          </div>
         </div>
       </div>
     </>
   );
 }
+
+export default VideoComponent;
 
