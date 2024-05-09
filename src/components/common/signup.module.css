@@ -6,19 +6,21 @@
   z-index: 1000;
   top: 0;
   left: 0;
+  bottom: 0;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   background-color: rgba(0, 0, 0, 0.5);
   overflow: auto;
+  /* height: 60%; */
 }
 
 .modal_content {
   background-color: #fefefe;
   margin: 6% auto;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid #888;
-  border-radius: 20px;
-  max-width: 50%;
+  border-radius: 9px;
+  max-width: 38%;
 }
 
 .top {
@@ -53,7 +55,7 @@
   padding: 1rem;
   margin-bottom: 0.8rem;
   border-radius: 10px;
-  width: 100%;
+  width: 90%;
   font-size: 1rem;
   border: 1px solid #ddd;
   outline: none;
@@ -74,21 +76,30 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  width: 90%;
 }
 
 .form_name input {
   flex: 1;
 }
 
-.dob,
-.gender_p,
+.dob{
+width: 90%;
+}
+.gender_p{
+  width: 90%;
+}
 .location {
   margin-bottom: 1rem;
+width: 90%;
+/* height: 40px; */
+
 }
 
 .dob_select {
   display: flex;
   gap: 1rem;
+  height: 40px;
 }
 
 .dob_select select {
@@ -161,7 +172,7 @@
   color: white;
   background-color: rgb(18, 173, 18);
   border: none;
-  padding: 0.7rem 5rem;
+  padding: 0.3rem 2rem;
   font-size: 18px;
 }
 
