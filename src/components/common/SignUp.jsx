@@ -29,7 +29,7 @@ function Signup({ toggleSignupForm }) {
     console.log(formData);
     // Send formData to the API
     try {
-      const response = await fetch("https://lzycrazy-tracking-backend.onrender.com/v1/users/create", {
+      const response = await fetch("http://213.210.36.143:8000/v1/users/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
