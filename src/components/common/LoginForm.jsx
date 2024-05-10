@@ -4,8 +4,9 @@ import styles from '../../styles/outerPages/login.module.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios'; // Import Axios
 import { useNavigate } from 'react-router-dom';
-
-
+import { toast } from 'react-toastify';
+import { useEffect } from 'react';
+import { BASEURL } from '../../constants/constant';
 const LoginForm = ({ toggleSignupForm }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -13,6 +14,12 @@ const LoginForm = ({ toggleSignupForm }) => {
   const [passwordError, setPasswordError] = useState('');
   const [showForgetForm, setShowForgetForm] = useState(false);
   const navigate = useNavigate();
+  const [loader, setLoader] = useState(false);
+
+
+
+ 
+    
 
   const toggleForgetForm = () => {
     setShowForgetForm(!showForgetForm);
@@ -20,10 +27,10 @@ const LoginForm = ({ toggleSignupForm }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+    setLoader(true)
     try {
       const response = await axios.post(
-        'http://213.210.36.143:8000/v1/users/login',
+        `${BASEURL}/v1/users/login`,
         {
           email: email,
           password: password
@@ -31,22 +38,24 @@ const LoginForm = ({ toggleSignupForm }) => {
         {
           headers: {
             'Content-Type': 'application/json'
-            // Add any other headers if required, such as authentication tokens
           }
         }
       );
-  
+    setLoader(false)
+      toast.success(response?.data?.message);
+      setLoader(false)
       console.log('Login Response:', response.data);
-      // You can handle the response here, maybe redirect the user to dashboard or show a success message
-      
+      // console.log('-----------', userData);
+
       navigate('/dashboard');
-      alert('Login successful..');
     } catch (error) {
+      setLoader(false)
+
+      toast.error(error?.response?.data.message);
       console.error('Login Error:', error);
-      // Handle login errors here, show an error message to the user, etc.
     }
   };
-  
+
 
   const checkEmailerr = () => {
     if (email === '') {
@@ -90,7 +99,12 @@ const LoginForm = ({ toggleSignupForm }) => {
         {passwordError && <p style={{ fontSize: 'small', color: 'red', marginTop: '-1rem' }}>{passwordError}</p>}
 
         <button type="submit" className={styles.login_btn}>
-          Log In
+          {/* Log In */}
+          {loader ? (
+        <span>Loading...</span>
+      ) : (
+        <span>Log In</span>
+      )}
         </button>
         <p className={styles.forget_p} onClick={toggleForgetForm}>
           Forgotten password?

@@ -10,10 +10,52 @@ const ReviewDetailsForm = () => {
     const isMobile = useMediaQuery('(max-width:600px)');
 
     const options = [
-        { label: 'Option 1', value: 'option1' },
-        { label: 'Option 2', value: 'option2' },
-        { label: 'Option 3', value: 'option3' },
+        { label: 'Andaman and Nicobar Islands', value: 'Andaman and Nicobar Islands' },
+        { label: "Andhra Pradesh", value: "Andhra Pradesh" },
+        { label: 'Arunachal Pradesh', value: 'Arunachal Pradesh' },
+        { label: 'Assam', value: 'Assam' },
+        { label: 'Bihar', value: 'Bihar' },
+        { label: 'Chandigarh', value: 'Chandigarh' },
+        { label: 'Chhattisgarh', value: 'Chhattisgarh' },
+        { label: 'Dadra and Nagar', value: 'Dadra and Nagar' },
+        { label: 'Daman and Diu', value: 'Daman and Diu' },
+        { label: 'Delhi', value: 'Delhi' },
+        { label: 'Daman and Diu', value: 'Daman and Diu' },
+        { label: 'Delhi', value: 'Delhi' },
+
+        { label: 'Goa', value: 'Goa' },
+        { label: 'Gujarat', value: 'Gujarat' },
+        { label: 'Haryana', value: 'Haryana' },
+        { label: 'Himachal Pradesh', value: 'Himachal Pradesh' },
+        { label: 'Jammu and Kashmir', value: 'Jammu and Kashmir' },
+        { label: 'Jharkhand', value: 'Jharkhand' },
+        { label: 'Karnataka', value: 'Karnataka' },
+        { label: 'Kerala', value: 'Kerala' },
+        { label: 'Lakshadweep', value: 'Lakshadweep' },
+        { label: 'Madhya Pradesh', value: 'Madhya Pradesh' },
+        { label: 'Maharashtra', value: 'Maharashtra' },
+        { label: 'Manipur', value: 'Manipur' },
+        { label: 'Meghalaya', value: 'Meghalaya' },
+        { label: 'Mizoram', value: 'Mizoram' },
+        { label: 'Nagaland', value: 'Nagaland' },
+        { label: 'Odisha', value: 'Odisha' },
+        { label: 'Puducherry', value: 'Puducherry' },
+        { label: 'Punjab', value: 'Punjab' },
+        { label: 'Rajasthan', value: 'Rajasthan' },
+        { label: 'Sikkim', value: 'Sikkim' },
+        { label: 'Tamil Nadu', value: 'Tamil Nadu' },
+        { label: 'Telangana', value: 'Telangana' },
+        { label: 'Tripura', value: 'Tripura' },
+        { label: 'Uttar Pradesh', value: 'Uttar Pradesh' },
+        { label: 'Uttarakhand', value: 'Uttarakhand' },
+        { label: 'West Bengal', value: 'West Bengal' }
+
     ];
+
+
+
+
+   
 
     const handleOption1Change = (event) => {
         setSelectedOption1(event.target.value);
@@ -42,7 +84,7 @@ const ReviewDetailsForm = () => {
             </Typography>
 
             <Box display="flex" alignItems="center" justifyContent="space-between" mb={2}
-                sx={{ gap: 5, flexDirection: isMobile? 'column':'row' }}
+                sx={{ gap: 5, flexDirection: isMobile ? 'column' : 'row' }}
             >
                 <CustomDropdown
                     label="state"

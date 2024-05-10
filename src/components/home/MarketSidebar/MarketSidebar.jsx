@@ -4,6 +4,7 @@ import "./MarketSidebar.css";
 import MarketSubCategory from "../MarketSubcategory/MarketSubcategory";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import MobileMarketSideBar from "./MobileMarketSidebar";
+import { BASEURL } from "../../../constants/constant";
 
 const Sidebar = () => {
   const [categories, setCategories] = useState([]);
@@ -15,7 +16,7 @@ const Sidebar = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://213.210.36.143:8000/categories/getAll"
+          `${BASEURL}/categories/getAll`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");

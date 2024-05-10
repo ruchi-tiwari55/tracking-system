@@ -12,7 +12,6 @@ import LogoBg from "../assets/updatedBanners/logobg.png"
 
 function Login() {
   const [showSignupForm, setShowSignupForm] = useState(false);
-
   const toggleSignupForm = () => {
     setShowSignupForm(!showSignupForm);
   };

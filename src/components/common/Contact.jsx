@@ -117,6 +117,7 @@ import React, { useState } from 'react';
 import styles from './contact.module.css';
 
 import { toast } from 'react-toastify';
+import { BASEURL } from '../../constants/constant';
 
 const Contact = ({ toggleContactForm }) => {
   const [formData, setFormData] = useState({
@@ -162,7 +163,7 @@ const Contact = ({ toggleContactForm }) => {
 
     try {
       const response = await fetch(
-        'http://213.210.36.143:8000/v1/contact/create',
+        `${BASEURL}/v1/contact/create`,
         requestOptions
       );
 
