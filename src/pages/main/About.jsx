@@ -2,6 +2,7 @@ import styles from '../../styles/outerPages/about.module.css'
 import React from "react"
 import LzyCrazyFooter from '../../components/common/LzyCrazyFooter'
 import LzyCrazyHeader from '../../components/common/LzyCrazyHeader'
+import Banner5 from "../../assets/updatedBanners/BANNER 5.jpg"
 function About() {
 
   return (
@@ -12,20 +13,19 @@ function About() {
           <div className={styles.banner_imga}>
           </div>
           <div className={styles.banner_heading}>
-            <h1>Crazy idea Can Change
-              Your Life</h1>
+            <h3>Crazy idea Can Change
+              Your Life</h3>
           </div>
         </section>
       </div>
       <section className={styles.about_section}>
         <div className={styles.about_content}>
           <div className={styles.about_heading}>
-            <h1>Who We Are</h1>
+            <h3>Who We Are</h3>
             <p>
               LzyCrazy has a concept of being the upcoming largest platform in the world by providing Business,
               Shopping & Entertainment under the same platform.
             </p>
-            <button className={styles.banner_btn}>More</button>
           </div>
           <div className={styles.about_imga}>
           </div>
@@ -34,8 +34,8 @@ function About() {
       <div class="container-fluid"> 
   <div class="row"> 
     <div class="col-12"> 
-      <div class="ratio ratio-16x9"> 
-        <video autoPlay loop muted playsInline>
+      <div class="ratio ratio-16x9" style={{height:'80%'}}> 
+        <video autoPlay loop muted playsInline >
           <source src="/assets/about/info_video1.mp4" type="video/mp4" />
         </video>
       </div>
@@ -56,19 +56,21 @@ function About() {
         <div className={styles.divider_content_img}>
           <div className={styles.divider_images}>
             <div className={styles.img1a}>
-              <img src="/assets/images/about-us.jpg" alt="" />
+              <img src="/assets/images/about-us.jpg" alt="" style={{height:300}}/>
             </div>
-            <h4>Work With LzyCrazy</h4>
+            <h4 style={{marginBottom:200, marginLeft:35}}>Work With LzyCrazy</h4>
             <div className={styles.img2a}>
-              <img src="/assets/images/about-us-2.jpg" alt="" />
+              <img src="/assets/images/about-us-2.jpg" alt="" style={{height:300}} />
             </div>
           </div>
-          <h1>Every work is available</h1>
+          <h3>Every work is available</h3>
           <div className={styles.divider_images_2} style={{ marginTop: "4rem" }}>
             <div className={styles.img1a}>
-              <img src="/assets/images/banner1.jpg" alt="" />
+              {/* <img src="/assets/images/BANNER 5.jpg" alt="" /> */}
+              <img src={Banner5} alt=""/>
+
             </div>
-            <h4></h4>
+            <h1></h1>
             <div className={styles.img2a}>
               <img src="/assets/images/ceo.jpg" alt="" />
             </div>

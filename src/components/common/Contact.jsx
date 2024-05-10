@@ -1,3 +1,7 @@
+
+
+
+
 // import React, { useState } from 'react';
 // import styles from './contact.module.css';
 
@@ -9,6 +13,8 @@
 //     email: '',
 //     message: '',
 //   });
+
+//   const [successMessage, setSuccessMessage] = useState(''); // New state variable for the message
 
 //   const handleChange = (e) => {
 //     const { name, value } = e.target;
@@ -31,14 +37,14 @@
 //       });
 //       const data = await response.json();
 //       if (response.ok) {
-//         alert('Thank you for joining us!\nLzyCrazy will call from this No- 9818238286');
-//         toggleContactForm(); // Close the form after successful submission
+//         setSuccessMessage('Thank you for joining us! LzyCrazy will call from this No- 9818238286'); // Update the message
+//         toggleContactForm(); // Optional: Close the form after successful submission
 //       } else {
-//         alert('Failed to send your message. Please try again.');
+//         setSuccessMessage('Failed to send your message. Please try again.'); // Error message
 //       }
 //     } catch (error) {
 //       console.error('Error sending contact form:', error);
-//       alert('An error occurred. Please try again.');
+//       setSuccessMessage('An error occurred. Please try again.');
 //     }
 //   };
 
@@ -92,7 +98,9 @@
 //             />
 //           </div>
 //           <div className={styles.bottom}>
-//             <p>People who use our service may have uploaded your contact information to<br /> Lzycrazy.</p>
+//             {successMessage && (
+//               <p>{successMessage}</p> // Display success or error message
+//             )}
 //           </div>
 //           <button className={styles.cbtn} type='submit'>Send</button>
 //         </form>
@@ -107,6 +115,7 @@
 
 import React, { useState } from 'react';
 import styles from './contact.module.css';
+import { toast } from 'react-toastify';
 
 const Contact = ({ toggleContactForm }) => {
   const [formData, setFormData] = useState({
@@ -117,7 +126,7 @@ const Contact = ({ toggleContactForm }) => {
     message: '',
   });
 
-  const [successMessage, setSuccessMessage] = useState(''); // New state variable for the message
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -129,21 +138,42 @@ const Contact = ({ toggleContactForm }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+
+    const { name, businessprofile, phone, email, message } = formData;
+
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        userName: name,
+        bussiness_profile: businessprofile,
+        email: email,
+        phoneNumber: phone,
+        message: message,
+        isDeleted: false,
+        jwtToken: 'your_jwt_token_here',
+        createdBy: 'user_id_here',
+        updatedBy: 'user_id_here'
+      }),
+    };
+
     try {
-      const response = await fetch('https://lzycrazy-backend.onrender.com/api/contacts', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        'http://213.210.36.143:8000/v1/contact/create',
+        requestOptions
+      );
+
       const data = await response.json();
-      if (response.ok) {
-        setSuccessMessage('Thank you for joining us! LzyCrazy will call from this No- 9818238286'); // Update the message
-        toggleContactForm(); // Optional: Close the form after successful submission
+
+      if (data?.message=="Contact registered successfully") {
+        setSuccessMessage('Thank you for contacting us!');
+        toast.success("Thank you for contacting us!");
+
+        toggleContactForm(); 
       } else {
-        setSuccessMessage('Failed to send your message. Please try again.'); // Error message
+        setSuccessMessage('Failed to send your message. Please try again.');
       }
     } catch (error) {
       console.error('Error sending contact form:', error);
@@ -156,7 +186,9 @@ const Contact = ({ toggleContactForm }) => {
       <div className={styles.modal_content}>
         <div className={styles.top}>
           <h4>Contact Us</h4>
-          <span className={styles.close} onClick={toggleContactForm}>&times;</span>
+          <span className={styles.close} onClick={toggleContactForm}>
+            &times;
+          </span>
         </div>
         <form onSubmit={handleSubmit}>
           <div className={styles.form}>
@@ -201,11 +233,11 @@ const Contact = ({ toggleContactForm }) => {
             />
           </div>
           <div className={styles.bottom}>
-            {successMessage && (
-              <p>{successMessage}</p> // Display success or error message
-            )}
+            {successMessage && <p>{successMessage}</p>}
           </div>
-          <button className={styles.cbtn} type='submit'>Send</button>
+          <button className={styles.cbtn} type='submit'>
+            Send
+          </button>
         </form>
       </div>
     </div>
@@ -213,3 +245,4 @@ const Contact = ({ toggleContactForm }) => {
 };
 
 export default Contact;
+

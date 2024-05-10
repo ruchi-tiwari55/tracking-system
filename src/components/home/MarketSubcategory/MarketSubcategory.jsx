@@ -8,7 +8,7 @@ const MarketSubcategory = ({ categoryName, setShowMarketSidebar }) => {
     const fetchSubcategories = async () => {
       try {
         const response = await fetch(
-          "https://lzycrazy-tracking-backend.onrender.com/subcategories/getAll"
+          "http://213.210.36.143:8000/subcategories/getAll"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch subcategories");

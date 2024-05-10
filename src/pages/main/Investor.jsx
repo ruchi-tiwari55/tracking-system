@@ -23,20 +23,16 @@ const Advertising = () => {
                                 <source src="/assets/about/info_video2.MP4" type="video/MP4" />
                             </video>
                         </div>
-                        <div className={styles.banner_heading}>
-                            <div className={styles.content_i}>
-                                <h3>I Invite All Investors</h3>
-                                <p>For collaboration</p>
-                               
-                                    <h4>New Resource Solution</h4>
+            
+                          <div className={styles.banner_heading}>
+                            <div className={styles.content_b} style={{marginTop:100}}>
+                                <h4>Invite All Investors</h4>
 
-                                    <p>Working in Futures<br />
-
-                                    Our Technology<br />
-                                    Our Manufacturer<br />
+                                <p style={{fontSize:16, lineHeight:1.5}}> For collaboration<br />  Our Technology<br />
+                                    Our Manufacturer
                                     Our Finance
                                 </p>
-                                <h5>Benefit</h5>
+                                 <h4>Benefit</h4>
                             </div>
                             <button className={styles.btn} onClick={toggleContactForm}>Contact Us</button>
                             {showContactForm && <Contact toggleContactForm={toggleContactForm} />}
