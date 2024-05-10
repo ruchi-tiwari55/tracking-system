@@ -161,7 +161,7 @@ const Contact = ({ toggleContactForm }) => {
 
     try {
       const response = await fetch(
-        'https://lzycrazy-tracking-backend.onrender.com/v1/contact/create',
+        'http://213.210.36.143:8000/v1/contact/create',
         requestOptions
       );
 
