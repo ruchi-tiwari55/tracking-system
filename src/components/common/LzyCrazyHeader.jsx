@@ -3,7 +3,8 @@ import styles from './lzyCrazyHeader.module.css'
 
 function LzyCrazyHeader() {
     return (
-        <div className={styles.outer}>
+
+        <div className={styles.outer ? "aboutnavbar" : aboutnavbar} style={{backgroundColor:"rgb(235,234,235)", position:"fixed",top:"0", width:"100%", zIndex:"999"}}>
             <div className={styles.inner} style={{ boxShadow: "2px solid gray" }}>
                 <div className={styles.main_box}>
                     <a href="#" className={styles.logo}>

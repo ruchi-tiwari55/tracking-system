@@ -26,6 +26,7 @@ import MarketplacePage from "../pages/MarketplacePage/MarketplacePage";
 
 
 import FormsLayout from "../pages/Home/postAddForms/FormLayout";
+import MarketplacePageDetails from "../pages/MarketplacePageDetails/MarketplacePageDetails";
 
 const AppRoutes = () => {
   return (
@@ -37,6 +38,7 @@ const AppRoutes = () => {
           <Route path="user-page" element={<Profile />} />
           <Route path="market-Place" element={<MarketPlace />} />
           <Route path="marketplacePage" element={<MarketplacePage />} />
+     
           <Route path="my-ads-response" element={<Response />} />
         </Route>
 
@@ -55,6 +57,9 @@ const AppRoutes = () => {
 
        
         <Route path="mainForms" element={<FormsLayout />} />
+        {/* <Route path="MarketplacePageDetails" element={<MarketplacePageDetails />} /> */}
+        <Route path="marketplacePage/:productId" element={<MarketplacePageDetails />} />
+
 
       </Routes>
     </Router>
