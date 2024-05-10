@@ -17,6 +17,7 @@ import Navbar from '../Navbar';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import MobileSUbCategories from '../MarketSubcategory/MobileSubCategories';
+import { BASEURL } from '../../../constants/constant';
 
 const drawerWidth = 230;
 
@@ -31,7 +32,7 @@ export default function MobileMarketSideBar() {
         const fetchData = async () => {
           try {
             const response = await fetch(
-              "https://lzycrazy-tracking-backend.onrender.com/categories/getAll"
+            `${BASEURL}/categories/getAll`
             );
             if (!response.ok) {
               throw new Error("Network response was not ok");

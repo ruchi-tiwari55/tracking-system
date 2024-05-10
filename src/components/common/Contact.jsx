@@ -116,6 +116,7 @@
 import React, { useState } from 'react';
 import styles from './contact.module.css';
 import { toast } from 'react-toastify';
+import { BASEURL } from '../../constants/constant';
 
 const Contact = ({ toggleContactForm }) => {
   const [formData, setFormData] = useState({
@@ -161,7 +162,7 @@ const Contact = ({ toggleContactForm }) => {
 
     try {
       const response = await fetch(
-        'https://lzycrazy-tracking-backend.onrender.com/v1/contact/create',
+        `${BASEURL}/v1/contact/create`,
         requestOptions
       );
 

@@ -17,6 +17,7 @@ import Navbar from '../Navbar';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from "react-router-dom";
+import { BASEURL } from '../../../constants/constant';
 
 
 const drawerWidth = 230;
@@ -33,7 +34,7 @@ export default function MobileSUbCategories({ categoryName, setShowMarketSidebar
         const fetchSubcategories = async () => {
             try {
                 const response = await fetch(
-                    "https://lzycrazy-tracking-backend.onrender.com/subcategories/getAll"
+                    `${BASEURL}/subcategories/getAll` 
                 );
                 if (!response.ok) {
                     throw new Error("Failed to fetch subcategories");

@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import styles from "./signup.module.css";
 import "../../styles/globals.css";
+import { toast } from "react-toastify";
+import { BASEURL } from "../../constants/constant";
 
 function Signup({ toggleSignupForm }) {
+  const [loader, setLoader] = useState(false);
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -25,11 +29,11 @@ function Signup({ toggleSignupForm }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoader(true)
 
-    console.log(formData);
     // Send formData to the API
     try {
-      const response = await fetch("https://lzycrazy-tracking-backend.onrender.com/v1/users/create", {
+      const response = await fetch(`${BASEURL}/v1/users/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -37,13 +41,18 @@ function Signup({ toggleSignupForm }) {
         body: JSON.stringify(formData),
       });
       const data = await response.json();
+      toast.success(data?.message);
 
+      setLoader(false)
       toggleSignupForm();
       // alert('Register successful');
       // Handle response
       console.log(data);
     } catch (error) {
+      setLoader(false)
       console.error("Error:", error);
+      toast.error(error?.data?.message);
+
     }
   };
 
@@ -87,30 +96,30 @@ function Signup({ toggleSignupForm }) {
 
               />
             </div>
-            <div style={{display:'flex', gap:20, width:'90%'}}>
+            <div style={{ display: 'flex', gap: 20, width: '90%' }}>
 
-           
-            <input
-              type="text"
-              name="email"
-              placeholder="email address"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              style={{ height: 35 }}
 
-            />
-            <input
-              type="text"
-              name="mobileNumber"
-              placeholder="Mobile number"
-              value={formData.mobileNumber}
-              onChange={handleChange}
-              required
-              style={{ height: 35 }}
+              <input
+                type="text"
+                name="email"
+                placeholder="email address"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                style={{ height: 35 }}
 
-            />
-             </div>
+              />
+              <input
+                type="text"
+                name="mobileNumber"
+                placeholder="Mobile number"
+                value={formData.mobileNumber}
+                onChange={handleChange}
+                required
+                style={{ height: 35 }}
+
+              />
+            </div>
             <input
               type="password"
               name="password"
@@ -169,7 +178,7 @@ function Signup({ toggleSignupForm }) {
             </div>
           </div>
           <div className={styles.gender_p}>
-            <p style={{ fontSize: 10 , marginTop:10 }}>Gender</p>
+            <p style={{ fontSize: 10, marginTop: 10 }}>Gender</p>
             <div className={styles.gender} style={{ height: 40 }}>
               <label>
                 Male
@@ -204,7 +213,7 @@ function Signup({ toggleSignupForm }) {
             </div>
           </div>
           <div className={styles.location}>
-            <p style={{ fontSize: 10, marginTop:20 }}>Country</p>
+            <p style={{ fontSize: 10, marginTop: 20 }}>Country</p>
             <div>
               <div className={styles.country} style={{ height: 40 }}>
                 <div>
@@ -274,7 +283,7 @@ function Signup({ toggleSignupForm }) {
           </div>
           <div className={styles.bottom}>
 
-            <p style={{ fontSize: 10, paddingLeft:20, paddingRight:20}}>
+            <p style={{ fontSize: 10, paddingLeft: 20, paddingRight: 20 }}>
               {/* By clicking Sign Up, you agree to our <span>Terms</span>,
               <span> Privacy Policy</span> and <br />
               <span>Cookies Policy</span>. You may receive SMS notifications
@@ -283,7 +292,13 @@ function Signup({ toggleSignupForm }) {
               and can opt out at any time. */}
               By Continuing, You Agree to Lzy Crazy <span>Term & Conditions</span> and Confirm that You have Read Lzy Crazy <span>Privacy Policy </span>.
             </p>
-            <button type="submit">Signup</button>
+            <button type="submit">
+              {loader ? (
+                <span style={{color:'white'}}>Loading...</span>
+              ) : (
+                <span style={{color:'white'}}>Signup</span>
+              )}
+            </button>
           </div>
         </form>
       </div>
