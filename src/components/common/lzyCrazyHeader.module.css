@@ -111,3 +111,12 @@
         margin-right: 3rem;
     }
 }
+
+
+.aboutnavbar {
+    background-color: red;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+}
