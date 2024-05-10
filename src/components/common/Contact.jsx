@@ -115,6 +115,7 @@
 
 import React, { useState } from 'react';
 import styles from './contact.module.css';
+
 import { toast } from 'react-toastify';
 
 const Contact = ({ toggleContactForm }) => {
