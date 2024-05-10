@@ -15,7 +15,7 @@ const Sidebar = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://lzycrazy-tracking-backend.onrender.com/categories/getAll"
+          "http://213.210.36.143:8000/categories/getAll"
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
