@@ -62,12 +62,15 @@ function Signup({ toggleSignupForm }) {
   }
 
   return (
-    <div className={styles.modal}>
+    
+    <div className={styles.container} style={{ overflow: 'hidden' }}>
+    <div className={styles.bottom} style={{height:750, marginBottom:-2000}}>
+    <div className={styles.modal} >
       <div className={styles.modal_content}>
         <div className={styles.top}>
           <div>
             <h4>Signup</h4>
-            <p style={{ fontSize: 12 }}>It's quick and easy.</p>
+            <p style={{ fontSize: 10 }}>It's quick and easy.</p>
           </div>
           <span className={styles.close} onClick={toggleSignupForm}>
             &times;
@@ -79,20 +82,23 @@ function Signup({ toggleSignupForm }) {
               <input
                 type="text"
                 name="firstName"
-                placeholder="First name"
+                placeholder="First_Name"
                 value={formData.firstName}
                 onChange={handleChange}
                 required
-                style={{ height: 35, }}
+                style={{ height: 15, fontSize: '1.5rem',fontSize: 'small'}}
+                
+
               />
               <input
                 type="text"
                 name="lastName"
-                placeholder="last Name"
+                placeholder="Last_Name"
                 value={formData.lastName}
                 onChange={handleChange}
                 required
-                style={{ height: 35 }}
+                style={{ height: 10 , fontSize: '1.5rem',fontSize: 'small'}}
+                
 
               />
             </div>
@@ -102,21 +108,21 @@ function Signup({ toggleSignupForm }) {
               <input
                 type="text"
                 name="email"
-                placeholder="email address"
+                placeholder="Email_Address"
                 value={formData.email}
                 onChange={handleChange}
                 required
-                style={{ height: 35 }}
+                style={{ height: 20, fontSize: "1rem",fontSize: 'small'}}
 
               />
               <input
                 type="text"
-                name="mobileNumber"
-                placeholder="Mobile number"
+                name="Mobile_Number"
+                placeholder="Mobile Number"
                 value={formData.mobileNumber}
                 onChange={handleChange}
                 required
-                style={{ height: 35 }}
+                style={{ height: 10, fontSize: '1rem',fontSize: 'small' }}
 
               />
             </div>
@@ -127,12 +133,12 @@ function Signup({ toggleSignupForm }) {
               value={formData.password}
               onChange={handleChange}
               required
-              style={{ height: 35 }}
+              style={{ height: 20,  fontSize: '1rem',fontSize: 'small'}}
 
             />
           </div>
           <div className={styles.dob}>
-            <p style={{ fontSize: 12 }}>Date of birth</p>
+            <p style={{ fontSize: 10 }}>Date of birth</p>
             <div className={styles.dob_select}>
               <select name="day" value={formData.day} onChange={handleChange}>
                 <option value="">Day</option>
@@ -188,6 +194,7 @@ function Signup({ toggleSignupForm }) {
                   value="male"
                   checked={formData.gender === "male"}
                   onChange={handleChange}
+                  style={{  fontSize: '1rem'}}
                 />
               </label>
               <label>
@@ -198,6 +205,7 @@ function Signup({ toggleSignupForm }) {
                   value="female"
                   checked={formData.gender === "female"}
                   onChange={handleChange}
+                  style={{ fontSize: '1rem'}}
                 />
               </label>
               <label>
@@ -208,6 +216,7 @@ function Signup({ toggleSignupForm }) {
                   value="other"
                   checked={formData.gender === "other"}
                   onChange={handleChange}
+                  style={{ fontSize: '1rem'}}
                 />
               </label>
             </div>
@@ -270,13 +279,15 @@ function Signup({ toggleSignupForm }) {
                   <option value="West Bengal">West Bengal</option>
                 </select>
               </div>
-              <div className={styles.city} style={{ height: 40 }}>
+              <div className={styles.city} style={{ height: 10 }}>
                 <input
                   type="text"
                   name="city"
                   placeholder="City"
                   value={formData.city}
                   onChange={handleChange}
+                  style={{ fontSize: '1rem'}}
+                  
                 />
               </div>
             </div>
@@ -292,7 +303,7 @@ function Signup({ toggleSignupForm }) {
               and can opt out at any time. */}
               By Continuing, You Agree to Lzy Crazy <span>Term & Conditions</span> and Confirm that You have Read Lzy Crazy <span>Privacy Policy </span>.
             </p>
-            <button type="submit">
+            <button type="submit" style={{width:450, height:40}}>
               {loader ? (
                 <span style={{color:'white'}}>Loading...</span>
               ) : (
@@ -303,6 +314,8 @@ function Signup({ toggleSignupForm }) {
         </form>
       </div>
     </div>
+    </div>
+  </div>
   );
 }
 

@@ -8,6 +8,10 @@ import styles from '../styles/outerPages/login.module.css';
 import '../styles/globals.css';
 // import LogoBg from '../../assets/updatedBanners/logobg.jpg';
 import LogoBg from "../assets/updatedBanners/logobg.png"
+import { Margin } from '@mui/icons-material';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Container from '@mui/material/Container';
 
 
 function Login() {
@@ -17,21 +21,64 @@ function Login() {
   };
 
   return (
-    <div className={styles.app}>
-      <div className={styles.container}>
+    <>
+{/* <div className={styles.container} style={{ overflow: 'hidden' }}> */}
+<div className={styles.container} style={{ overflow: 'hidden' }}>
+      
+<div className={styles.app}>
+    
+
+    <div className={styles.container}>
+      <div className={styles.left}>
+        {/* <p>dfghj</p> */}
         <div className={styles.left}>
-          {/* <p>dfghj</p> */}
-          <img src={LogoBg} style={{height:200, width:200, marginBottom:-70}}/>
-          <Search />
-          <Banner />
-        </div>
-        <div className={styles.right}>
-          <LoginForm toggleSignupForm={toggleSignupForm} />
-        </div>
+       
+
+  
+  <img src={LogoBg} style={{height:130, width:150, marginTop:-70}}/>
+  
+       
+  
+  <div  style={{hight:10,width:350, marginTop:-30}}>
+  <Search />
+  </div>
+  <div  style={{hight:700,width:500,}}>
+  <Banner />
+  </div>
+        
+        <div className={styles.left} style={{height:240 ,marginTop:-5}}>
+       
+        
+      
+        <LoginForm toggleSignupForm={toggleSignupForm}/>
       </div>
-      <Footer />
-      {showSignupForm && <Signup toggleSignupForm={toggleSignupForm} />}
+      
+        
+      
+        
+        </div>
+        
+       
+      </div>
+      </div>
+     
     </div>
+    <div className={styles.left} style={{hight:120, marginBottom:50}}>
+
+    
+    
+    {showSignupForm && <Signup toggleSignupForm={toggleSignupForm} />}
+    </div>
+</div>
+
+
+  <div style={{hight:20}}>
+  <Footer />
+  </div>
+  
+
+
+    </>
   );
 }
 

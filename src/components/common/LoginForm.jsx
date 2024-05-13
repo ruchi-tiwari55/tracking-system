@@ -70,17 +70,19 @@ const LoginForm = ({ toggleSignupForm }) => {
   };
 
   return (
-    <div className={styles.login_form}>
+    <div className={styles.login_form} style={{width:400}}>
+      <div className={styles.app}>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Email address or phone number"
           value={email}
-          onBlur={checkEmailerr}
+          style={{height:30}}
 
           onChange={(e) => {
             setEmail(e.target.value);
             setEmailError('');
+        
           }}
           required
         />
@@ -89,6 +91,7 @@ const LoginForm = ({ toggleSignupForm }) => {
           type="password"
           placeholder="Password"
           value={password}
+          style={{height:30}}
           onBlur={checkpasswderr}
           onChange={(e) => {
             setPassword(e.target.value);
@@ -96,7 +99,7 @@ const LoginForm = ({ toggleSignupForm }) => {
           }}
           required
         />
-        {passwordError && <p style={{ fontSize: 'small', color: 'red', marginTop: '-1rem' }}>{passwordError}</p>}
+        {passwordError && <p style={{ fontSize: 'small', color: 'red', marginBottom: '-1rem' }}>{passwordError}</p>}
 
         <button type="submit" className={styles.login_btn}>
           {/* Log In */}
@@ -106,16 +109,17 @@ const LoginForm = ({ toggleSignupForm }) => {
         <span>Log In</span>
       )}
         </button>
-        <p className={styles.forget_p} onClick={toggleForgetForm}>
+        <p className={styles.forget_p} onClick={toggleForgetForm} style={{height:40}}>
           Forgotten password?
         </p>
         <div>{showForgetForm && <Forget toggleForgetForm={toggleForgetForm} />}</div>
-        <hr />
+
 
         <button onClick={toggleSignupForm} type="button" className={styles.create_account_btn}>
           Create New Account
         </button>
       </form>
+      </div>
     </div>
   );
 };
